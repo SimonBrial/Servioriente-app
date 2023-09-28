@@ -47,6 +47,10 @@
     color: #004ee5;
 }
 
-.iconContainer[data-active]:hover{
-    border: 2px solid red;
+.iconContainer[data-active],
+.iconContainer[data-active]:hover {
+    border-radius: 6px;
+    background-color: #fff;
+    color: #004ee5;
+    transition: 0.3s ease-in-out all;
 }

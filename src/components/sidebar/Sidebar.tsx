@@ -15,81 +15,76 @@ import {
 } from "react-icons/hi";
 import { HiOutlineChatBubbleLeftRight, HiOutlineUser } from "react-icons/hi2";
 import { AiOutlineIdcard } from "react-icons/ai";
-import navClass from "./sidebar.module.css";
-import sidebarClass from "./sidebar.module.css";
-import NavIcon from "./NavIcon";
 
-interface sidebarItems {
-    icon: ReactNode;
-    label: string;
-    direction: string;
-}
+import sidebarClass from "./styles/sidebar.module.css";
+import NavIcon from "./NavIcon";
+import { sidebarItems } from "@/interface/interface";
 
 const sections: sidebarItems[] = [
     {
-        icon: <HiOutlineUser className={navClass.icon} />,
+        icon: <HiOutlineUser className={sidebarClass.icon} />,
         label: "UserName",
         direction: "",
     },
     {
-        icon: <HiOutlineTemplate className={navClass.icon} />,
+        icon: <HiOutlineTemplate className={sidebarClass.icon} />,
         label: "Dahsboard",
         direction: "/home",
     },
     {
-        icon: <AiOutlineIdcard className={navClass.icon} />,
+        icon: <AiOutlineIdcard className={sidebarClass.icon} />,
         label: "Cards",
         direction: "/process",
     },
     {
-        icon: <HiOutlineChatBubbleLeftRight className={navClass.icon} />,
+        icon: <HiOutlineChatBubbleLeftRight className={sidebarClass.icon} />,
         label: "Chats",
         direction: "/chats",
     },
     {
-        icon: <HiOutlineDatabase className={navClass.icon} />,
+        icon: <HiOutlineDatabase className={sidebarClass.icon} />,
         label: "Base de Datos",
         direction: "/data-base",
     },
     {
-        icon: <HiOutlineCalendar className={navClass.icon} />,
+        icon: <HiOutlineCalendar className={sidebarClass.icon} />,
         label: "Calendario",
         direction: "/calendar",
     },
     {
-        icon: <HiOutlineChartBar className={navClass.icon} />,
+        icon: <HiOutlineChartBar className={sidebarClass.icon} />,
         label: "Metricas",
         direction: "/metrics",
     },
     {
-        icon: <HiOutlineMail className={navClass.icon} />,
+        icon: <HiOutlineMail className={sidebarClass.icon} />,
         label: "Correos",
         direction: "/mails",
     },
     {
-        icon: <HiOutlineExclamationCircle className={navClass.icon} />,
+        icon: <HiOutlineExclamationCircle className={sidebarClass.icon} />,
         label: "Recordatorios",
         direction: "/alarms",
     },
     {
-        icon: <HiOutlineCog className={navClass.icon} />,
+        icon: <HiOutlineCog className={sidebarClass.icon} />,
         label: "Configuraciones",
         direction: "/settings",
     },
 ];
 
 export function Sidebar() {
-    const [action, setAction] = useState<boolean>(false);
+    const [active, setActive] = useState<number>(2);
     const [selected, setSelected] = useState<number>(0);
 
-    const linkSelected = (index: number) => {
+    /*  const linkSelected = (index: number) => {
         if (links.length > 0) {
             setSelected(index);
             if (links[index].key !== 0) {
                 setAction(true);
             }
         }
-    };
+    }; */
     const links = sections.map((section: sidebarItems, index) => {
         //console.log(action);
 
@@ -99,14 +94,14 @@ export function Sidebar() {
                 icon={section.icon}
                 label={section.label}
                 dir={section.direction}
-                status={action}
-                onClick={() => linkSelected(index)}
+                active={index === active}
+                onClick={() => setActive(index)}
             />
         );
     });
 
     return (
-        <nav className={navClass.sidebar}>
+        <nav className={sidebarClass.sidebar}>
             <Stack justify="center" gap={"sm"}>
                 {links}
             </Stack>
@@ -118,7 +113,7 @@ export function Sidebar() {
                 />
                 <NavIcon
                     dir={""}
-                    icon={<HiOutlineBell className={navClass.icon} />}
+                    icon={<HiOutlineBell className={sidebarClass.icon} />}
                     label={"Notificaciones"}
                 />
             </Stack>

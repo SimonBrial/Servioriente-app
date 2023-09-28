@@ -5,7 +5,6 @@ import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 
-import { Prueba } from "@/components/sidebar/Prueba";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -27,7 +26,6 @@ export default function RootLayout({
                 <MantineProvider>
                     <Container fluid size={"100%"} px={0} display={"flex"}>
                         <Sidebar />
-                        <Prueba />
                         {children}
                     </Container>
                 </MantineProvider>
