@@ -28,7 +28,7 @@ export default function RootLayout({
                 <MantineProvider>
                     <Container fluid size={"100%"} px={"0"} display={"flex"}>
                         <Sidebar />
-                        <Container className={styles.containerLayout}>
+                        <Container mx={"1rem"} className={styles.containerLayout}>
                             {children}
                         </Container>
                     </Container>
