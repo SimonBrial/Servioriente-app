@@ -17,7 +17,7 @@ export default function ListDataBase() {
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
         },{
-            id: 1,
+            id: 2,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -28,7 +28,7 @@ export default function ListDataBase() {
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
         },{
-            id: 1,
+            id: 3,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -39,7 +39,7 @@ export default function ListDataBase() {
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
         },{
-            id: 1,
+            id: 4,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -50,7 +50,7 @@ export default function ListDataBase() {
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
         },{
-            id: 1,
+            id: 5,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",

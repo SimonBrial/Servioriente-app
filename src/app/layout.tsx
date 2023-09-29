@@ -1,10 +1,10 @@
-import "./globals.css";
+//import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
 import { Sidebar } from "@/components";
-import styles from "./layout.module.css"
+import styles from "./layout.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,13 +25,9 @@ export default function RootLayout({
             </head>
             <body>
                 <MantineProvider>
-                    <Container fluid size={"100%"} px={0} display={"flex"}>
+                    <Container fluid size={"100%"} px={"0"} display={"flex"}>
                         <Sidebar />
-                        <Container
-                            size={"100%"}
-                            p={"1rem"}
-                            className={styles.containerLayout}
-                        >
+                        <Container className={styles.containerLayout}>
                             {children}
                         </Container>
                     </Container>
