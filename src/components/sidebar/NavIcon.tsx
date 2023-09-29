@@ -8,7 +8,6 @@ import sidebarClass from "./styles/sidebar.module.css";
 import { NavIconProps } from "@/interface/interface";
 
 function NavIcon({ icon, dir, active, label, onClick }: NavIconProps) {
-    console.log(status);
     return (
         <Tooltip
             withArrow
