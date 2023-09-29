@@ -1,7 +1,7 @@
 "use client";
 
 import { Table } from "@mantine/core";
-import { StatusBadge } from "..";
+import StatusBadge from "./StatusBadge";
 
 export default function ListDataBase() {
     const elements = [
@@ -16,7 +16,8 @@ export default function ListDataBase() {
             email: "correo@gmail.com",
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
-        },{
+        },
+        {
             id: 2,
             name: "Mario",
             lastName: "Hurtado",
@@ -27,7 +28,8 @@ export default function ListDataBase() {
             email: "correo@gmail.com",
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
-        },{
+        },
+        {
             id: 3,
             name: "Mario",
             lastName: "Hurtado",
@@ -38,7 +40,8 @@ export default function ListDataBase() {
             email: "correo@gmail.com",
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
-        },{
+        },
+        {
             id: 4,
             name: "Mario",
             lastName: "Hurtado",
@@ -49,7 +52,8 @@ export default function ListDataBase() {
             email: "correo@gmail.com",
             status: <StatusBadge title="GENERACION" />,
             birthdate: "16-12-1996",
-        },{
+        },
+        {
             id: 5,
             name: "Mario",
             lastName: "Hurtado",
