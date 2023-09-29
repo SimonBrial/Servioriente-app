@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
-import { Sidebar } from "@/components/sidebar/Sidebar";
+import { Sidebar } from "@/components";
 import styles from "./layout.module.css"
 
 const inter = Inter({ subsets: ["latin"] });

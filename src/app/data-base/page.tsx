@@ -1,8 +1,11 @@
+import { ListDataBase } from "@/components";
 
 function page() {
     return (
-        <div>base de datos</div>
-    )
+        <div>
+            <ListDataBase />
+        </div>
+    );
 }
 
-export default page
+export default page;
