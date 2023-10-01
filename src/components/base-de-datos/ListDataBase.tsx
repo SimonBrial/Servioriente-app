@@ -83,7 +83,6 @@ export default function ListDataBase() {
 
     return (
         <Stack>
-            <UtilsBar />
 
             <Table highlightOnHover>
                 <Table.Thead>

@@ -6,14 +6,14 @@ import btnClass from "../styles/BtnStyles.module.css"
 function BtnFilter() {
     return (
         <Menu>
-            <Menu.Target>
                 <div className={btnClass.btnFilter}>
                     <span className={btnClass.FilterIcon}>
                         <BsFilter />
                     </span>
                     <p>Filtrar</p>
                 </div>
-            </Menu.Target>
+            {/* <Menu.Target>
+            </Menu.Target> */}
         </Menu>
     );
 }
