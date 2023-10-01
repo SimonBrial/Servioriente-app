@@ -1,7 +1,8 @@
 "use client";
 
-import { Table } from "@mantine/core";
+import { Stack, Table } from "@mantine/core";
 import StatusBadge from "./StatusBadge";
+import { UtilsBar } from "../UtilsBar";
 
 export default function ListDataBase() {
     const elements = [
@@ -67,7 +68,7 @@ export default function ListDataBase() {
         },
     ];
     const rows = elements.map((element) => (
-        <Table.Tr key={element.id} style={{ color: "000" }}>
+        <Table.Tr key={element.id} style={{ color: "#000" }}>
             <Table.Td>{element.name}</Table.Td>
             <Table.Td>{element.lastName}</Table.Td>
             <Table.Td>{element.car}</Table.Td>
@@ -81,21 +82,25 @@ export default function ListDataBase() {
     ));
 
     return (
-        <Table highlightOnHover>
-            <Table.Thead>
-                <Table.Tr>
-                    <Table.Th>Nombre</Table.Th>
-                    <Table.Th>Apellido</Table.Th>
-                    <Table.Th>Vehiculo</Table.Th>
-                    <Table.Th>ID Vehiculo</Table.Th>
-                    <Table.Th>Lugar</Table.Th>
-                    <Table.Th>Telefono</Table.Th>
-                    <Table.Th>Correo</Table.Th>
-                    <Table.Th>Status</Table.Th>
-                    <Table.Th>Cumpleaños</Table.Th>
-                </Table.Tr>
-            </Table.Thead>
-            <Table.Tbody>{rows}</Table.Tbody>
-        </Table>
+        <Stack>
+            <UtilsBar />
+
+            <Table highlightOnHover>
+                <Table.Thead>
+                    <Table.Tr style={{ color: "#000" }}>
+                        <Table.Th>Nombre</Table.Th>
+                        <Table.Th>Apellido</Table.Th>
+                        <Table.Th>Vehiculo</Table.Th>
+                        <Table.Th>ID Vehiculo</Table.Th>
+                        <Table.Th>Lugar</Table.Th>
+                        <Table.Th>Telefono</Table.Th>
+                        <Table.Th>Correo</Table.Th>
+                        <Table.Th>Status</Table.Th>
+                        <Table.Th>Cumpleaños</Table.Th>
+                    </Table.Tr>
+                </Table.Thead>
+                <Table.Tbody>{rows}</Table.Tbody>
+            </Table>
+        </Stack>
     );
 }

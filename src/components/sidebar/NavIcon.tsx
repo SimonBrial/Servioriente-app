@@ -1,8 +1,7 @@
 "use Client";
 
 import React, { ReactNode } from "react";
-import { IconType } from "react-icons";
-import { ActionIcon, Tooltip, UnstyledButton } from "@mantine/core";
+import { Tooltip, UnstyledButton } from "@mantine/core";
 import Link from "next/link";
 import sidebarClass from "./styles/sidebar.module.css";
 import { NavIconProps } from "@/interface/interface";

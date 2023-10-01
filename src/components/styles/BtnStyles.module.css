@@ -1,0 +1,32 @@
+.btnFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F8F8F8;
+    gap: 0.6rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #cdcdcd;
+    height: 100%;
+}
+
+.btnFilter:hover {
+    background-color: #EFEFEF;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.FilterIcon {
+    font-size: 1.5rem;
+    margin-bottom: -0.3rem;
+}
+
+.btnAdd {
+    background-color: #004EE5;
+    height: 100%;
+}
+
+.btnAdd:hover {
+    background-color: #033EB2;
+    transition: background-color 0.3s ease-in-out;
+}

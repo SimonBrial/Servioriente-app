@@ -144,6 +144,10 @@ App Styles: [
             "code": "#696969"
         },
         {
+            "color_name": "Sidebar bg",
+            "code": "#F8F8F8"
+        },
+        {
             "color_name": "Sidebar bg - hover",
             "code": "#EFEFEF"
         },
