@@ -1,10 +1,13 @@
+"use client"
+
 import { ReactNode } from "react";
-import { Button } from "@mantine/core";
+import { useDisclosure } from '@mantine/hooks';
+import { Button, Drawer } from "@mantine/core";
 import { LuGoal } from "react-icons/lu";
 import { HiOutlineUserAdd } from "react-icons/hi";
 import { TbTemplate, TbMailPlus } from "react-icons/tb";
 import { MdOutlineEventNote } from "react-icons/md";
-import btnClass from "../styles/BtnStyles.module.css"
+import btnClass from "../styles/BtnStyles.module.css";
 
 interface BtnAdd {
     iconTag: tagIcon;
@@ -20,6 +23,8 @@ interface iconList {
 }
 
 function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
+    const [opened, { open, close }] = useDisclosure(false);
+
     const iconList: iconList[] = [
         {
             tag: "goal",
@@ -54,9 +59,18 @@ function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
     };
 
     return (
-        <Button leftSection={selectIcon(iconTag)} className={btnClass.btnAdd}>
-            {label}
-        </Button>
+        <>
+            <Drawer opened={opened} onClose={close} title="Authentication" position="right">
+                <h1>Prueba</h1>
+            </Drawer>
+            <Button
+                leftSection={selectIcon(iconTag)}
+                className={btnClass.btnAdd}
+                onClick={open}
+            >
+                {label}
+            </Button>
+        </>
     );
 }
 

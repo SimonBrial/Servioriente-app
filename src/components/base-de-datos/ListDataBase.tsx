@@ -2,7 +2,7 @@
 
 import { Stack, Table } from "@mantine/core";
 import StatusBadge from "./StatusBadge";
-import { UtilsBar } from "../UtilsBar";
+import BtnFn from "../buttons/BtnFn";
 
 export default function ListDataBase() {
     const elements = [
@@ -68,7 +68,10 @@ export default function ListDataBase() {
         },
     ];
     const rows = elements.map((element) => (
-        <Table.Tr key={element.id} style={{ color: "#000" }}>
+        <Table.Tr key={element.id} style={{ color: "#000",  }}>
+            <Table.Td>
+                <BtnFn />
+            </Table.Td>
             <Table.Td>{element.name}</Table.Td>
             <Table.Td>{element.lastName}</Table.Td>
             <Table.Td>{element.car}</Table.Td>
@@ -83,10 +86,10 @@ export default function ListDataBase() {
 
     return (
         <Stack>
-
             <Table highlightOnHover>
                 <Table.Thead>
-                    <Table.Tr style={{ color: "#000" }}>
+                    <Table.Tr style={{ color: "#000", borderBottom: "2px solid #004EE5" }}>
+                        <Table.Th style={{marginRight: ""}}></Table.Th>
                         <Table.Th>Nombre</Table.Th>
                         <Table.Th>Apellido</Table.Th>
                         <Table.Th>Vehiculo</Table.Th>
