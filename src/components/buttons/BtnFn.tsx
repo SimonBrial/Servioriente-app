@@ -1,5 +1,10 @@
 import { ActionIcon, Menu } from "@mantine/core";
-import { HiOutlineDotsVertical } from "react-icons/hi";
+import {
+    HiOutlineDotsVertical,
+    HiOutlinePencil,
+    HiOutlineTrash,
+} from "../IconsIndex";
+import btnClass from "../styles/BtnStyles.module.css";
 
 function BtnFn() {
     return (
@@ -15,8 +20,18 @@ function BtnFn() {
                     border: "1px solid #CDCDCD",
                 }}
             >
-                <Menu.Item>Editar</Menu.Item>
-                <Menu.Item>Eliminar</Menu.Item>
+                <Menu.Item className={btnClass.btnEditDelete_item}>
+                    <span>
+                        <HiOutlinePencil />
+                    </span>
+                    Editar
+                </Menu.Item>
+                <Menu.Item className={btnClass.btnEditDelete_item}>
+                    <span>
+                        <HiOutlineTrash />
+                    </span>
+                    Eliminar
+                </Menu.Item>
             </Menu.Dropdown>
         </Menu>
     );

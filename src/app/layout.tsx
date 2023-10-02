@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
+import { theme } from "../theme/CustomTheme";
 
 import styles from "./layout.module.css";
 import { Sidebar } from "@/components/sidebar/Sidebar";
@@ -25,10 +26,13 @@ export default function RootLayout({
                 <ColorSchemeScript />
             </head>
             <body>
-                <MantineProvider>
+                <MantineProvider theme={theme}>
                     <Container fluid size={"100%"} px={"0"} display={"flex"}>
                         <Sidebar />
-                        <Container mx={"1rem"} className={styles.containerLayout}>
+                        <Container
+                            mx={"1rem"}
+                            className={styles.containerLayout}
+                        >
                             {children}
                         </Container>
                     </Container>

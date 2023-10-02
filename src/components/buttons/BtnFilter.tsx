@@ -1,21 +1,32 @@
+"use client";
 import React from "react";
-import { Menu } from "@mantine/core";
-import { BsFilter } from "react-icons/bs";
-import btnClass from "../styles/BtnStyles.module.css"
+import { Modal, Button } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { BsFilter } from "../IconsIndex";
+import btnClass from "../styles/BtnStyles.module.css";
 
-function BtnFilter() {
+export function BtnFilter({ children }: { children: React.ReactNode }) {
+    const [opened, { open, close }] = useDisclosure(false);
+
     return (
-        <Menu>
-                <div className={btnClass.btnFilter}>
-                    <span className={btnClass.FilterIcon}>
-                        <BsFilter />
-                    </span>
-                    <p>Filtrar</p>
-                </div>
-            {/* <Menu.Target>
-            </Menu.Target> */}
-        </Menu>
+        <>
+            <Modal
+                opened={opened}
+                onClose={close}
+                styles={{
+                    header: { textAlign: "center" },
+                    close: { display: "none" },
+                    title: { textAlign: "center", margin: "0 auto" },
+                }}
+            >
+                {children}
+            </Modal>
+            <Button className={btnClass.btnFilter} onClick={open}>
+                <span className={btnClass.FilterIcon}>
+                    <BsFilter />
+                </span>
+                <p>Filtrar</p>
+            </Button>
+        </>
     );
 }
-
-export default BtnFilter;

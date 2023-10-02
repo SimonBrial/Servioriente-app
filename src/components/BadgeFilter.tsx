@@ -1,6 +1,5 @@
 import { Badge } from "@mantine/core";
-import { ReactNode } from "react";
-import { IoClose } from "react-icons/io5";
+import { IoClose } from "./IconsIndex";
 
 export function BadgeFilter({ tag }: { tag: string }) {
     return (

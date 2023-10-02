@@ -1,6 +1,5 @@
 import { Badge } from "@mantine/core";
-import { ReactNode } from "react";
-import { HiOutlineTrash } from "react-icons/hi";
+import { HiOutlineTrash } from "./IconsIndex";
 
 export function BadgeClose({ status }: { status: boolean }) {
     let badge = <></>;

@@ -2,16 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
+    border: 1px solid #cdcdcd;
+    color: #696969;
     gap: 0.6rem;
     padding: 0.2rem 0.8rem;
     border-radius: 6px;
-    border: 1px solid #cdcdcd;
     height: 100%;
 }
 
 .btnFilter:hover {
-    background-color: #EFEFEF;
+    background-color: #efefef;
     transition: background-color 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -22,11 +23,25 @@
 }
 
 .btnAdd {
-    background-color: #004EE5;
+    background-color: #004ee5;
     height: 100%;
 }
 
 .btnAdd:hover {
-    background-color: #033EB2;
+    background-color: #033eb2;
     transition: background-color 0.3s ease-in-out;
+}
+
+.btnEditDelete_item {
+    display: flex;
+    color: #696969;
+}
+
+.btnEditDelete_item:hover {
+    color: #004ee5;
+    transition: color 0.3s ease-in-out;
+}
+
+.btnEditDelete_item span {
+    margin-right: 0.5rem;
 }

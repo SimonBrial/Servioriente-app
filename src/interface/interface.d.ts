@@ -14,4 +14,4 @@ interface sidebarItems {
     direction: string;
 }
 
-export type { NavIconProps, sidebarItems };
+export type { NavIconProps, sidebarItems, arraySocial, SocialRed };

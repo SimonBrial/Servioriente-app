@@ -1,5 +1,5 @@
 import { Autocomplete } from "@mantine/core";
-import { HiOutlineSearch } from "react-icons/hi";
+import { HiOutlineSearch } from "./IconsIndex";
 import autoCompleteClass from "./styles/autoComplete.module.css";
 
 export function AutoCompleteInput() {

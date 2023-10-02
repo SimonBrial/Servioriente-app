@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import { ReactNode } from "react";
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure } from "@mantine/hooks";
 import { Button, Drawer } from "@mantine/core";
-import { LuGoal } from "react-icons/lu";
-import { HiOutlineUserAdd } from "react-icons/hi";
-import { TbTemplate, TbMailPlus } from "react-icons/tb";
-import { MdOutlineEventNote } from "react-icons/md";
+import { LuGoal } from "../IconsIndex";
+import { HiOutlineUserAdd } from "../IconsIndex";
+import { TbTemplate, TbMailPlus } from "../IconsIndex";
+import { MdOutlineEventNote } from "../IconsIndex";
 import btnClass from "../styles/BtnStyles.module.css";
 
 interface BtnAdd {
@@ -60,7 +60,12 @@ function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
 
     return (
         <>
-            <Drawer opened={opened} onClose={close} title="Authentication" position="right">
+            <Drawer
+                opened={opened}
+                onClose={close}
+                title="Authentication"
+                position="right"
+            >
                 <h1>Prueba</h1>
             </Drawer>
             <Button

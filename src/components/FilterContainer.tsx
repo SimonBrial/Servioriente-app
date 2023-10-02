@@ -1,6 +1,6 @@
 import { Badge, Container, Flex } from "@mantine/core";
-import { IoClose } from "react-icons/io5";
-import { HiOutlineTrash } from "react-icons/hi";
+import { IoClose } from "./IconsIndex";
+import { HiOutlineTrash } from "./IconsIndex";
 import { BadgeClose } from "./BadgeClose";
 import { BadgeFilter } from "./BadgeFilter";
 
