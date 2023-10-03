@@ -1,29 +1,24 @@
-"use client";
-
 import {
-    Divider,
-    Flex,
-    Select,
-    Stack,
+    ActionIcon,
     TextInput,
+    Select,
     Title,
-    Button,
+    Stack,
+    Flex,
 } from "@mantine/core";
-//import { Calendar, DateInput } from "@mantine/dates";
+import { TitleLayout } from "./TitleLayout";
 import {
+    HiDevicePhoneMobile,
+    MdOutlinePlace,
     HiOutlineUser,
     AiOutlineCar,
-    MdOutlinePlace,
-    HiDevicePhoneMobile,
-    BsFilter,
+    HiLink,
 } from "./IconsIndex";
-import { TitleLayout } from "./TitleLayout";
-import { CalendarInput } from "./CalendarInput";
 
-export function GeneralFilterLayout() {
+export default function ClientRegister() {
     return (
         <Stack gap={"xs"}>
-            <TitleLayout title="FILTRAR CATEGORIA" />
+            <TitleLayout title="Crear Registro" />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Nombre
@@ -90,22 +85,10 @@ export function GeneralFilterLayout() {
             </Flex>
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
-                    Red Social
-                </Title>
-                <Select
-                    size="xs"
-                    label=""
-                    placeholder="Red Social"
-                    data={["Facebook", "Instagram", "Whatsapp"]}
-                />
-            </Flex>
-            <Flex justify={"space-between"} align={"center"}>
-                <Title order={5} style={{ color: "#696969" }}>
                     Estatus
                 </Title>
                 <Select
                     size="xs"
-                    label=""
                     placeholder="Estatus"
                     data={[
                         "Muy Importante",
@@ -116,23 +99,67 @@ export function GeneralFilterLayout() {
                     ]}
                 />
             </Flex>
+            <TitleLayout title="Redes Sociales" />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
-                    Desde
+                    Facebook
                 </Title>
-                <p>Aqui va el input del calendario</p>
+                <div
+                    style={{
+                        display: "flex",
+                        gap: "0.5rem",
+                        alignItems: "center",
+                    }}
+                >
+                    <TextInput size="xs" placeholder="Facebook" />
+
+                    <ActionIcon
+                        variant="transparent"
+                        color="#696969"
+                        aria-label="Settings"
+                    >
+                        <HiLink />
+                    </ActionIcon>
+                </div>
             </Flex>
-            <Button
-                leftSection={<BsFilter />}
-                styles={(theme) => ({
-                    section: { fontSize: "1.8rem" },
-                    root: {
-                        backgroundColor: `${theme.colors.principalTheme[6]}`,
-                    },
-                })}
-            >
-                Aplicar Filtros
-            </Button>
+            <Flex justify={"space-between"} align={"center"}>
+                <Title order={5} style={{ color: "#696969" }}>
+                    Whatsapp
+                </Title>
+                <Title
+                    order={5}
+                    styles={{
+                        root: {
+                            color: "#696969",
+                            width: "55%",
+                            textAlign: "center",
+                        },
+                    }}
+                >
+                    0424 -589.85.76
+                </Title>
+            </Flex>
+            <Flex justify={"space-between"} align={"center"}>
+                <Title order={5} style={{ color: "#696969" }}>
+                    Instagram
+                </Title>
+                <div
+                    style={{
+                        display: "flex",
+                        gap: "0.5rem",
+                        alignItems: "center",
+                    }}
+                >
+                    <TextInput size="xs" placeholder="Instagram" />
+                    <ActionIcon
+                        variant="transparent"
+                        color="#696969"
+                        aria-label="Settings"
+                    >
+                        <HiLink />
+                    </ActionIcon>
+                </div>
+            </Flex>
         </Stack>
     );
 }

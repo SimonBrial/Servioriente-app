@@ -1,26 +1,15 @@
 "use client";
 
-import { ReactNode } from "react";
 import { useDisclosure } from "@mantine/hooks";
-import { Button, Drawer } from "@mantine/core";
-import { LuGoal } from "../IconsIndex";
+import { Button, Drawer, Stack } from "@mantine/core";
+import { HiOutlineCheck, LuGoal } from "../IconsIndex";
 import { HiOutlineUserAdd } from "../IconsIndex";
 import { TbTemplate, TbMailPlus } from "../IconsIndex";
 import { MdOutlineEventNote } from "../IconsIndex";
 import btnClass from "../styles/BtnStyles.module.css";
-
-interface BtnAdd {
-    iconTag: tagIcon;
-    label: string;
-    addFn?(): void;
-}
-
-type tagIcon = "goal" | "add-user" | "format" | "add-mail" | "add-event";
-
-interface iconList {
-    tag: tagIcon;
-    icon: ReactNode;
-}
+import BtnActions from "./BtnActions";
+import { BtnAdd, iconList } from "@/interface/interface";
+import ClientRegister from "../ClientRegister";
 
 function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
     const [opened, { open, close }] = useDisclosure(false);
@@ -65,8 +54,21 @@ function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
                 onClose={close}
                 title="Authentication"
                 position="right"
+                overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+                styles={{
+                    header: { display: "none" },
+                }}
             >
-                <h1>Prueba</h1>
+                <Stack
+                    justify="space-between"
+                    style={{
+                        padding: "1rem 1rem 0 1rem",
+                        height: "96vh",
+                    }}
+                >
+                    <ClientRegister />
+                    <BtnActions icon={<HiOutlineCheck />} title="Aceptar" />
+                </Stack>
             </Drawer>
             <Button
                 leftSection={selectIcon(iconTag)}

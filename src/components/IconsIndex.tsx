@@ -10,10 +10,12 @@ import {
     HiOutlineLogout,
     HiOutlinePencil,
     HiOutlineTrash,
+    HiOutlineCheck,
     HiOutlineBell,
     HiOutlineMail,
     HiOutlineCog,
     HiHashtag,
+    HiLink,
 } from "react-icons/hi";
 import {
     HiOutlineChatBubbleLeftRight,
@@ -46,6 +48,7 @@ export {
     AiOutlineIdcard,
     MdOutlinePlace,
     HiOutlineTrash,
+    HiOutlineCheck,
     HiOutlineUser,
     HiOutlineBell,
     HiOutlineMail,
@@ -57,4 +60,5 @@ export {
     BsFilter,
     IoClose,
     LuGoal,
+    HiLink,
 };

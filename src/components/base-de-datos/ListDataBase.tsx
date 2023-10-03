@@ -69,7 +69,7 @@ export default function ListDataBase() {
     ];
     const rows = elements.map((element) => (
         <Table.Tr key={element.id} style={{ color: "#000",  }}>
-            <Table.Td>
+            <Table.Td style={{paddingRight: "0", width: "2rem"}}>
                 <BtnFn />
             </Table.Td>
             <Table.Td>{element.name}</Table.Td>

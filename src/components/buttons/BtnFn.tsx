@@ -1,39 +1,21 @@
-import { ActionIcon, Menu } from "@mantine/core";
-import {
-    HiOutlineDotsVertical,
-    HiOutlinePencil,
-    HiOutlineTrash,
-} from "../IconsIndex";
+import { ActionIcon, Menu, Flex } from "@mantine/core";
+import { HiOutlineTrash } from "../IconsIndex";
 import btnClass from "../styles/BtnStyles.module.css";
+import BtnEdit from "./BtnEdit";
 
 function BtnFn() {
     return (
-        <Menu position="right" withArrow>
-            <Menu.Target>
-                <ActionIcon variant="transparent" color="#696969">
-                    <HiOutlineDotsVertical />
-                </ActionIcon>
-            </Menu.Target>
-            <Menu.Dropdown
-                style={{
-                    BackgroundColor: "#F8F8F8",
-                    border: "1px solid #CDCDCD",
-                }}
+        <Flex>
+            <BtnEdit label="Editar" />
+            <ActionIcon
+                variant="transparent"
+                color="gray"
+                aria-label="Settings"
+                className={btnClass.btnEditDelete_item}
             >
-                <Menu.Item className={btnClass.btnEditDelete_item}>
-                    <span>
-                        <HiOutlinePencil />
-                    </span>
-                    Editar
-                </Menu.Item>
-                <Menu.Item className={btnClass.btnEditDelete_item}>
-                    <span>
-                        <HiOutlineTrash />
-                    </span>
-                    Eliminar
-                </Menu.Item>
-            </Menu.Dropdown>
-        </Menu>
+                <HiOutlineTrash />
+            </ActionIcon>
+        </Flex>
     );
 }
 

@@ -32,16 +32,26 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-.btnEditDelete_item {
-    display: flex;
+.btnEditEdit_item {
     color: #696969;
+    font-size: 1.2rem;
+}
+
+.btnEditEdit_item:hover {
+    color: orange;
+    transition: color 0.3s ease-in-out;
+}
+.btnEditDelete_item {
+    color: #696969;
+    font-size: 1.2rem;
 }
 
 .btnEditDelete_item:hover {
-    color: #004ee5;
+    color: red;
     transition: color 0.3s ease-in-out;
 }
 
-.btnEditDelete_item span {
+/* .btnEditDelete_item span {
     margin-right: 0.5rem;
-}
+} */
+

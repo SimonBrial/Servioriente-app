@@ -10,7 +10,7 @@ export const theme = createTheme({
             "#6599fe",
             "#3b7afd",
             "#2167fd",
-            "#115dfe", // This is the principal theme color
+            "#115dfe", // This is the principal theme color -> 6
             "#004de3",
             "#0045cb",
             "#003ab3",
