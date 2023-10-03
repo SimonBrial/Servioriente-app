@@ -13,7 +13,9 @@ import {
     HiOutlineCheck,
     HiOutlineBell,
     HiOutlineMail,
+    HiOutlineSave,
     HiOutlineCog,
+    HiOutlineEye,
     HiHashtag,
     HiLink,
 } from "react-icons/hi";
@@ -23,7 +25,7 @@ import {
     HiOutlineUser,
     HiDevicePhoneMobile,
 } from "react-icons/hi2";
-import { IoClose } from "react-icons/io5";
+import { IoClose, IoArrowBackOutline } from "react-icons/io5";
 import { LuGoal } from "react-icons/lu";
 import { TbTemplate, TbMailPlus } from "react-icons/tb";
 import { MdOutlineEventNote, MdOutlinePlace } from "react-icons/md";
@@ -37,6 +39,7 @@ export {
     HiOutlineUserCircle,
     HiDevicePhoneMobile,
     MdOutlineEventNote,
+    IoArrowBackOutline,
     HiOutlineDatabase,
     HiOutlineTemplate,
     HiOutlineCalendar,
@@ -52,8 +55,10 @@ export {
     HiOutlineUser,
     HiOutlineBell,
     HiOutlineMail,
+    HiOutlineSave,
     AiOutlineCar,
     HiOutlineCog,
+    HiOutlineEye,
     TbTemplate,
     TbMailPlus,
     HiHashtag,

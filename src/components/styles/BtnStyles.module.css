@@ -39,7 +39,8 @@
 
 .btnEditEdit_item:hover {
     color: orange;
-    transition: color 0.3s ease-in-out;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
 }
 .btnEditDelete_item {
     color: #696969;
@@ -50,7 +51,16 @@
     color: red;
     transition: color 0.3s ease-in-out;
 }
+.btnEditView_item {
+    color: #696969;
+    font-size: 1.2rem;
+}
 
+.btnEditView_item:hover {
+    color: #004ee5;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
 /* .btnEditDelete_item span {
     margin-right: 0.5rem;
 } */

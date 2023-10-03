@@ -67,7 +67,7 @@ function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
                     }}
                 >
                     <ClientRegister />
-                    <BtnActions icon={<HiOutlineCheck />} title="Aceptar" />
+                    <BtnActions icon={<HiOutlineCheck />} title="Aceptar" close={close}/>
                 </Stack>
             </Drawer>
             <Button

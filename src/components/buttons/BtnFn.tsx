@@ -1,20 +1,33 @@
-import { ActionIcon, Menu, Flex } from "@mantine/core";
-import { HiOutlineTrash } from "../IconsIndex";
+import { ActionIcon, Tooltip, Flex, UnstyledButton } from "@mantine/core";
+import { HiOutlineTrash, HiOutlineEye } from "../IconsIndex";
 import btnClass from "../styles/BtnStyles.module.css";
 import BtnEdit from "./BtnEdit";
+import BtnSee from "./BtnSee";
 
 function BtnFn() {
     return (
-        <Flex>
+        <Flex gap={"xs"}>
             <BtnEdit label="Editar" />
-            <ActionIcon
-                variant="transparent"
-                color="gray"
-                aria-label="Settings"
-                className={btnClass.btnEditDelete_item}
+            <Tooltip
+                label="Borrar"
+                withArrow
+                position="top"
+                styles={(theme) => ({
+                    tooltip: {
+                        background: `${theme.colors.principalTheme[6]}`,
+                    },
+                })}
             >
-                <HiOutlineTrash />
-            </ActionIcon>
+                <UnstyledButton
+                    variant="transparent"
+                    color="gray"
+                    aria-label="Borrar"
+                    className={btnClass.btnEditDelete_item}
+                >
+                    <HiOutlineTrash />
+                </UnstyledButton>
+            </Tooltip>
+            <BtnSee />
         </Flex>
     );
 }

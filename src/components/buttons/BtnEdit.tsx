@@ -7,6 +7,8 @@ import {
     Stack,
     Title,
     Flex,
+    Tooltip,
+    UnstyledButton,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import {
@@ -17,7 +19,7 @@ import {
     AiOutlineCar,
     HiLink,
     HiOutlinePencil,
-    HiOutlineTrash,
+    HiOutlineSave,
 } from "../IconsIndex";
 import { TitleLayout } from "../TitleLayout";
 import btnClass from "../styles/BtnStyles.module.css";
@@ -31,7 +33,6 @@ export default function BtnEdit({ label }: { label: string }) {
             <Drawer
                 opened={opened}
                 onClose={close}
-                title="Authentication"
                 position="right"
                 overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
                 styles={{
@@ -46,7 +47,7 @@ export default function BtnEdit({ label }: { label: string }) {
                     }}
                 >
                     <Stack gap={"xs"}>
-                        <TitleLayout title="Crear Registro" />
+                        <TitleLayout title="Editar Registro" />
                         <Flex justify={"space-between"} align={"center"}>
                             <Title order={5} style={{ color: "#696969" }}>
                                 Nombre
@@ -189,25 +190,29 @@ export default function BtnEdit({ label }: { label: string }) {
                             </div>
                         </Flex>
                     </Stack>
-                    <BtnActions icon={<HiOutlineCheck />} title="Aceptar" />
+                    <BtnActions icon={<HiOutlineSave />} title="Guardar" close={close}/>
                 </Stack>
             </Drawer>
-            <ActionIcon
-                variant="transparent"
-                color="gray"
-                aria-label="Editar"
-                className={btnClass.btnEditEdit_item}
-                onClick={open}
+            <Tooltip
+                label="Editar"
+                withArrow
+                position="top"
+                styles={(theme) => ({
+                    tooltip: {
+                        background: `${theme.colors.principalTheme[6]}`,
+                    },
+                })}
             >
-                <HiOutlinePencil />
-            </ActionIcon>
-            {/* <Button
-                leftSection={<HiOutlinePencil />}
-                className={btnClass.btnAdd}
-                onClick={open}
-            >
-                {label}
-            </Button> */}
+                <UnstyledButton
+                    variant="transparent"
+                    color="gray"
+                    aria-label="Editar"
+                    className={btnClass.btnEditEdit_item}
+                    onClick={open}
+                >
+                    <HiOutlinePencil />
+                </UnstyledButton>
+            </Tooltip>
         </>
     );
 }
