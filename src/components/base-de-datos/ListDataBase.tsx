@@ -72,7 +72,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 6,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -84,7 +84,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 7,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -96,7 +96,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 8,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -108,7 +108,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 9,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -120,7 +120,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 10,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -132,7 +132,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 11,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -144,7 +144,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 12,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -156,7 +156,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 13,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -168,7 +168,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 14,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -180,7 +180,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 15,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -192,7 +192,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 16,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -204,7 +204,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 17,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -216,7 +216,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 18,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -228,7 +228,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 19,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -240,7 +240,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 20,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -252,7 +252,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 21,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -264,7 +264,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 22,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -276,7 +276,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 23,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -288,7 +288,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
         {
-            id: 5,
+            id: 24,
             name: "Mario",
             lastName: "Hurtado",
             car: "car",
@@ -300,6 +300,7 @@ export default function ListDataBase() {
             birthdate: "16-12-1996",
         },
     ];
+    
     const rows = elements.map((element) => (
         <Table.Tr key={element.id} style={{ color: "#000" }}>
             <Table.Td style={{ paddingRight: "0", width: "2.5rem" }}>

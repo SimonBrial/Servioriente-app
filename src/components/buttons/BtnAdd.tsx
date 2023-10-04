@@ -52,27 +52,34 @@ function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
             <Drawer
                 opened={opened}
                 onClose={close}
-                title="Authentication"
                 position="right"
                 overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
-                styles={{
-                    header: { display: "none" },
-                }}
+                withCloseButton={false}
             >
                 <Stack
                     justify="space-between"
                     style={{
                         padding: "1rem 1rem 0 1rem",
-                        height: "96vh",
+                        height: "95vh",
                     }}
                 >
                     <ClientRegister />
-                    <BtnActions icon={<HiOutlineCheck />} title="Aceptar" close={close}/>
+                    <BtnActions
+                        icon={<HiOutlineCheck />}
+                        title="Aceptar"
+                        close={close}
+                    />
                 </Stack>
             </Drawer>
             <Button
                 leftSection={selectIcon(iconTag)}
-                className={btnClass.btnAdd}
+                styles={(theme) => ({
+                    root: {
+                        backgroundColor: `${theme.colors.principalTheme[6]}`,
+                        height: "100%",
+                    },
+                    section: {fontSize: "1.2rem"}
+                })}
                 onClick={open}
             >
                 {label}

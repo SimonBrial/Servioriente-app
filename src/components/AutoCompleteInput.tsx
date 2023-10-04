@@ -12,7 +12,7 @@ export function AutoCompleteInput() {
                 size="xs"
                 style={{ width: "100%" }}
                 maxDropdownHeight={100}
-                placeholder="Pick value or enter anything"
+                placeholder="Buscar Informacion del usuario"
                 data={[
                     "Mario Hurtado",
                     "Simon Briceño",

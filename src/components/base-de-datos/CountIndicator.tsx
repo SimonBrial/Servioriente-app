@@ -1,6 +1,7 @@
+"use client";
 import { ReactNode } from "react";
-import { Tooltip } from "@mantine/core";
-import countClass from "../styles/countIndicator.module.css"
+import { Tooltip, Button } from "@mantine/core";
+import countClass from "../styles/countIndicator.module.css";
 
 interface CountIndicatorProps {
     count: number;
@@ -22,10 +23,28 @@ export function CountIndicator({
             color="#004EE5"
             transitionProps={{ transition: "skew-up", duration: 300 }}
         >
-            <div className={countClass.countIndicator}>
-                <span className={countClass.countIndicator_Icon}>{iconSection}</span>
-                <p>{count}</p>
-            </div>
+            <Button
+                leftSection={iconSection}
+                /* className={countClass.countIndicator} */
+                styles={(theme) => ({
+                    section: {
+                        fontSize: "1.6rem",
+                        color: `${theme.colors.principalTheme[6]}`,
+                    },
+                    root: {
+                        backgroundColor: "#F8F8F8",
+                        border: "1px solid #CDCDCD",
+                        color: "#696969",
+                        fontSize: "1.2rem",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "100%"
+                    },
+                })}
+            >
+                {count}
+            </Button>
         </Tooltip>
     );
 }

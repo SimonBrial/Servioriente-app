@@ -1,6 +1,7 @@
 import {
     HiOutlineExclamationCircle,
     HiOutlineDotsVertical,
+    HiOutlineDocumentText,
     HiOutlineDatabase,
     HiOutlineTemplate,
     HiOutlineCalendar,
@@ -36,6 +37,7 @@ export {
     HiOutlineChatBubbleLeftRight,
     HiOutlineExclamationCircle,
     HiOutlineDotsVertical,
+    HiOutlineDocumentText,
     HiOutlineUserCircle,
     HiDevicePhoneMobile,
     MdOutlineEventNote,

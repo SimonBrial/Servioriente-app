@@ -13,19 +13,23 @@ export function BtnFilter({ children }: { children: React.ReactNode }) {
             <Modal
                 opened={opened}
                 onClose={close}
+                withCloseButton={false}
                 styles={{
                     header: { textAlign: "center" },
-                    close: { display: "none" },
                     title: { textAlign: "center", margin: "0 auto" },
                 }}
             >
                 {children}
             </Modal>
-            <Button className={btnClass.btnFilter} onClick={open}>
-                <span className={btnClass.FilterIcon}>
-                    <BsFilter />
-                </span>
-                <p>Filtrar</p>
+            <Button
+                className={btnClass.btnFilter}
+                onClick={open}
+                styles={{
+                    section: { fontSize: "1.2rem" },
+                }}
+                leftSection={<BsFilter />}
+            >
+                Filtrar
             </Button>
         </>
     );

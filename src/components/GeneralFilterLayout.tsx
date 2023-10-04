@@ -1,13 +1,14 @@
 "use client";
 
 import {
-    Divider,
-    Flex,
-    Select,
-    Stack,
     TextInput,
-    Title,
+    Checkbox,
+    Divider,
+    Select,
     Button,
+    Stack,
+    Title,
+    Flex,
 } from "@mantine/core";
 //import { Calendar, DateInput } from "@mantine/dates";
 import {
@@ -22,100 +23,62 @@ import { CalendarInput } from "./CalendarInput";
 
 export function GeneralFilterLayout() {
     return (
-        <Stack gap={"xs"}>
+        <Stack
+            gap={"xs"}
+            styles={{
+                root: { padding: "1rem" },
+            }}
+        >
             <TitleLayout title="FILTRAR CATEGORIA" />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Nombre
                 </Title>
-                <TextInput
-                    leftSection={<HiOutlineUser />}
-                    variant="default"
-                    size="xs"
-                    placeholder="Nombre"
-                />
+                <Checkbox aria-label="My checkbox" />
             </Flex>
+            <Divider size={"xs"} />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Apellido
                 </Title>
-                <TextInput
-                    leftSection={<HiOutlineUser />}
-                    variant="default"
-                    size="xs"
-                    placeholder="Apellido"
-                />
+                <Checkbox aria-label="My checkbox" />
             </Flex>
+            <Divider size={"xs"} />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Vehiculo
                 </Title>
-                <TextInput
-                    leftSection={<AiOutlineCar />}
-                    variant="default"
-                    size="xs"
-                    placeholder="Vehiculo"
-                />
+                <Checkbox aria-label="My checkbox" />
             </Flex>
+            <Divider size={"xs"} />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Estado
                 </Title>
-                <TextInput
-                    leftSection={<MdOutlinePlace />}
-                    variant="default"
-                    size="xs"
-                    placeholder="Estado"
-                />
+                <Checkbox aria-label="My checkbox" />
             </Flex>
+            <Divider size={"xs"} />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Telefono
                 </Title>
-                <div style={{ display: "flex", gap: "8px" }}>
-                    <Select
-                        style={{ width: "100px" }}
-                        size="xs"
-                        label=""
-                        placeholder="Codigo"
-                        data={["0412", "0424", "0416"]}
-                    />
-                    <TextInput
-                        leftSection={<HiDevicePhoneMobile />}
-                        variant="default"
-                        size="xs"
-                        placeholder="Telefono"
-                    />
-                </div>
+                <Checkbox aria-label="My checkbox" />
             </Flex>
+            <Divider size={"xs"} />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Red Social
                 </Title>
-                <Select
-                    size="xs"
-                    label=""
-                    placeholder="Red Social"
-                    data={["Facebook", "Instagram", "Whatsapp"]}
-                />
+                <Checkbox aria-label="My checkbox" />
             </Flex>
+            <Divider size={"xs"} />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Estatus
                 </Title>
-                <Select
-                    size="xs"
-                    label=""
-                    placeholder="Estatus"
-                    data={[
-                        "Muy Importante",
-                        "Importante",
-                        "Normal",
-                        "Poco Importante",
-                        "Muy Poco Importante",
-                    ]}
-                />
+                <Checkbox aria-label="My checkbox" />
             </Flex>
+            <Divider size={"xs"} />
             <Flex justify={"space-between"} align={"center"}>
                 <Title order={5} style={{ color: "#696969" }}>
                     Desde
