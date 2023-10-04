@@ -1,24 +1,19 @@
-import { Badge } from "@mantine/core";
-import { IoClose } from "./IconsIndex";
+import { Pill } from "@mantine/core";
 
 export function BadgeFilter({ tag }: { tag: string }) {
     return (
-        <Badge
-            variant="light"
-            color="blue"
-            radius="sm"
-            style={{
-                color: "#004EE5",
-                backgroundColor: "rgba(0, 76, 229, 0.3)",
-                cursor: "default"
+        <Pill
+            withRemoveButton
+            styles={{
+                root: {
+                    color: "#004EE5",
+                    backgroundColor: "rgba(0, 76, 229, 0.3)",
+                    fontWeight: "bold",
+                    borderRadius: "6px",
+                },
             }}
-            rightSection={
-                <IoClose
-                    style={{ width: "16px", height: "16px", cursor: "pointer" }}
-                />
-            }
         >
             {tag}
-        </Badge>
+        </Pill>
     );
 }
