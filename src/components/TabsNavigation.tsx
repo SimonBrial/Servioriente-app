@@ -1,31 +1,72 @@
+"use client";
+
+import Link from "next/link";
 import { Tabs } from "@mantine/core";
 import {
     BiMailSend,
     HiOutlineStar,
     HiOutlineTrash,
     HiOutlineDocumentText,
+    HiOutlineSave,
 } from "./IconsIndex";
+import React from "react";
 
-export default function TabsNavigation() {
-    return (
-        <Tabs color="gray" variant="outline" defaultValue="gallery">
+const mailSections = [
+    { value: "Enviados", icon: <BiMailSend />, dir: "/mails" },
+    { value: "Favoritos", icon: <HiOutlineStar />, dir: "/mails/favorities" },
+    { value: "Borrados", icon: <HiOutlineTrash />, dir: "/mails/erased" },
+    {
+        value: "Plantillas",
+        icon: <HiOutlineDocumentText />,
+        dir: "/mails/formats",
+    },
+    { value: "Archivados", icon: <HiOutlineSave />, dir: "/mails/archived" },
+];
+
+interface TabsSectionesProps {
+    value: string;
+    icon: React.ReactNode;
+    dir: string;
+}
+interface SectionsArray {
+    sectionsArray: TabsSectionesProps[];
+}
+
+export default function TabsNavigation({ sectionsArray }: SectionsArray) {
+    const sections = () => {
+        return (
             <Tabs.List>
-                <Tabs.Tab value="Enviados" leftSection={<BiMailSend />}>
-                    Enviados
-                </Tabs.Tab>
-                <Tabs.Tab value="Favoritos" leftSection={<HiOutlineStar />}>
-                    Favoritos
-                </Tabs.Tab>
-                <Tabs.Tab value="Borrados" leftSection={<HiOutlineTrash />}>
-                    Borrados
-                </Tabs.Tab>
-                <Tabs.Tab
-                    value="Plantillas"
-                    leftSection={<HiOutlineDocumentText />}
-                >
-                    Plantillas
-                </Tabs.Tab>
+                {sectionsArray.map(
+                    (section: TabsSectionesProps, index: number) => (
+                        <Link href={section.dir} key={index}>
+                            <Tabs.Tab
+                                value={section.value}
+                                leftSection={section.icon}
+                            >
+                                {section.value}
+                            </Tabs.Tab>
+                        </Link>
+                    ),
+                )}
             </Tabs.List>
+        );
+    };
+
+    return (
+        <Tabs
+            color="gray"
+            variant="outline"
+            defaultValue="Enviados"
+            styles={{
+                root: {
+                    color: "#696969",
+                },
+                tabSection: {
+                    fontSize: "1.2rem",
+                },
+            }}
+        >
+            {sections()}
         </Tabs>
     );
 }

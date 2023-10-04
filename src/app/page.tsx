@@ -2,7 +2,7 @@
 export default function Home() {
     return (
         <main>
-            prueba
+            Hay que modificar el layout y agregar el login page en esta seccion
         </main>
     );
 }
