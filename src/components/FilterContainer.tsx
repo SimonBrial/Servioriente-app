@@ -1,6 +1,4 @@
-import { Badge, Container, Flex } from "@mantine/core";
-import { IoClose } from "./IconsIndex";
-import { HiOutlineTrash } from "./IconsIndex";
+import { Container, Flex } from "@mantine/core"; 
 import { BadgeClose } from "./BadgeClose";
 import { BadgeFilter } from "./BadgeFilter";
 

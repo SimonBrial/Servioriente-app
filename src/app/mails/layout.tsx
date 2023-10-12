@@ -1,12 +1,14 @@
 import TabsNavigation from "@/components/TabsNavigation";
 import ListLayout from "../data-base/layout";
 import {
-    BiMailSend,
-    HiOutlineStar,
-    HiOutlineTrash,
     HiOutlineDocumentText,
+    IoMailUnreadOutline,
+    HiOutlineTrash,
     HiOutlineSave,
+    HiOutlineStar,
+    BiMailSend,
 } from "../../components/IconsIndex";
+import AutoCompleteFilterContainer from "@/components/AutoCompleteFilterContainer";
 
 export default function MailLayout({
     children,
@@ -14,7 +16,8 @@ export default function MailLayout({
     children: React.ReactNode;
 }) {
     const mailSections = [
-        { value: "Enviados", icon: <BiMailSend />, dir: "/mails" },
+        { value: "Recibidos", icon: <IoMailUnreadOutline />, dir: "/mails" },
+        { value: "Enviados", icon: <BiMailSend />, dir: "/mails/sent" },
         {
             value: "Favoritos",
             icon: <HiOutlineStar />,
@@ -35,7 +38,10 @@ export default function MailLayout({
 
     return (
         <ListLayout>
-            <TabsNavigation sectionsArray={mailSections}/>
+            <TabsNavigation sectionsArray={mailSections} />
+            <AutoCompleteFilterContainer
+            label={["correo@correo.com", "correo2@correo.com"]}
+        />
             {children}
         </ListLayout>
     );

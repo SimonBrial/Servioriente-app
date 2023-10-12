@@ -2,26 +2,7 @@
 
 import Link from "next/link";
 import { Tabs } from "@mantine/core";
-import {
-    BiMailSend,
-    HiOutlineStar,
-    HiOutlineTrash,
-    HiOutlineDocumentText,
-    HiOutlineSave,
-} from "./IconsIndex";
 import React from "react";
-
-const mailSections = [
-    { value: "Enviados", icon: <BiMailSend />, dir: "/mails" },
-    { value: "Favoritos", icon: <HiOutlineStar />, dir: "/mails/favorities" },
-    { value: "Borrados", icon: <HiOutlineTrash />, dir: "/mails/erased" },
-    {
-        value: "Plantillas",
-        icon: <HiOutlineDocumentText />,
-        dir: "/mails/formats",
-    },
-    { value: "Archivados", icon: <HiOutlineSave />, dir: "/mails/archived" },
-];
 
 interface TabsSectionesProps {
     value: string;
@@ -56,7 +37,7 @@ export default function TabsNavigation({ sectionsArray }: SectionsArray) {
         <Tabs
             color="gray"
             variant="outline"
-            defaultValue="Enviados"
+            defaultValue="Recibidos"
             styles={{
                 root: {
                     color: "#696969",

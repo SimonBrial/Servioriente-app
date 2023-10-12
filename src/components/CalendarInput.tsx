@@ -8,7 +8,7 @@ export function CalendarInput() {
         null,
         null,
     ]);
-    console.log(value);
+    //Wconsole.log(value);
     return (
         <DatePicker
             allowSingleDateInRange

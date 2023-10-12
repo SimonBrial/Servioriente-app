@@ -28,8 +28,17 @@ import {
     HiDevicePhoneMobile,
     HiOutlineStar,
 } from "react-icons/hi2";
-import { IoClose, IoArrowBackOutline } from "react-icons/io5";
+import {
+    IoClose,
+    IoArrowBackOutline,
+    IoMailUnreadOutline,
+} from "react-icons/io5";
 import { LuGoal } from "react-icons/lu";
+import {
+    CgCornerUpLeft,
+    CgCornerDoubleUpLeft,
+    CgCornerUpRight,
+} from "react-icons/cg";
 import { TbTemplate, TbMailPlus } from "react-icons/tb";
 import { MdOutlineEventNote, MdOutlinePlace } from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
@@ -41,6 +50,8 @@ export {
     HiOutlineExclamationCircle,
     HiOutlineDotsVertical,
     HiOutlineDocumentText,
+    CgCornerDoubleUpLeft,
+    IoMailUnreadOutline,
     HiOutlineUserCircle,
     HiDevicePhoneMobile,
     MdOutlineEventNote,
@@ -51,6 +62,7 @@ export {
     HiOutlineChartBar,
     HiOutlineMailOpen,
     HiOutlineUserAdd,
+    CgCornerUpRight,
     HiOutlineSearch,
     HiOutlineLogout,
     HiOutlinePencil,
@@ -58,6 +70,7 @@ export {
     MdOutlinePlace,
     HiOutlineTrash,
     HiOutlineCheck,
+    CgCornerUpLeft,
     HiOutlineStar,
     HiOutlineUser,
     HiOutlineBell,

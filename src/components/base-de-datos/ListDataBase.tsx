@@ -8,7 +8,7 @@ import classes from "../styles/listStyles.module.css";
 
 export default function ListDataBase() {
     const [scrolled, setScrolled] = useState(false);
-    console.log(scrolled);
+    //console.log(scrolled);
 
     const elements = [
         {

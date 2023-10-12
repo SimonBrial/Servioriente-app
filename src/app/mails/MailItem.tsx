@@ -11,110 +11,68 @@ import {
     Box,
     Button,
     Checkbox,
-    Collapse,
     Flex,
     Group,
     Text,
     Title,
+    Avatar,
+    Stack,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 
 export default function MailItem() {
-    const [opened, { toggle }] = useDisclosure(false);
     return (
-        <Box mx="auto">
-            <Group
-                onClick={toggle}
-                mb={5}
-                styles={{
-                    root: {
-                        padding: "0.3rem 1rem",
-                        border: "1px solid #CDCDCD",
-                        backgroundColor: "#F8F8F8",
-                        borderRadius: "6px",
-                    },
+        <Group
+            mb={5}
+            styles={{
+                root: {
+                    padding: "0.3rem 1rem",
+                    border: "1px solid #CDCDCD",
+                    backgroundColor: "#FFF",
+                    borderRadius: "6px",
+                    /* width: "30%", */
+                },
+            }}
+        >
+            <Flex
+                justify={"start"}
+                gap={"md"}
+                style={{
+                    width: "100%",
+                    cursor: "pointer",
+                    padding: "0.5rem",
                 }}
             >
-                <Flex
-                    justify={"space-between"}
-                    style={{ width: "100%", cursor: "pointer" }}
-                >
-                    <Group>
-                        <Flex align={"center"}>
-                            <Checkbox size="sm" />
-                            <ActionIcon
-                                variant="transparent"
-                                color="yellow"
-                                size="lg"
-                                aria-label="Favorites"
-                            >
-                                <HiOutlineStar />
-                            </ActionIcon>
-                        </Flex>
-                        <Flex
-                            align={"center"}
-                            gap={"xs"}
-                            style={{ marginLeft: "-0.8rem" }}
+                <Avatar
+                    src={null}
+                    alt="no image here"
+                    color="indigo"
+                    size="md"
+                />
+                <Stack gap={0} style={{ width: "100%" }}>
+                    <Title order={5}>Titulo del mail</Title>
+                    <Flex justify={"space-between"}>
+                        <Text
+                            styles={(theme) => ({
+                                root: {
+                                    color: `${theme.colors.principalTheme[6]}`,
+                                },
+                            })}
                         >
-                            <Title order={4}>Titulo del mail</Title>
-                            <Title order={5}>
-                                Titulo del cuerpo del correo
-                            </Title>
-                            <Text>Descripcion del mail</Text>
-                        </Flex>
-                    </Group>
-                    <Flex>
-                        <ActionIcon
-                            variant="transparent"
-                            color="yellow"
-                            size="lg"
-                            aria-label="Favorites"
+                            Header del correo
+                        </Text>
+                        <Text
+                            styles={(theme) => ({
+                                root: {
+                                    color: `${theme.colors.principalTheme[6]}`,
+                                },
+                            })}
                         >
-                            <HiOutlineTrash />
-                        </ActionIcon>
-                        <ActionIcon
-                            variant="transparent"
-                            color="yellow"
-                            size="lg"
-                            aria-label="Favorites"
-                        >
-                            <HiOutlineMailOpen />
-                        </ActionIcon>
-                        <ActionIcon
-                            variant="transparent"
-                            color="yellow"
-                            size="lg"
-                            aria-label="Favorites"
-                        >
-                            <HiOutlineSave />
-                        </ActionIcon>
+                            12/10/2023
+                        </Text>
                     </Flex>
-                </Flex>
-            </Group>
-
-            <Collapse in={opened}>
-                <ul>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                    <li>Prueba</li>
-                </ul>
-                {/* <Text>
-                </Text> */}
-            </Collapse>
-        </Box>
+                    <Text>Descripcion del mai...............</Text>
+                </Stack>
+            </Flex>
+        </Group>
     );
 }
