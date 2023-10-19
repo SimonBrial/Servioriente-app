@@ -1,10 +1,10 @@
-import { Container, Flex, ScrollArea } from "@mantine/core";
-import MailItem from "./MailItem";
-import MailReadView from "./MailReadView";
+import { Container, Flex, Group, ScrollArea } from "@mantine/core";
+
+import MailItem from "../MailItem";
+import MailReadView from "../MailReadView";
 import InsideContainer from "@/components/InsideContainer";
 
-function page() {
-    
+export default function page() {
     return (
         <InsideContainer>
             <Flex gap={"sm"} style={{ height: "100%" }}>
@@ -65,5 +65,3 @@ function page() {
         </InsideContainer>
     );
 }
-
-export default page;

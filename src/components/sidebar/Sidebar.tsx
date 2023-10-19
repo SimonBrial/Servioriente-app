@@ -1,6 +1,6 @@
 "use client";
 
-import {  useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { Stack } from "@mantine/core";
 import {
     HiOutlineDatabase,
@@ -12,11 +12,10 @@ import {
     HiOutlineCog,
     HiOutlineBell,
     HiOutlineLogout,
-} from "react-icons/hi";
-import { HiOutlineChatBubbleLeftRight, HiOutlineUser } from "react-icons/hi2";
-import { AiOutlineIdcard } from "react-icons/ai";
-
-import sidebarClass from "../styles/sidebar.module.css";
+} from "../IconsIndex";
+import { HiOutlineChatBubbleLeftRight, HiOutlineUser } from "../IconsIndex";
+import { AiOutlineIdcard } from "../IconsIndex";
+import sidebarClass from "./styles/sidebar.module.css";
 import NavIcon from "./NavIcon";
 import { sidebarItems } from "@/interface/interface";
 
@@ -75,8 +74,8 @@ const sections: sidebarItems[] = [
 
 export function Sidebar() {
     const [active, setActive] = useState<number>(2);
-    const links = sections.map((section: sidebarItems, index) => {
 
+    const links = sections.map((section: sidebarItems, index) => {
         return (
             <NavIcon
                 key={index}

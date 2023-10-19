@@ -1,10 +1,13 @@
-import { Container } from "@mantine/core";
-import { ListDataBase } from "@/components";
+import { Stack } from "@mantine/core";
 
 export default function ListLayout({
     children,
 }: {
     children: React.ReactNode;
 }) {
-    return <><ListDataBase /></>;
+    return (
+        <Stack align="stretch" justify="flex-start" gap="xs">
+            {children}
+        </Stack>
+    );
 }

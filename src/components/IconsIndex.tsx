@@ -1,0 +1,90 @@
+import {
+    HiOutlineExclamationCircle,
+    HiOutlineDotsVertical,
+    HiOutlineDocumentText,
+    HiOutlineDatabase,
+    HiOutlineTemplate,
+    HiOutlineCalendar,
+    HiOutlineChartBar,
+    HiOutlineMailOpen,
+    HiOutlineUserAdd,
+    HiOutlineSearch,
+    HiOutlineLogout,
+    HiOutlinePencil,
+    HiOutlineTrash,
+    HiOutlineCheck,
+    HiOutlineBell,
+    HiOutlineMail,
+    HiOutlineSave,
+    HiOutlineCog,
+    HiOutlineEye,
+    HiHashtag,
+    HiLink,
+} from "react-icons/hi";
+import {
+    HiOutlineChatBubbleLeftRight,
+    HiOutlineUserCircle,
+    HiOutlineUser,
+    HiDevicePhoneMobile,
+    HiOutlineStar,
+} from "react-icons/hi2";
+import {
+    IoClose,
+    IoArrowBackOutline,
+    IoMailUnreadOutline,
+} from "react-icons/io5";
+import { LuGoal } from "react-icons/lu";
+import {
+    CgCornerUpLeft,
+    CgCornerDoubleUpLeft,
+    CgCornerUpRight,
+} from "react-icons/cg";
+import { TbTemplate, TbMailPlus } from "react-icons/tb";
+import { MdOutlineEventNote, MdOutlinePlace } from "react-icons/md";
+import { BsFilter } from "react-icons/bs";
+import { AiOutlineIdcard, AiOutlineCar } from "react-icons/ai";
+import { BiMailSend } from "react-icons/bi";
+
+export {
+    HiOutlineChatBubbleLeftRight,
+    HiOutlineExclamationCircle,
+    HiOutlineDotsVertical,
+    HiOutlineDocumentText,
+    CgCornerDoubleUpLeft,
+    IoMailUnreadOutline,
+    HiOutlineUserCircle,
+    HiDevicePhoneMobile,
+    MdOutlineEventNote,
+    IoArrowBackOutline,
+    HiOutlineDatabase,
+    HiOutlineTemplate,
+    HiOutlineCalendar,
+    HiOutlineChartBar,
+    HiOutlineMailOpen,
+    HiOutlineUserAdd,
+    CgCornerUpRight,
+    HiOutlineSearch,
+    HiOutlineLogout,
+    HiOutlinePencil,
+    AiOutlineIdcard,
+    MdOutlinePlace,
+    HiOutlineTrash,
+    HiOutlineCheck,
+    CgCornerUpLeft,
+    HiOutlineStar,
+    HiOutlineUser,
+    HiOutlineBell,
+    HiOutlineMail,
+    HiOutlineSave,
+    AiOutlineCar,
+    HiOutlineCog,
+    HiOutlineEye,
+    TbTemplate,
+    TbMailPlus,
+    BiMailSend,
+    HiHashtag,
+    BsFilter,
+    IoClose,
+    LuGoal,
+    HiLink,
+};

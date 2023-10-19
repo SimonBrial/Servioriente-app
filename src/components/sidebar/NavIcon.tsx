@@ -1,8 +1,9 @@
 "use Client";
 
-import {  Tooltip, UnstyledButton } from "@mantine/core";
+import React, { ReactNode } from "react";
+import { Tooltip, UnstyledButton } from "@mantine/core";
 import Link from "next/link";
-import sidebarClass from "../styles/sidebar.module.css";
+import sidebarClass from "./styles/sidebar.module.css";
 import { NavIconProps } from "@/interface/interface";
 
 function NavIcon({ icon, dir, active, label, onClick }: NavIconProps) {

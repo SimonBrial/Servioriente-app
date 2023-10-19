@@ -1,0 +1,64 @@
+.btnFilter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    border: 1px solid #cdcdcd;
+    color: #696969;
+    gap: 0.6rem;
+    padding: 0.2rem 0.8rem;
+    border-radius: 6px;
+    height: 100%;
+}
+
+.btnFilter:hover {
+    background-color: #efefef;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.FilterIcon {
+    font-size: 1.5rem;
+    margin-bottom: -0.3rem;
+}
+
+.btnAdd {
+    background-color: #004ee5;
+    height: 100%;
+}
+
+.btnAdd:hover {
+    background-color: #033eb2;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btnEditEdit_item {
+    color: #696969;
+    font-size: 1.2rem;
+}
+
+.btnEditEdit_item:hover {
+    color: orange;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.btnEditDelete_item {
+    color: #696969;
+    font-size: 1.2rem;
+}
+
+.btnEditDelete_item:hover {
+    color: red;
+    transition: color 0.3s ease-in-out;
+}
+.btnEditView_item {
+    color: #696969;
+    font-size: 1.2rem;
+}
+
+.btnEditView_item:hover {
+    color: #004ee5;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
