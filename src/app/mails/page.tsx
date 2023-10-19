@@ -1,22 +1,29 @@
 import { Container, Flex, ScrollArea } from "@mantine/core";
 import MailItem from "./MailItem";
 import MailReadView from "./MailReadView";
+import InsideContainer from "@/components/InsideContainer";
 
 function page() {
+    
     return (
-        <Container px={0} style={{ width: "100%" }}>
-            <Flex  gap={"sm"}>
+        <InsideContainer>
+            <Flex gap={"sm"} style={{ height: "100%" }}>
                 <Container
                     py={10}
                     px={5}
                     style={{
-                        width: "30%",
+                        width: "35%",
+                        height: "100%",
                         backgroundColor: "#F8F8F8",
                         borderRadius: "6px",
                         border: "1px solid #CDCDCD",
                     }}
                 >
-                    <ScrollArea h={520} offsetScrollbars>
+                    <ScrollArea
+                        h={"100%"}
+                        style={{ borderRadius: "6px" }}
+                        offsetScrollbars
+                    >
                         <MailItem />
                         <MailItem />
                         <MailItem />
@@ -43,9 +50,9 @@ function page() {
                     </ScrollArea>
                 </Container>
                 <Container
-                    py={10}
-                    px={5}
+                    p={10}
                     style={{
+                        height: "100%",
                         width: "70%",
                         backgroundColor: "#F8F8F8",
                         borderRadius: "6px",
@@ -55,7 +62,7 @@ function page() {
                     <MailReadView />
                 </Container>
             </Flex>
-        </Container>
+        </InsideContainer>
     );
 }
 

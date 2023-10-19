@@ -149,7 +149,7 @@ App Styles: [
         },
         {
             "color_name": "Sidebar bg - hover",
-            "code": "#EFEFEF"
+            "code": "#EFEFEF", "rgba(239, 239, 239, 0.3)
         },
         {
             "color_name": "Border Container",

@@ -15,7 +15,6 @@ import {
 } from "../IconsIndex";
 import { HiOutlineChatBubbleLeftRight, HiOutlineUser } from "../IconsIndex";
 import { AiOutlineIdcard } from "../IconsIndex";
-
 import sidebarClass from "./styles/sidebar.module.css";
 import NavIcon from "./NavIcon";
 import { sidebarItems } from "@/interface/interface";

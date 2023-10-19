@@ -40,8 +40,8 @@ export default function MailLayout({
         <ListLayout>
             <TabsNavigation sectionsArray={mailSections} />
             <AutoCompleteFilterContainer
-            label={["correo@correo.com", "correo2@correo.com"]}
-        />
+                label={["correo@correo.com", "correo2@correo.com"]}
+            />
             {children}
         </ListLayout>
     );
