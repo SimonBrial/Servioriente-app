@@ -1,12 +1,36 @@
+import { Flex } from "@mantine/core";
 import ListDataBase from "@/components/base-de-datos/ListDataBase";
 import ListLayout from "./layout";
-import { UtilsBar } from "@/components/UtilsBar";
 import { FilterContainer } from "@/components/FilterContainer";
+import { CountIndicator } from "@/components/base-de-datos/CountIndicator";
+import { HiOutlineUserCircle } from "@/components/IconsIndex";
+import { AutoCompleteInput } from "@/components/AutoCompleteInput";
+import { BtnFilter } from "@/components/buttons/BtnFilter";
+import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";
+import BtnReportGenerate from "@/components/buttons/BtnReportGenerate";
+import BtnAdd from "@/components/buttons/BtnAdd";
 
 function page() {
     return (
         <ListLayout>
-            <UtilsBar />
+            <Flex
+                gap={"sm"}
+                align={"center"}
+                style={{ height: "2.5rem", width: "100%" }}
+            >
+                <CountIndicator
+                    count={24}
+                    iconSection={<HiOutlineUserCircle />}
+                    description="Total de usuario"
+                />
+                <AutoCompleteInput />
+                <BtnFilter>
+                    <GeneralFilterLayout />
+                </BtnFilter>
+                <BtnReportGenerate />
+
+                <BtnAdd iconTag="add-user" label="Nuevo Usuario" />
+            </Flex>
             <FilterContainer />
             <ListDataBase />
         </ListLayout>

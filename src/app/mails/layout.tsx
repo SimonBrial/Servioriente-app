@@ -9,6 +9,7 @@ import {
     BiMailSend,
 } from "../../components/IconsIndex";
 import AutoCompleteFilterContainer from "@/components/AutoCompleteFilterContainer";
+import InsideContainer from "@/components/InsideContainer";
 
 export default function MailLayout({
     children,
@@ -42,7 +43,7 @@ export default function MailLayout({
             <AutoCompleteFilterContainer
                 label={["correo@correo.com", "correo2@correo.com"]}
             />
-            {children}
+            <InsideContainer offset={155}>{children}</InsideContainer>
         </ListLayout>
     );
 }

@@ -2,6 +2,8 @@ import {
     HiOutlineExclamationCircle,
     HiOutlineDotsVertical,
     HiOutlineDocumentText,
+    HiOutlineLockClosed,
+    HiOutlineLockOpen,
     HiOutlineDatabase,
     HiOutlineTemplate,
     HiOutlineCalendar,
@@ -42,8 +44,9 @@ import {
 import { TbTemplate, TbMailPlus } from "react-icons/tb";
 import { MdOutlineEventNote, MdOutlinePlace } from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
-import { AiOutlineIdcard, AiOutlineCar } from "react-icons/ai";
-import { BiMailSend } from "react-icons/bi";
+import { AiOutlineIdcard, AiOutlineCar, AiOutlinePlus } from "react-icons/ai";
+import { BiMailSend, BiBellPlus } from "react-icons/bi";
+import { PiRobot } from "react-icons/pi";
 
 export {
     HiOutlineChatBubbleLeftRight,
@@ -54,8 +57,10 @@ export {
     IoMailUnreadOutline,
     HiOutlineUserCircle,
     HiDevicePhoneMobile,
+    HiOutlineLockClosed,
     MdOutlineEventNote,
     IoArrowBackOutline,
+    HiOutlineLockOpen,
     HiOutlineDatabase,
     HiOutlineTemplate,
     HiOutlineCalendar,
@@ -72,13 +77,16 @@ export {
     HiOutlineCheck,
     CgCornerUpLeft,
     HiOutlineStar,
+    AiOutlinePlus,
     HiOutlineUser,
     HiOutlineBell,
     HiOutlineMail,
     HiOutlineSave,
     AiOutlineCar,
+    PiRobot,
     HiOutlineCog,
     HiOutlineEye,
+    BiBellPlus,
     TbTemplate,
     TbMailPlus,
     BiMailSend,

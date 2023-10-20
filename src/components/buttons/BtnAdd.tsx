@@ -2,10 +2,15 @@
 
 import { useDisclosure } from "@mantine/hooks";
 import { Button, Drawer, Stack } from "@mantine/core";
-import { HiOutlineCheck, LuGoal } from "../IconsIndex";
-import { HiOutlineUserAdd } from "../IconsIndex";
-import { TbTemplate, TbMailPlus } from "../IconsIndex";
-import { MdOutlineEventNote } from "../IconsIndex";
+import {
+    MdOutlineEventNote,
+    HiOutlineUserAdd,
+    HiOutlineCheck,
+    TbTemplate,
+    TbMailPlus,
+    BiBellPlus,
+    LuGoal,
+} from "../IconsIndex";
 import btnClass from "../styles/BtnStyles.module.css";
 import BtnActions from "./BtnActions";
 import { BtnAdd, iconList } from "@/interface/interface";
@@ -34,6 +39,10 @@ function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
         {
             tag: "add-event",
             icon: <MdOutlineEventNote />,
+        },
+        {
+            tag: "add",
+            icon: <BiBellPlus />,
         },
     ];
 
@@ -78,7 +87,7 @@ function BtnAdd({ iconTag, label, addFn }: BtnAdd) {
                         backgroundColor: `${theme.colors.principalTheme[6]}`,
                         height: "100%",
                     },
-                    section: {fontSize: "1.2rem"}
+                    section: { fontSize: "1.2rem" },
                 })}
                 onClick={open}
             >

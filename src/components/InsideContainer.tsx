@@ -5,15 +5,17 @@ import { useViewportSize } from "@mantine/hooks";
 
 export default function InsideContainer({
     children,
+    offset
 }: {
-    children: React.ReactNode;
+    children: React.ReactNode,
+    offset: number
 }) {
     const { height } = useViewportSize();
 
     return (
         <Container
             px={0}
-            h={height - 155}
+            h={height - offset}
             styles={{
                 root: {
                     width: "100%",

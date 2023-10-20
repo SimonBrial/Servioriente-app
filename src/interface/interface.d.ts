@@ -26,7 +26,14 @@ interface BtnAdd {
     addFn?(): void;
 }
 
+interface TitleLayoutProps {
+    title: string;
+    icon?: string;
+    color: string;
+}
+
 export type {
+    TitleLayoutProps,
     NavIconProps,
     sidebarItems,
     arraySocial,
