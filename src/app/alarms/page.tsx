@@ -7,6 +7,61 @@ import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";
 import { BtnFilter } from "@/components/buttons/BtnFilter";
 import BtnAdd from "@/components/buttons/BtnAdd";
 import AlarmDescription from "./AlarmDescription";
+import { AlarmObj } from "@/interface/interface";
+
+const fakeAlarmDescription:AlarmObj = {
+    id: crypto.randomUUID(),
+    title: "Cumpleaños",
+    color: "red",
+    icon: "😎",
+    createAt: "20/9/2023 - 10:58 AM",
+    createdTo: "21/9/2023 - 10:00 AM",
+    privateAlarm: true,
+    privateUser: "Simon Briceño",
+    description: `t is a long established fact that a reader
+    will be distracted by the readable content
+    of a page when looking at its layout. The
+    point of using Lorem Ipsum is that it has a
+    more-or-less normal distribution of letters,
+    as opposed to using Content here, content
+    here, making it look like readable English.t
+    is a long established fact that a reader
+    will be distracted by the readable content
+    of a page when looking at its layout. The
+    point of using Lorem Ipsum is that it has a
+    more-or-less normal distribution of letters,
+    as opposed to using Content here, content
+    here, making it look like readable English.t
+    is a long established fact that a reader
+    will be distracted by the readable content
+    of a page when looking at its layout. The
+    point of using Lorem Ipsum is that it has a
+    more-or-less normal distribution of letters,
+    as opposed to using Content here, content
+    here, making it look like readable English.
+    t is a long established fact that a reader
+    will be distracted by the readable content
+    of a page when looking at its layout. The
+    point of using Lorem Ipsum is that it has a
+    more-or-less normal distribution of letters,
+    as opposed to using Content here, content
+    here, making it look like readable English.t
+    is a long established fact that a reader
+    will be distracted by the readable content
+    of a page when looking at its layout. The
+    point of using Lorem Ipsum is that it has a
+    more-or-less normal distribution of letters,
+    as opposed to using Content here, content
+    here, making it look like readable English.t
+    is a long established fact that a reader
+    will be distracted by the readable content
+    of a page when looking at its layout. The
+    point of using Lorem Ipsum is that it has a
+    more-or-less normal distribution of letters,
+    as opposed to using Content here, content
+    here, making it look like readable English.`,
+    automated: true,
+};
 
 function page() {
     return (
@@ -96,9 +151,7 @@ function page() {
                         </ScrollArea>
                     </Container>
                     <AlarmDescription
-                        color="red"
-                        title="Cumpleaños"
-                        icon="😎"
+                        objAlarm={fakeAlarmDescription}
                     />
                 </Flex>
             </InsideContainer>

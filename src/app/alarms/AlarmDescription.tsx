@@ -1,27 +1,37 @@
 "use client";
+
 import {
-    Text,
-    Flex,
-    Stack,
-    Title,
-    Box,
     ScrollArea,
     Container,
+    Stack,
+    Title,
+    Text,
+    Flex,
+    Box,
+    Center,
 } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import { TitleLayout } from "@/components/TitleLayout";
-import { TitleLayoutProps } from "@/interface/interface";
+import { AlarmProps } from "@/interface/interface";
 import PrivateInput from "./PrivateInput";
 import AutomatedInput from "./AutomatedInput";
 import BtnActions from "@/components/buttons/BtnActions";
-import { HiOutlinePencil } from "@/components/IconsIndex";
+import { HiOutlinePencil, MdOutlinePlace } from "@/components/IconsIndex";
 
-export default function AlarmDescription({
-    color,
-    title,
-    icon,
-}: TitleLayoutProps) {
+export default function AlarmDescription({ objAlarm }: AlarmProps) {
     const { height } = useViewportSize();
+    const {
+        privateAlarm,
+        privateUser,
+        description,
+        automated,
+        createdTo,
+        createAt,
+        color,
+        title,
+        icon,
+        id,
+    } = objAlarm;
 
     return (
         <Container
@@ -34,99 +44,97 @@ export default function AlarmDescription({
                 border: "1px solid #CDCDCD",
             }}
         >
-            <Stack h={"100%"} justify={"space-between"}>
-                <Stack gap={2} mah={"90%"}>
-                    <TitleLayout title={title} color={color} icon={icon} />
-                    <Flex justify={"space-between"}>
-                        <Title order={4}>Titulo:</Title>
-                        <Text style={{ color: `${color}` }}>{title}</Text>
-                    </Flex>
-                    <Flex justify={"space-between"}>
-                        <Title order={4}>Icono:</Title>
-                        <Text size="1.2rem">{icon}</Text>
-                    </Flex>
-                    <Flex justify={"space-between"}>
-                        <Title order={4}>Creado:</Title>
-                        <Text
-                            styles={(theme) => ({
-                                root: {
-                                    color: theme.colors.principalTheme[6],
-                                },
-                            })}
-                        >
-                            20/9/2023 - 10:58 AM
-                        </Text>
-                    </Flex>
-                    <Flex justify={"space-between"}>
-                        <Title order={4}>Cliente:</Title>
-                        <Text>Cliente</Text>
-                    </Flex>
-                    <Flex justify={"space-between"}>
-                        <Title order={4}>Privado:</Title>
-                        <PrivateInput />
-                    </Flex>
-                    <Flex justify={"space-between"}>
-                        <Title order={4}>Automatizado:</Title>
-                        <AutomatedInput />
-                    </Flex>
-                    <Stack gap={1} h={height <= 720 ? "58%" : "70%"}>
-                        <Title order={4}>Descripción:</Title>
-                        <ScrollArea h={"100%"} maw={"100%"} offsetScrollbars>
-                            <Box>
-                                <Text>
-                                    t is a long established fact that a reader
-                                    will be distracted by the readable content
-                                    of a page when looking at its layout. The
-                                    point of using Lorem Ipsum is that it has a
-                                    more-or-less normal distribution of letters,
-                                    as opposed to using Content here, content
-                                    here, making it look like readable English.t
-                                    is a long established fact that a reader
-                                    will be distracted by the readable content
-                                    of a page when looking at its layout. The
-                                    point of using Lorem Ipsum is that it has a
-                                    more-or-less normal distribution of letters,
-                                    as opposed to using Content here, content
-                                    here, making it look like readable English.t
-                                    is a long established fact that a reader
-                                    will be distracted by the readable content
-                                    of a page when looking at its layout. The
-                                    point of using Lorem Ipsum is that it has a
-                                    more-or-less normal distribution of letters,
-                                    as opposed to using Content here, content
-                                    here, making it look like readable English.
-                                    t is a long established fact that a reader
-                                    will be distracted by the readable content
-                                    of a page when looking at its layout. The
-                                    point of using Lorem Ipsum is that it has a
-                                    more-or-less normal distribution of letters,
-                                    as opposed to using Content here, content
-                                    here, making it look like readable English.t
-                                    is a long established fact that a reader
-                                    will be distracted by the readable content
-                                    of a page when looking at its layout. The
-                                    point of using Lorem Ipsum is that it has a
-                                    more-or-less normal distribution of letters,
-                                    as opposed to using Content here, content
-                                    here, making it look like readable English.t
-                                    is a long established fact that a reader
-                                    will be distracted by the readable content
-                                    of a page when looking at its layout. The
-                                    point of using Lorem Ipsum is that it has a
-                                    more-or-less normal distribution of letters,
-                                    as opposed to using Content here, content
-                                    here, making it look like readable English.
-                                </Text>
-                            </Box>
-                        </ScrollArea>
+            {objAlarm ? (
+                <Stack h={"100%"} justify={"space-between"}>
+                    <Stack gap={height <= 720 ? 1 : 2} mah={"90%"}>
+                        <TitleLayout title={title} color={color} icon={icon} />
+                        <Flex justify={"space-between"}>
+                            <Title order={4}>Titulo:</Title>
+                            <Text style={{ color: `${color}` }}>{title}</Text>
+                        </Flex>
+                        <Flex justify={"space-between"}>
+                            <Title order={4}>Icono:</Title>
+                            <Text size="1.2rem">{icon}</Text>
+                        </Flex>
+                        <Flex justify={"space-between"}>
+                            <Title order={4}>Creado:</Title>
+                            <Text
+                                size="sm"
+                                styles={(theme) => ({
+                                    root: {
+                                        color: theme.colors.principalTheme[6],
+                                    },
+                                })}
+                            >
+                                {createAt}
+                            </Text>
+                        </Flex>
+                        <Flex justify={"space-between"}>
+                            <Title order={4}>Para:</Title>
+                            <Text
+                                size="sm"
+                                styles={(theme) => ({
+                                    root: {
+                                        color: theme.colors.principalTheme[6],
+                                    },
+                                })}
+                            >
+                                {createdTo}
+                            </Text>
+                        </Flex>
+                        <Flex justify={"space-between"}>
+                            <Title order={4}>Cliente:</Title>
+                            <Text>Cliente</Text>
+                        </Flex>
+                        <Flex justify={"space-between"}>
+                            <Title order={4}>Privado:</Title>
+                            <PrivateInput
+                                userName={privateUser}
+                                privateStatus={privateAlarm}
+                            />
+                        </Flex>
+                        <Flex justify={"space-between"}>
+                            <Title order={4}>Automatizado:</Title>
+                            <AutomatedInput automatedStatus={automated} />
+                        </Flex>
+                        <Stack gap={1} h={height <= 720 ? "53%" : "70%"}>
+                            <Title order={4}>Descripción:</Title>
+                            <ScrollArea
+                                h={"100%"}
+                                maw={"100%"}
+                                offsetScrollbars
+                            >
+                                <Box>
+                                    <Text>{description}</Text>
+                                </Box>
+                            </ScrollArea>
+                        </Stack>
                     </Stack>
+                    <BtnActions
+                        close={() => console.log("prueba")}
+                        icon={<HiOutlinePencil />}
+                        title="Editar"
+                    />
                 </Stack>
-                <BtnActions
-                    close={() => console.log("prueba")}
-                    icon={<HiOutlinePencil />}
-                    title="Editar"
-                />
-            </Stack>
+            ) : (
+                <Stack
+                    h={"100%"}
+                    gap={5}
+                    justify="center"
+                    align="center"
+                    styles={(theme) => ({
+                        root: {
+                            color: "rgba(105, 105, 105, 0.3)",
+                            fontSize: "12rem",
+                        },
+                    })}
+                >
+                    <MdOutlinePlace />
+                    <Text size="2.5rem" style={{ textAlign: "center" }}>
+                        Selecciona un recordatorio
+                    </Text>
+                </Stack>
+            )}
         </Container>
     );
 }

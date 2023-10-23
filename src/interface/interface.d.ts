@@ -28,8 +28,25 @@ interface BtnAdd {
 
 interface TitleLayoutProps {
     title: string;
+    icon: string;
+    color: string;
+}
+
+interface AlarmProps {
+    objAlarm: TitleLayoutObj;
+}
+
+interface AlarmObj {
+    id: string;
+    title: string;
     icon?: string;
     color: string;
+    createAt: string;
+    createdTo: string;
+    privateAlarm: boolean;
+    privateUser: string;
+    description: string;
+    automated: boolean;
 }
 
 export type {
@@ -37,7 +54,9 @@ export type {
     NavIconProps,
     sidebarItems,
     arraySocial,
+    AlarmProps,
     SocialRed,
+    AlarmObj,
     iconList,
     BtnAdd,
 };

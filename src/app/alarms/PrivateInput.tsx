@@ -1,13 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Checkbox, Flex, Text } from "@mantine/core";
 import {
     HiOutlineLockClosed,
     HiOutlineLockOpen,
 } from "@/components/IconsIndex";
 
-export default function PrivateInput() {
+export default function PrivateInput({
+    userName,
+    privateStatus,
+}: {
+    userName: string;
+    privateStatus: boolean;
+}) {
     const [checked, setChecked] = useState<boolean>(false);
+    useEffect(() => {
+        setChecked(privateStatus);
+    }, []);
 
     return (
         <Flex align={"center"} gap={5}>
