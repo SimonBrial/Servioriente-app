@@ -1,21 +1,21 @@
 .header {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    transition: box-shadow 150ms ease;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  transition: box-shadow 150ms ease;
 }
 .header::after {
-    content: "";
-    /* z-index: 10; */
-    background-color: #fff;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-bottom: 2px solid #004EE5;
+  content: "";
+  /* z-index: 10; */
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 2px solid #004ee5;
 }
 
 .scrolled {
-    border-bottom: 2px solid red;
-    background-color: red;
+  border-bottom: 2px solid red;
+  background-color: red;
 }

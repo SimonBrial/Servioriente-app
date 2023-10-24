@@ -5,44 +5,42 @@ import { BadgeClose } from "./BadgeClose";
 import { BadgeFilter } from "./BadgeFilter";
 
 interface AutoCompleteData {
-    label: string | string[];
+  label: string | string[];
 }
 
-export default function AutoCompleteFilterContainer({
-    label,
-}: AutoCompleteData) {
-    const pills = (label: string | string[]) => {
-        if (typeof label === "string") {
-            return <BadgeFilter tag={label} />;
-        } else if (Array.isArray(label)) {
-            return label.map((value: string, index: number) => {
-                return <BadgeFilter tag={value} key={index} />;
-            });
-        }
-    };
+export default function AutoCompleteFilterContainer ({
+  label,
+}: AutoCompleteData): JSX.Element {
+  let resolve: JSX.Element | JSX.Element[];
 
-    return (
-        <Container
-            style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                gap: "0.5rem",
-                borderBottom: "1px solid #696969",
-            }}
-        >
-            <Flex
-                justify="flex-start"
-                align="center"
-                direction="row"
-                gap={"xs"}
-            >
-                <Checkbox />
-                <Title order={5}>Buscar: </Title>
-                {pills(label)}
-            </Flex>
-            <BadgeClose status={true} />
-        </Container>
-    );
+  const pills = (label: string | string[]): JSX.Element | JSX.Element[] => {
+    if (typeof label === "string") {
+      resolve = <BadgeFilter tag={label} />;
+    } else if (Array.isArray(label)) {
+      resolve = label.map((value: string, index: number) => {
+        return <BadgeFilter tag={value} key={index} />;
+      });
+    }
+    return resolve;
+  };
+
+  return (
+    <Container
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        gap: "0.5rem",
+        borderBottom: "1px solid #696969",
+      }}
+    >
+      <Flex justify="flex-start" align="center" direction="row" gap={"xs"}>
+        <Checkbox />
+        <Title order={5}>Buscar: </Title>
+        {pills(label)}
+      </Flex>
+      <BadgeClose status={true} />
+    </Container>
+  );
 }

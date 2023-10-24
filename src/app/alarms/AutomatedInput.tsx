@@ -1,43 +1,43 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { useState, useEffect } from "react";
-import { Center, Checkbox, Flex, Text } from "@mantine/core";
+import { Checkbox, Flex } from "@mantine/core";
 import { PiRobot } from "@/components/IconsIndex";
 
 export default function AutomatedInput({
-    automatedStatus,
+  automatedStatus,
 }: {
-    automatedStatus: boolean;
-}) {
-    const [checked, setChecked] = useState<boolean>(false);
+  automatedStatus: boolean;
+}): JSX.Element {
+  const [checked, setChecked] = useState<boolean>(false);
 
-    useEffect(() => {
-        setChecked(automatedStatus);
-    }, []);
+  useEffect(() => {
+    setChecked(automatedStatus);
+  }, []);
 
-    return (
-        <Flex align={"center"} gap={5}>
-            <div>
-                {checked ? (
-                    <span
-                        style={{
-                            fontSize: "1.05rem",
-                            color: "#696969",
-                            marginBottom: "5px",
-                        }}
-                    >
-                        <PiRobot
-                            style={{ fontSize: "1.5rem", marginTop: "0px" }}
-                        />
-                    </span>
-                ) : (
-                    <></>
-                )}
-            </div>
-            <Checkbox
-                checked={checked}
-                onChange={(event) => setChecked(event.currentTarget.checked)}
-                style={{ marginTop: "-5px" }}
-            />
-        </Flex>
-    );
+  return (
+    <Flex align={"center"} gap={5}>
+      <div>
+        {checked ? (
+          <span
+            style={{
+              color: "#696969",
+              marginBottom: "5px",
+            }}
+          >
+            <PiRobot style={{ fontSize: "1.3rem", marginTop: "0px" }} />
+          </span>
+        ) : (
+          <></>
+        )}
+      </div>
+      <Checkbox
+        checked={checked}
+        onChange={(event) => {
+          setChecked(event.currentTarget.checked);
+        }}
+        style={{ marginTop: "-5px" }}
+      />
+    </Flex>
+  );
 }

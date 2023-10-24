@@ -1,8 +1,5 @@
-
-function page() {
-    return (
-        <div>metricas</div>
-    )
+function page(): JSX.Element {
+  return <div>metricas</div>;
 }
 
-export default page
+export default page;

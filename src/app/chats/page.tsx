@@ -1,8 +1,5 @@
-
-function page() {
-    return (
-        <div>chats</div>
-    )
+function page(): JSX.Element {
+  return <div>chats</div>;
 }
 
-export default page
+export default page;

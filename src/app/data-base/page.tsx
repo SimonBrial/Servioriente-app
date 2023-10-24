@@ -10,31 +10,31 @@ import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";
 import BtnReportGenerate from "@/components/buttons/BtnReportGenerate";
 import BtnAdd from "@/components/buttons/BtnAdd";
 
-function page() {
-    return (
-        <ListLayout>
-            <Flex
-                gap={"sm"}
-                align={"center"}
-                style={{ height: "2.5rem", width: "100%" }}
-            >
-                <CountIndicator
-                    count={24}
-                    iconSection={<HiOutlineUserCircle />}
-                    description="Total de usuario"
-                />
-                <AutoCompleteInput />
-                <BtnFilter>
-                    <GeneralFilterLayout />
-                </BtnFilter>
-                <BtnReportGenerate />
+function page(): JSX.Element {
+  return (
+    <ListLayout>
+      <Flex
+        gap={"sm"}
+        align={"center"}
+        style={{ height: "2.5rem", width: "100%" }}
+      >
+        <CountIndicator
+          count={24}
+          iconSection={<HiOutlineUserCircle />}
+          description="Total de usuario"
+        />
+        <AutoCompleteInput />
+        <BtnFilter>
+          <GeneralFilterLayout />
+        </BtnFilter>
+        <BtnReportGenerate />
 
-                <BtnAdd iconTag="add-user" label="Nuevo Usuario" />
-            </Flex>
-            <FilterContainer />
-            <ListDataBase />
-        </ListLayout>
-    );
+        <BtnAdd iconTag="add-user" label="Nuevo Usuario" />
+      </Flex>
+      <FilterContainer />
+      <ListDataBase />
+    </ListLayout>
+  );
 }
 
 export default page;

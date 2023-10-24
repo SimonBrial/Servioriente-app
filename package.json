@@ -1,37 +1,44 @@
 {
-  "name": "servioriente-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@mantine/core": "^7.1.0",
-    "@mantine/dates": "^7.1.0",
-    "@mantine/form": "^7.1.0",
-    "@mantine/hooks": "^7.1.0",
-    "@mantine/notifications": "^7.1.0",
-    "@mantine/tiptap": "^7.1.0",
-    "@tabler/icons-react": "^2.36.0",
-    "@tiptap/extension-link": "^2.1.11",
-    "@tiptap/react": "^2.1.11",
-    "@tiptap/starter-kit": "^2.1.11",
-    "dayjs": "^1.11.10",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-icons": "^4.11.0"
-  },
-  "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "@types/react-icons": "^3.0.0",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "typescript": "latest"
-  }
+    "name": "servioriente-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@mantine/core": "^7.1.0",
+        "@mantine/dates": "^7.1.0",
+        "@mantine/form": "^7.1.0",
+        "@mantine/hooks": "^7.1.0",
+        "@mantine/notifications": "^7.1.0",
+        "@mantine/tiptap": "^7.1.0",
+        "@tabler/icons-react": "^2.36.0",
+        "@tiptap/extension-link": "^2.1.11",
+        "@tiptap/react": "^2.1.11",
+        "@tiptap/starter-kit": "^2.1.11",
+        "dayjs": "^1.11.10",
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "react-icons": "^4.11.0"
+    },
+    "devDependencies": {
+        "@next/eslint-plugin-next": "^13.5.6",
+        "@types/node": "latest",
+        "@types/react": "latest",
+        "@types/react-dom": "latest",
+        "@types/react-icons": "^3.0.0",
+        "@typescript-eslint/eslint-plugin": "^6.9.0",
+        "eslint": "^8.52.0",
+        "eslint-config-next": "^13.5.6",
+        "eslint-config-standard-with-typescript": "^39.1.1",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+        "eslint-plugin-promise": "^6.0.0",
+        "eslint-plugin-react": "^7.33.2",
+        "typescript": "^5.2.2"
+    }
 }

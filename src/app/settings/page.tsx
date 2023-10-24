@@ -1,8 +1,5 @@
-
-function page() {
-    return (
-        <div>configuraciones</div>
-    )
+function page(): JSX.Element {
+  return <div>configuraciones</div>;
 }
 
-export default page
+export default page;

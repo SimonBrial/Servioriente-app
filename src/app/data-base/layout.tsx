@@ -1,13 +1,13 @@
 import { Stack } from "@mantine/core";
 
 export default function ListLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
-}) {
-    return (
-        <Stack align="stretch" justify="flex-start" gap="xs">
-            {children}
-        </Stack>
-    );
+  children: React.ReactNode;
+}): JSX.Element {
+  return (
+    <Stack align="stretch" justify="flex-start" gap="xs">
+      {children}
+    </Stack>
+  );
 }
