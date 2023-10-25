@@ -46,7 +46,7 @@ import { MdOutlineEventNote, MdOutlinePlace } from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlineIdcard, AiOutlineCar, AiOutlinePlus } from "react-icons/ai";
 import { BiMailSend, BiBellPlus } from "react-icons/bi";
-import { PiRobot } from "react-icons/pi";
+import { PiRobot, PiFolderSimpleDashed } from "react-icons/pi";
 
 export {
   HiOutlineChatBubbleLeftRight,
@@ -54,6 +54,7 @@ export {
   HiOutlineDotsVertical,
   HiOutlineDocumentText,
   CgCornerDoubleUpLeft,
+  PiFolderSimpleDashed,
   IoMailUnreadOutline,
   HiOutlineUserCircle,
   HiDevicePhoneMobile,

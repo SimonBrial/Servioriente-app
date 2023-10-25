@@ -49,9 +49,20 @@ interface AlarmObj {
   automated: boolean
 }
 
+interface AlarmCardProps {
+  id: string;
+  title: string;
+  createdAt: string;
+  createHour: string;
+  forDate: string;
+  forHour: string;
+  description: string;
+}
+
 export type {
   /* arraySocial, */
   TitleLayoutProps,
+  AlarmCardProps,
   NavIconProps,
   sidebarItems,
   AlarmProps,
