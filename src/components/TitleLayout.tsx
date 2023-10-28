@@ -2,7 +2,7 @@
 import { Divider, Flex, Title, Text } from "@mantine/core";
 import { TitleLayoutProps } from "@/interface/interface";
 
-export function TitleLayout ({
+export function TitleLayout({
   title,
   icon,
   color,
@@ -27,6 +27,7 @@ export function TitleLayout ({
           root: {
             borderColor:
               color !== "" ? color : `${theme.colors.principalTheme[6]}`,
+            marginTop: "-0.3rem",
           },
         })}
       />

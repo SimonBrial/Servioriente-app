@@ -2,51 +2,52 @@ import { type ReactNode } from "react";
 import { type tagIcon } from "../types/types";
 
 interface NavIconProps {
-  icon: ReactNode
-  dir: string
-  active?: boolean
-  label: string
-  onClick?: () => void
+  icon: ReactNode;
+  dir: string;
+  active?: boolean;
+  label: string;
+  onClick?: () => void;
 }
 
 interface sidebarItems {
-  icon: ReactNode
-  label: string
-  direction: string
+  icon: ReactNode;
+  label: string;
+  direction: string;
 }
 
 interface iconList {
-  tag: tagIcon
-  icon: ReactNode
+  tag: tagIcon;
+  icon: ReactNode;
 }
 
 interface BtnAddProps {
-  iconTag: tagIcon
-  label: string
-  addFn?: () => void
+  iconTag: tagIcon;
+  label: string;
+  addFn?: () => void;
+  children: ReactNode;
 }
 
 interface TitleLayoutProps {
-  title: string
-  icon: string
-  color: string
+  title: string;
+  icon: string;
+  color: string;
 }
 
 interface AlarmProps {
-  objAlarm: TitleLayoutObj
+  objAlarm: TitleLayoutObj;
 }
 
 interface AlarmObj {
-  id: string
-  title: string
-  icon?: string
-  color: string
-  createAt: string
-  createdTo: string
-  privateAlarm: boolean
-  privateUser: string
-  description: string
-  automated: boolean
+  id: string;
+  title: string;
+  icon?: string;
+  color: string;
+  createAt: string;
+  createdTo: string;
+  privateAlarm: boolean;
+  privateUser: string;
+  description: string;
+  automated: boolean;
 }
 
 interface AlarmCardProps {
@@ -69,5 +70,5 @@ export type {
   /* SocialRed, */
   AlarmObj,
   iconList,
-  BtnAddProps
+  BtnAddProps,
 };

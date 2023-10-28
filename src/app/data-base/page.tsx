@@ -9,6 +9,7 @@ import { BtnFilter } from "@/components/buttons/BtnFilter";
 import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";
 import BtnReportGenerate from "@/components/buttons/BtnReportGenerate";
 import BtnAdd from "@/components/buttons/BtnAdd";
+import ClientRegister from "@/components/ClientRegister";
 
 function page(): JSX.Element {
   return (
@@ -29,7 +30,9 @@ function page(): JSX.Element {
         </BtnFilter>
         <BtnReportGenerate />
 
-        <BtnAdd iconTag="add-user" label="Nuevo Usuario" />
+        <BtnAdd iconTag="add-user" label="Nuevo Usuario">
+          <ClientRegister />
+        </BtnAdd>
       </Flex>
       <FilterContainer />
       <ListDataBase />

@@ -1,10 +1,8 @@
 "use client";
 
 import { useDisclosure } from "@mantine/hooks";
-import { HiOutlinePencil, PiFolderSimpleDashed } from "@/components/IconsIndex";
 import { AlarmCardProps } from "@/interface/interface";
 import {
-  UnstyledButton,
   Container,
   Collapse,
   Divider,
@@ -18,6 +16,9 @@ import {
   Grid,
 } from "@mantine/core";
 import AlarmCard from "./AlarmCard";
+import BtnEdit from "@/components/buttons/BtnEdit";
+import CreateFolderLayout from "./CreateFolderLayout";
+import { PiFolderSimpleDashed } from "@/components/IconsIndex";
 
 const arrayTest: AlarmCardProps[] = [
   {
@@ -171,11 +172,14 @@ export default function AlarmFolder(): JSX.Element {
             })}
             transitionProps={{ transition: "skew-up", duration: 300 }}
           >
-            <UnstyledButton style={{ fontSize: "1.5rem" }}>
+            <BtnEdit buttonStyles="unstyled">
+              <CreateFolderLayout title="Editar Carpeta" />
+            </BtnEdit>
+            {/* <UnstyledButton style={{ fontSize: "1.5rem" }}>
               <Center>
                 <HiOutlinePencil />
               </Center>
-            </UnstyledButton>
+            </UnstyledButton> */}
           </Tooltip>
         </Flex>
         <Text

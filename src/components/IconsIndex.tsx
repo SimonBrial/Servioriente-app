@@ -3,6 +3,7 @@ import {
   HiOutlineDotsVertical,
   HiOutlineDocumentText,
   HiOutlineLockClosed,
+  HiOutlineFolderAdd,
   HiOutlineLockOpen,
   HiOutlineDatabase,
   HiOutlineTemplate,
@@ -15,6 +16,7 @@ import {
   HiOutlinePencil,
   HiOutlineTrash,
   HiOutlineCheck,
+  HiOutlineClock,
   HiOutlineBell,
   HiOutlineMail,
   HiOutlineSave,
@@ -34,6 +36,7 @@ import {
   IoClose,
   IoArrowBackOutline,
   IoMailUnreadOutline,
+  IoWarningOutline,
 } from "react-icons/io5";
 import { LuGoal } from "react-icons/lu";
 import {
@@ -42,7 +45,12 @@ import {
   CgCornerUpRight,
 } from "react-icons/cg";
 import { TbTemplate, TbMailPlus } from "react-icons/tb";
-import { MdOutlineEventNote, MdOutlinePlace } from "react-icons/md";
+import {
+  MdOutlineEventNote,
+  MdOutlinePlace,
+  MdTitle,
+  MdOutlineInsertEmoticon,
+} from "react-icons/md";
 import { BsFilter } from "react-icons/bs";
 import { AiOutlineIdcard, AiOutlineCar, AiOutlinePlus } from "react-icons/ai";
 import { BiMailSend, BiBellPlus } from "react-icons/bi";
@@ -51,6 +59,7 @@ import { PiRobot, PiFolderSimpleDashed } from "react-icons/pi";
 export {
   HiOutlineChatBubbleLeftRight,
   HiOutlineExclamationCircle,
+  MdOutlineInsertEmoticon,
   HiOutlineDotsVertical,
   HiOutlineDocumentText,
   CgCornerDoubleUpLeft,
@@ -61,6 +70,7 @@ export {
   HiOutlineLockClosed,
   MdOutlineEventNote,
   IoArrowBackOutline,
+  HiOutlineFolderAdd,
   HiOutlineLockOpen,
   HiOutlineDatabase,
   HiOutlineTemplate,
@@ -68,11 +78,13 @@ export {
   HiOutlineChartBar,
   HiOutlineMailOpen,
   HiOutlineUserAdd,
+  IoWarningOutline,
   CgCornerUpRight,
   HiOutlineSearch,
   HiOutlineLogout,
   HiOutlinePencil,
   AiOutlineIdcard,
+  HiOutlineClock,
   MdOutlinePlace,
   HiOutlineTrash,
   HiOutlineCheck,
@@ -84,7 +96,6 @@ export {
   HiOutlineMail,
   HiOutlineSave,
   AiOutlineCar,
-  PiRobot,
   HiOutlineCog,
   HiOutlineEye,
   BiBellPlus,
@@ -93,6 +104,8 @@ export {
   BiMailSend,
   HiHashtag,
   BsFilter,
+  PiRobot,
+  MdTitle,
   IoClose,
   LuGoal,
   HiLink,

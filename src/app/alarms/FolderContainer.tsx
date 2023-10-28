@@ -1,7 +1,7 @@
 import { Container, ScrollArea, Stack } from "@mantine/core";
 import AlarmFolder from "./AlarmFolder";
 
-export default function AlarmContainer(): JSX.Element {
+export default function FolderContainer(): JSX.Element {
   return (
     <Container
       p={10}
@@ -15,6 +15,7 @@ export default function AlarmContainer(): JSX.Element {
     >
       <ScrollArea h={"100%"} style={{ borderRadius: "6px" }} offsetScrollbars>
         <Stack gap={12}>
+          <AlarmFolder />
           <AlarmFolder />
           <AlarmFolder />
           <AlarmFolder />

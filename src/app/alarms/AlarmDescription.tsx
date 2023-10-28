@@ -8,14 +8,16 @@ import {
   Text,
   Flex,
   Box,
+  Button,
 } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import { TitleLayout } from "@/components/TitleLayout";
 import { AlarmProps } from "@/interface/interface";
 import PrivateInput from "./PrivateInput";
 import AutomatedInput from "./AutomatedInput";
-import BtnActions from "@/components/buttons/BtnActions";
-import { HiOutlinePencil, MdOutlinePlace } from "@/components/IconsIndex";
+import { IoClose, MdOutlinePlace } from "@/components/IconsIndex";
+import BtnEdit from "@/components/buttons/BtnEdit";
+import CreateAlarmLayout from "./CreateAlarmLayout";
 
 export default function AlarmDescription({
   objAlarm,
@@ -86,17 +88,8 @@ export default function AlarmDescription({
               <Title order={4}>Cliente:</Title>
               <Text>Cliente</Text>
             </Flex>
-            <Flex justify={"space-between"}>
-              <Title order={4}>Privado:</Title>
-              <PrivateInput
-                userName={privateUser}
-                privateStatus={privateAlarm}
-              />
-            </Flex>
-            <Flex justify={"space-between"}>
-              <Title order={4}>Automatizado:</Title>
-              <AutomatedInput automatedStatus={automated} />
-            </Flex>
+            <PrivateInput userName={privateUser} privateStatus={privateAlarm} />
+            <AutomatedInput automatedStatus={automated} />
             <Stack gap={1} h={height <= 720 ? "54%" : "65%"}>
               <Title order={4}>Descripción:</Title>
               <ScrollArea h={"100%"} maw={"100%"} offsetScrollbars>
@@ -106,13 +99,26 @@ export default function AlarmDescription({
               </ScrollArea>
             </Stack>
           </Stack>
-          <BtnActions
-            close={() => {
-              console.log("prueba");
-            }}
-            icon={<HiOutlinePencil />}
-            title="Editar"
-          />
+          <Flex gap={"sm"} align={"center"}>
+            <Button
+              onClick={close}
+              fullWidth
+              variant="white"
+              leftSection={<IoClose />}
+              styles={(theme) => ({
+                root: {
+                  border: `2px solid ${theme.colors.principalTheme[6]}`,
+                  color: `${theme.colors.principalTheme[6]}`,
+                },
+                section: { fontSize: "1.2rem" },
+              })}
+            >
+              Cancelar
+            </Button>
+            <BtnEdit buttonStyles="normal">
+              <CreateAlarmLayout title="Editar Alarma" />
+            </BtnEdit>
+          </Flex>
         </Stack>
       ) : (
         <Stack

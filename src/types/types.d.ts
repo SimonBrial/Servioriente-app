@@ -1,9 +1,10 @@
 type tagIcon =
-  | "goal"
-  | "add-user"
-  | "format"
-  | "add-mail"
   | "add-event"
+  | "add-user"
+  | "add-mail"
+  | "format"
+  | "folder"
+  | "goal"
   | "add";
 
 export type { tagIcon };

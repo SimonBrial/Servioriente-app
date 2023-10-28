@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
 import { theme } from "../theme/CustomTheme";
-
 import styles from "./layout.module.css";
+import "@mantine/tiptap/styles.css";
+import "@mantine/dates/styles.css";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 
 export const metadata: Metadata = {

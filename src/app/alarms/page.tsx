@@ -8,7 +8,9 @@ import { BtnFilter } from "@/components/buttons/BtnFilter";
 import BtnAdd from "@/components/buttons/BtnAdd";
 import AlarmDescription from "./AlarmDescription";
 import { AlarmObj } from "@/interface/interface";
-import AlarmContainer from "./AlarmContainer";
+import FolderContainer from "./FolderContainer";
+import CreateAlarmLayout from "./CreateAlarmLayout";
+import CreateFolderLayout from "./CreateFolderLayout";
 
 const fakeAlarmDescription: AlarmObj = {
   id: crypto.randomUUID(),
@@ -75,18 +77,23 @@ function page(): JSX.Element {
         <CountIndicator
           count={5}
           iconSection={<HiOutlineExclamationCircle />}
-          description="Total de usuario"
+          description="Total de Alarmas"
         />
         <AutoCompleteInput />
         <BtnFilter>
           <GeneralFilterLayout />
         </BtnFilter>
 
-        <BtnAdd iconTag="add" label="Nueva Alerta" />
+        <BtnAdd iconTag="folder" label="Nueva Carpeta">
+          <CreateFolderLayout title="Crear Nueva Carpeta" />
+        </BtnAdd>
+        <BtnAdd iconTag="add" label="Nueva Alarma">
+          <CreateAlarmLayout title="Crear Nueva Alarma" />
+        </BtnAdd>
       </Flex>
       <InsideContainer offset={120}>
         <Flex gap={"sm"} style={{ height: "100%" }}>
-          <AlarmContainer />
+          <FolderContainer />
           <AlarmDescription objAlarm={fakeAlarmDescription} />
         </Flex>
       </InsideContainer>

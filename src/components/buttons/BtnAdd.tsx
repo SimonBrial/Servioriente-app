@@ -10,13 +10,12 @@ import {
   TbMailPlus,
   BiBellPlus,
   LuGoal,
+  HiOutlineFolderAdd,
 } from "../IconsIndex";
 import BtnActions from "./BtnActions";
 import { BtnAddProps, iconList } from "@/interface/interface";
-import ClientRegister from "../ClientRegister";
-import React from "react";
 
-function BtnAdd({ iconTag, label, addFn }: BtnAddProps): JSX.Element {
+function BtnAdd({ iconTag, label, children, addFn }: BtnAddProps): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
 
   const iconList: iconList[] = [
@@ -43,6 +42,10 @@ function BtnAdd({ iconTag, label, addFn }: BtnAddProps): JSX.Element {
     {
       tag: "add",
       icon: <BiBellPlus />,
+    },
+    {
+      tag: "folder",
+      icon: <HiOutlineFolderAdd />,
     },
   ];
 
@@ -72,11 +75,11 @@ function BtnAdd({ iconTag, label, addFn }: BtnAddProps): JSX.Element {
         <Stack
           justify="space-between"
           style={{
-            padding: "1rem 1rem 0 1rem",
+            padding: "0 1rem",
             height: "95vh",
           }}
         >
-          <ClientRegister />
+          {children}
           <BtnActions icon={<HiOutlineCheck />} title="Aceptar" close={close} />
         </Stack>
       </Drawer>
