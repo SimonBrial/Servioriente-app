@@ -3,9 +3,13 @@ import React from "react";
 import { Modal, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { BsFilter } from "../IconsIndex";
-import btnClass from "../styles/BtnStyles.module.css";
+import btnClass from "../../styles/BtnStyles.module.css";
 
-export function BtnFilter({ children }: { children: React.ReactNode }): JSX.Element {
+export function BtnFilter({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
 
   return (

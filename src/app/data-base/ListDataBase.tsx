@@ -2,9 +2,9 @@
 
 import { ScrollArea, Stack, Table } from "@mantine/core";
 import StatusBadge from "./StatusBadge";
-import BtnFn from "../buttons/BtnFn";
+import BtnFn from "../../components/buttons/BtnFn";
 import { useState } from "react";
-import classes from "../styles/listStyles.module.css";
+import classes from "../../styles/listStyles.module.css";
 
 export default function ListDataBase(): JSX.Element {
   const [scrolled, setScrolled] = useState(false);

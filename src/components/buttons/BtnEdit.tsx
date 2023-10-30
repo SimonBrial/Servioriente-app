@@ -1,7 +1,14 @@
-import { Button, Center, Drawer, Stack, Tooltip, UnstyledButton } from "@mantine/core";
+import {
+  Button,
+  Center,
+  Drawer,
+  Stack,
+  Tooltip,
+  UnstyledButton,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { HiOutlinePencil, HiOutlineSave } from "../IconsIndex";
-import btnClass from "../styles/BtnStyles.module.css";
+import btnClass from "../../styles/BtnStyles.module.css";
 import BtnActions from "./BtnActions";
 
 type EditButtonStyles = "normal" | "special" | "unstyled";

@@ -1,6 +1,6 @@
 import { Flex, Stack } from "@mantine/core";
 import InsideContainer from "@/components/InsideContainer";
-import { CountIndicator } from "@/components/base-de-datos/CountIndicator";
+import { CountIndicator } from "@/app/data-base/CountIndicator";
 import { HiOutlineExclamationCircle } from "@/components/IconsIndex";
 import { AutoCompleteInput } from "@/components/AutoCompleteInput";
 import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";

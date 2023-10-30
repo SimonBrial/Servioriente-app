@@ -51,8 +51,13 @@ import {
   MdTitle,
   MdOutlineInsertEmoticon,
 } from "react-icons/md";
-import { BsFilter } from "react-icons/bs";
-import { AiOutlineIdcard, AiOutlineCar, AiOutlinePlus } from "react-icons/ai";
+import { BsFilter, BsTelephone } from "react-icons/bs";
+import {
+  AiOutlineIdcard,
+  AiOutlineCar,
+  AiOutlinePlus,
+  AiOutlinePaperClip,
+} from "react-icons/ai";
 import { BiMailSend, BiBellPlus } from "react-icons/bi";
 import { PiRobot, PiFolderSimpleDashed } from "react-icons/pi";
 
@@ -71,6 +76,7 @@ export {
   MdOutlineEventNote,
   IoArrowBackOutline,
   HiOutlineFolderAdd,
+  AiOutlinePaperClip,
   HiOutlineLockOpen,
   HiOutlineDatabase,
   HiOutlineTemplate,
@@ -98,6 +104,7 @@ export {
   AiOutlineCar,
   HiOutlineCog,
   HiOutlineEye,
+  BsTelephone,
   BiBellPlus,
   TbTemplate,
   TbMailPlus,

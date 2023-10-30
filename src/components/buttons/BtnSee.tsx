@@ -7,10 +7,10 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { HiOutlineEye } from "../IconsIndex";
-import btnClass from "../styles/BtnStyles.module.css";
+import btnClass from "../../styles/BtnStyles.module.css";
 import { TitleLayout } from "../TitleLayout";
 import RegisterInfo from "../RegisterInfo";
-import StatusBadge from "../base-de-datos/StatusBadge";
+import StatusBadge from "../../app/data-base/StatusBadge";
 import BtnBack from "./BtnBack";
 
 export default function BtnSee(): JSX.Element {

@@ -16,7 +16,7 @@ import {
   HiOutlineChatBubbleLeftRight,
   HiOutlineUser,
 } from "../IconsIndex";
-import sidebarClass from "./styles/sidebar.module.css";
+import sidebarClass from "../../styles/sidebar.module.css";
 import NavIcon from "./NavIcon";
 import { sidebarItems } from "@/interface/interface";
 
@@ -73,7 +73,7 @@ const sections: sidebarItems[] = [
   },
 ];
 
-export function Sidebar (): JSX.Element {
+export function Sidebar(): JSX.Element {
   const [active, setActive] = useState<number>(2);
 
   const links = sections.map((section: sidebarItems, index) => {
@@ -84,7 +84,9 @@ export function Sidebar (): JSX.Element {
         label={section.label}
         dir={section.direction}
         active={index === active}
-        onClick={() => { setActive(index); }}
+        onClick={() => {
+          setActive(index);
+        }}
       />
     );
   });

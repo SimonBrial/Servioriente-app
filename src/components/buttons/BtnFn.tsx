@@ -7,11 +7,11 @@ import RegisterEditLayout from "@/app/data-base/RegisterEditLayout";
 function BtnFn(): JSX.Element {
   return (
     <Flex gap={"xs"}>
-      <BtnEdit label="Editar">
-        <RegisterEditLayout />
-      </BtnEdit>
       <BtnDelete />
       <BtnSee />
+      <BtnEdit buttonStyles="special">
+        <RegisterEditLayout />
+      </BtnEdit>
     </Flex>
   );
 }

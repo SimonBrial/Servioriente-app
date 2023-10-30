@@ -4,6 +4,7 @@ import { Checkbox, Divider, Button, Stack, Title, Flex } from "@mantine/core";
 // import { Calendar, DateInput } from "@mantine/dates";
 import { BsFilter } from "./IconsIndex";
 import { TitleLayout } from "./TitleLayout";
+import { CalendarInput } from "./CalendarInput";
 
 export function GeneralFilterLayout(): JSX.Element {
   return (
@@ -67,7 +68,7 @@ export function GeneralFilterLayout(): JSX.Element {
         <Title order={5} style={{ color: "#696969" }}>
           Desde
         </Title>
-        <p>Aqui va el input del calendario</p>
+        <CalendarInput withTitle={false} title="Fecha"/>
       </Flex>
       <Button
         leftSection={<BsFilter />}

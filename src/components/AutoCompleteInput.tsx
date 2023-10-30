@@ -1,8 +1,8 @@
 import { Autocomplete } from "@mantine/core";
 import { HiOutlineSearch } from "./IconsIndex";
-import autoCompleteClass from "./styles/autoComplete.module.css";
+import autoCompleteClass from "../styles/autoComplete.module.css";
 
-export function AutoCompleteInput (): JSX.Element {
+export function AutoCompleteInput(): JSX.Element {
   return (
     <div className={autoCompleteClass.container}>
       <span className={autoCompleteClass.icon}>

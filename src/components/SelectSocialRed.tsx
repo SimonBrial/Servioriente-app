@@ -1,53 +1,18 @@
 "use client";
-import { Combobox, Input, InputBase, useCombobox } from "@mantine/core";
-import { useState } from "react";
 
-export function SelectSocialRed (): JSX.Element {
-  const combobox = useCombobox({
-    onDropdownClose: () => {
-      combobox.resetSelectedOption();
-    },
-  });
-  const [value, setValue] = useState<string | null>(null);
+import { Flex, Select, Title } from "@mantine/core";
 
-  const socialRedArray: string[] = ["Facebook", "Instagram", "Whatsapp"];
-
-  const options = socialRedArray.map((item: string, index) => (
-    <Combobox.Option value={item} key={index}>
-      {item}
-    </Combobox.Option>
-  ));
+export function SelectSocialRed(): JSX.Element {
+  // const [value, setValue] = useState<string | null>(null);
 
   return (
-    <>
-      <Combobox
-        store={combobox}
-        onOptionSubmit={(val) => {
-          setValue(val);
-          combobox.closeDropdown();
-        }}
-      >
-        <Combobox.Target>
-          <InputBase
-            component="button"
-            pointer
-            rightSection={<Combobox.Chevron />}
-            onClick={() => {
-              combobox.toggleDropdown();
-            }}
-          >
-            {value !== null ? (
-              <Input.Placeholder>Pick value</Input.Placeholder>
-            ) : (
-              <></>
-            )}
-          </InputBase>
-        </Combobox.Target>
-
-        <Combobox.Dropdown>
-          <Combobox.Options>{options}</Combobox.Options>
-        </Combobox.Dropdown>
-      </Combobox>
-    </>
+    <Flex justify={"space-between"} align={"center"} w={"100%"}>
+      <Title order={4}> Red social</Title>
+      <Select
+        w={200}
+        placeholder="Seleeciona una red"
+        data={["Facebook", "Whatsapp", "Instagram"]}
+      />
+    </Flex>
   );
 }

@@ -1,8 +1,8 @@
 import { Flex } from "@mantine/core";
-import ListDataBase from "@/components/base-de-datos/ListDataBase";
+import ListDataBase from "@/app/data-base/ListDataBase";
 import ListLayout from "./layout";
 import { FilterContainer } from "@/components/FilterContainer";
-import { CountIndicator } from "@/components/base-de-datos/CountIndicator";
+import { CountIndicator } from "@/app/data-base/CountIndicator";
 import { HiOutlineUserCircle } from "@/components/IconsIndex";
 import { AutoCompleteInput } from "@/components/AutoCompleteInput";
 import { BtnFilter } from "@/components/buttons/BtnFilter";

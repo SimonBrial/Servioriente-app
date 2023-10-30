@@ -9,10 +9,10 @@ import {
   UnstyledButton,
 } from "@mantine/core";
 import { HiOutlineTrash, HiOutlineCheck } from "../IconsIndex";
-import btnClass from "../styles/BtnStyles.module.css";
+import btnClass from "../../styles/BtnStyles.module.css";
 import { TitleLayout } from "../TitleLayout";
 import RegisterInfo from "../RegisterInfo";
-import StatusBadge from "../base-de-datos/StatusBadge";
+import StatusBadge from "../../app/data-base/StatusBadge";
 import BtnActions from "./BtnActions";
 
 export default function BtnDelete(): JSX.Element {
