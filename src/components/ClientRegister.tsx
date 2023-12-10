@@ -18,7 +18,7 @@ import {
 export default function ClientRegister (): JSX.Element {
   return (
     <Stack gap={"xs"}>
-      <TitleLayout title="Crear Registro" color="" icon="" />
+      <TitleLayout title="Crear Registro" color="" icon="" onText={false} />
       <Flex justify={"space-between"} align={"center"}>
         <Title order={5} style={{ color: "#696969" }}>
           Nombre
@@ -99,7 +99,7 @@ export default function ClientRegister (): JSX.Element {
           ]}
         />
       </Flex>
-      <TitleLayout title="Redes Sociales" color="" icon="" />
+      <TitleLayout title="Redes Sociales" color="" icon="" onText={false} />
       <Flex justify={"space-between"} align={"center"}>
         <Title order={5} style={{ color: "#696969" }}>
           Facebook

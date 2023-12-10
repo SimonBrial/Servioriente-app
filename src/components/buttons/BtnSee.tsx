@@ -47,7 +47,7 @@ export default function BtnSee(): JSX.Element {
               height: "96vh",
             }}
           >
-            <TitleLayout title="Registro del cliente" icon="" color="" />
+            <TitleLayout title="Registro del cliente" icon="" color="" onText={false} />
             <ScrollArea h={"90vh"} offsetScrollbars scrollbarSize={4}>
               <Stack>
                 <RegisterInfo keyInput={"Nombre: "} valueInput={fakeArr.name} />

@@ -18,7 +18,7 @@ export default function CreateFolderLayout({
           root: { padding: "0 0.2rem" },
         }}
       >
-        <TitleLayout title={title} color="" icon="" />
+        <TitleLayout title={title} color="" icon="" onText={false} />
         <VerticalInputLayout label="Titulo" icon={<MdTitle />} />
         <VerticalInputLayout label="Icono" icon={<MdOutlineInsertEmoticon />} />
         <ColorSelectInput />

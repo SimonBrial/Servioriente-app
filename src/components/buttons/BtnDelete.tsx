@@ -34,7 +34,7 @@ export default function BtnDelete(): JSX.Element {
     <>
       <Modal opened={opened} onClose={close} withCloseButton={false}>
         <Stack style={{ padding: "1rem" }}>
-          <TitleLayout title="Eliminar Registro" icon="" color="" />
+          <TitleLayout title="Eliminar Registro" icon="" color="" onText={false} />
           <Title order={5} style={{ color: "#696969", textAlign: "center" }}>
             {" "}
             Estas seguro que quiere eliminar este registro?

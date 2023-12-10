@@ -1,4 +1,4 @@
-import { HiOutlineDotsVertical } from "@/components/IconsIndex";
+// import { HiOutlineDotsVertical } from "@/components/IconsIndex";
 import {
   Group,
   Text,
@@ -6,11 +6,17 @@ import {
   Divider,
   Avatar,
   Stack,
-  UnstyledButton,
-  Center,
+  /* UnstyledButton,
+  Center, */
 } from "@mantine/core";
+import { CardProcessItemProps } from "@/interface/interface";
 
-export default function CardItemProcess(): JSX.Element {
+export default function CardItemProcess({
+  date,
+  direction,
+  tag,
+  vehicle,
+}: CardProcessItemProps): JSX.Element {
   return (
     <Group
       align={"center"}
@@ -44,9 +50,9 @@ export default function CardItemProcess(): JSX.Element {
                 },
               })}
             >
-              Vehiculo
+              {vehicle}
             </Text>
-            <Text>Tarifa: $$</Text>
+            <Text>Tarifa: {tag}$</Text>
           </Stack>
           <Stack gap={6}>
             <Text
@@ -57,17 +63,19 @@ export default function CardItemProcess(): JSX.Element {
                 },
               })}
             >
-              Carabobo
+              {direction}
             </Text>
-            <Text size="xs">30/10/2023</Text>
+            <Text size="xs">{date}</Text>
           </Stack>
         </Flex>
       </Flex>
-      <UnstyledButton>
+      {/* <UnstyledButton>
         <Center>
-          <HiOutlineDotsVertical style={{ fontSize: "1.8rem", color: "#696969" }} />
+          <HiOutlineDotsVertical
+            style={{ fontSize: "1.8rem", color: "#696969" }}
+          />
         </Center>
-      </UnstyledButton>
+      </UnstyledButton> */}
     </Group>
   );
 }

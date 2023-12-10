@@ -7,4 +7,6 @@ type tagIcon =
   | "goal"
   | "add";
 
-export type { tagIcon };
+type processTitle = "Espera" | "Generacion" | "Pagado" | "Entregado";
+
+export type { tagIcon, processTitle };

@@ -31,6 +31,7 @@ interface TitleLayoutProps {
   title: string;
   icon: string;
   color: string;
+  onText: boolean;
 }
 
 interface AlarmProps {
@@ -60,13 +61,38 @@ interface AlarmCardProps {
   description: string;
 }
 
+interface CardProcessItemProps {
+  direction: string;
+  vehicle: string;
+  date: string;
+  tag: number;
+}
+interface CardProcessProps {
+  /* dragHandleProps: DraggableProvidedDragHandleProps | null | undefined;
+  draggableProps: DraggableProvidedDraggableProps;
+  innerRef: (element: HTMLElement | null) => void; // HTMLElement | LegacyRef<HTMLDivElement> */
+  clientName: string;
+  columnId: string;
+  vehicle: string;
+  date: string;
+  tag: number;
+  cardId: string;
+}
+
+interface CardProps {
+  cardItem: CardProcessProps;
+}
+
 export type {
   /* arraySocial, */
+  CardProcessItemProps,
   TitleLayoutProps,
+  CardProcessProps,
   AlarmCardProps,
   NavIconProps,
   sidebarItems,
   AlarmProps,
+  CardProps,
   /* SocialRed, */
   AlarmObj,
   iconList,

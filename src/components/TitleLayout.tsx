@@ -3,10 +3,34 @@ import { Divider, Flex, Title, Text } from "@mantine/core";
 import { TitleLayoutProps } from "@/interface/interface";
 
 export function TitleLayout({
+  onText,
   title,
-  icon,
   color,
+  icon,
 }: TitleLayoutProps): JSX.Element {
+  /*
+  { id: "Espera", color: "#E5DB00" },
+    { id: "Generacion", color: "#E56000" },
+    { id: "Pagado", color: "#12E500" },
+    { id: "Entregado", color: "#004EE5" },
+  */
+
+  let colorSelected: string = "";
+  function underScoreColor(colorEnum: string): string {
+    if (colorEnum === "Espera") {
+      colorSelected = "#E5DB00";
+    } else if (colorEnum === "Generacion") {
+      colorSelected = "#E56000";
+    } else if (colorEnum === "Pagado") {
+      colorSelected = "#12E500";
+    } else if (colorEnum === "Entregado") {
+      colorSelected = "#004EE5";
+    } else {
+      colorSelected = "";
+    }
+    return colorSelected;
+  }
+
   return (
     <>
       <Flex gap={5} justify={"center"} align={"center"}>
@@ -14,7 +38,7 @@ export function TitleLayout({
         <Title
           order={2}
           style={{
-            color: `${color !== "" ? color : "#696969"}`,
+            color: `${onText ? (color !== "" ? color : "#696969") : "#696969"}`,
             textAlign: "center",
           }}
         >
@@ -25,8 +49,11 @@ export function TitleLayout({
         size="md"
         styles={(theme) => ({
           root: {
-            borderColor:
-              color !== "" ? color : `${theme.colors.principalTheme[6]}`,
+            borderColor: !underScoreColor(title)
+              ? color !== ""
+                ? color
+                : `${theme.colors.principalTheme[6]}`
+              : underScoreColor(title),
             marginTop: "-0.3rem",
           },
         })}

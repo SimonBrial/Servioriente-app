@@ -49,7 +49,7 @@ export default function AlarmDescription({
       {objAlarm ? (
         <Stack h={"100%"} justify={"space-between"}>
           <Stack gap={height <= 720 ? 1 : 2} mah={"90%"}>
-            <TitleLayout title={title} color={color} icon={icon} />
+            <TitleLayout title={title} color={color} icon={icon} onText />
             <Flex justify={"space-between"}>
               <Title order={4}>Titulo:</Title>
               <Text style={{ color: `${color}` }}>{title}</Text>

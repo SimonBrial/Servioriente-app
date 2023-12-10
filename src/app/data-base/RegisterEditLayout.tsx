@@ -18,7 +18,7 @@ import { TitleLayout } from "@/components/TitleLayout";
 export default function RegisterEditLayout(): JSX.Element {
   return (
     <Stack gap={"xs"}>
-      <TitleLayout title="Editar Registro" icon="" color="" />
+      <TitleLayout title="Editar Registro" icon="" color="" onText={false} />
       <Flex justify={"space-between"} align={"center"}>
         <Title order={5} style={{ color: "#696969" }}>
           Nombre
@@ -99,7 +99,7 @@ export default function RegisterEditLayout(): JSX.Element {
           ]}
         />
       </Flex>
-      <TitleLayout title="Redes Sociales" icon="" color="" />
+      <TitleLayout title="Redes Sociales" icon="" color="" onText={false} />
       <Flex justify={"space-between"} align={"center"}>
         <Title order={5} style={{ color: "#696969" }}>
           Facebook

@@ -14,7 +14,7 @@ export function GeneralFilterLayout(): JSX.Element {
         root: { padding: "1rem" },
       }}
     >
-      <TitleLayout title="FILTRAR CATEGORIA" color="" icon="" />
+      <TitleLayout title="FILTRAR CATEGORIA" color="" icon="" onText={false} />
       <Flex justify={"space-between"} align={"center"}>
         <Title order={5} style={{ color: "#696969" }}>
           Nombre

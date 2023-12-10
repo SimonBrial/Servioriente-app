@@ -10,7 +10,7 @@ import { Container, Stack } from "@mantine/core";
 export default function CreateClientLayout(): JSX.Element {
   return (
     <Container w={"100%"} p={0}>
-      <TitleLayout color="" icon="" title="Crear Registro" />
+      <TitleLayout color="" icon="" title="Crear Registro" onText={false} />
       <Stack align="center" justify="space-between" gap={2} w={"100%"}>
         <UserPhoto userIconSize="6rem" />
         <HorizontalInputLayout
