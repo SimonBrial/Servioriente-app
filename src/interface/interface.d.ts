@@ -81,6 +81,7 @@ interface CardProcessProps {
 
 interface CardProps {
   cardItem: CardProcessProps;
+  colorCard: string;
 }
 
 export type {

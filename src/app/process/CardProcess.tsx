@@ -10,7 +10,7 @@ import {
   Avatar,
   Stack,
   Title,
-  Badge,
+  // Badge,
   Group,
   Text,
   Flex,
@@ -20,6 +20,7 @@ import CardItemProcess from "./CardItemProcess";
 import { CardProcessItemProps, CardProps } from "@/interface/interface";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { underScoreColor } from "@/utils/ColorLeads";
 
 const itemCardFake: CardProcessItemProps[] = [
   { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
@@ -29,7 +30,10 @@ const itemCardFake: CardProcessItemProps[] = [
   { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
 ];
 
-export default function CardProcess({ cardItem }: CardProps): JSX.Element {
+export default function CardProcess({
+  cardItem,
+  colorCard,
+}: CardProps): JSX.Element {
   const [opened, { toggle }] = useDisclosure(false);
   const matches = useMediaQuery("(max-width: 1280px)");
 
@@ -107,6 +111,12 @@ export default function CardProcess({ cardItem }: CardProps): JSX.Element {
     return data;
   };
 
+  if (opened) {
+    console.log("abriendo");
+  }
+
+  const colorSelected: string = underScoreColor(colorCard);
+
   const {
     setNodeRef,
     attributes,
@@ -119,43 +129,155 @@ export default function CardProcess({ cardItem }: CardProps): JSX.Element {
     data: { type: "CardProps", cardItem },
   });
 
-  const style = {
+  /*  const style = {
     transform: CSS.Transform.toString(transform),
     transition,
-  };
-
-  /* const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    padding: "0.5rem 1rem",
-    backgroundColor: "#66bbe5",
-    borderRadius: "10px",
-    margin: "0.2rem 0.2rem",
-    cursor: "pointer",
-    opacity: isDragging ? 0.7 : 1,
-    display: "flex",
-    gap: "0.5rem",
+    border: `1px solid #696969`,
+    backgroundColor: "white",
+    borderRadius: "6px",
+    position: "relative",
+    cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
+    margin: "0.2rem 0",
+    opacity: isDragging ? "1" : "1",
+    zIndex: isDragging ? "10" : "1",
+    boxShadow: isDragging ? "0px 11px 14px -4px rgba(74,74,74,0.81)" : "",
   }; */
+
+  /* if (isDragging) {
+    return (
+      <Box
+        ref={setNodeRef}
+        {...attributes}
+        style={{
+          transform: CSS.Transform.toString(transform),
+          transition,
+          border: `1px solid #696969`,
+          backgroundColor: "white",
+          borderRadius: "6px",
+          position: "relative",
+          cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
+          margin: "0.2rem 0",
+          opacity: isDragging ? "1" : "1",
+          zIndex: isDragging ? "10" : "1",
+          boxShadow: isDragging ? "0px 11px 14px -4px rgba(74,74,74,0.81)" : "",
+        }}
+        mx="auto"
+      >
+        <Group
+          align={"center"}
+          // justify={"space-between"}
+
+          styles={(theme) => ({
+            root: {
+              width: "100%",
+            },
+          })}
+          py={5}
+          pl={22}
+          pr={10}
+        >
+          <Divider
+            {...listeners}
+            orientation="vertical"
+            size="8px"
+            color={colorSelected}
+            h={itemCardFake.length > 0 && opened ? "94%" : matches ? 50 : 64}
+            style={{
+              height: `${opened ? " 91.5%" : "58px"}`,
+              transition: "height 0.3s ease-in-out",
+              borderRadius: "15px",
+              marginTop: "0.4rem",
+              position: "absolute",
+              left: "8px",
+              top: "2px",
+              cursor: "move",
+            }}
+          />
+          <Flex
+            onClick={toggle}
+            align={"center"}
+            justify={"center"}
+            gap={matches ? 3 : 8}
+            style={{
+              cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
+            }}
+          >
+            <Avatar
+              component="button"
+              src={null}
+              alt="no image here"
+              color="indigo"
+              size={matches ? "md" : "lg"}
+              style={{
+                cursor: "pointer",
+              }}
+            />
+            <Stack align="start" gap={0}>
+              <Title order={matches ? 5 : 4}>
+                {cardItem.clientName} {cardItem.cardId}
+              </Title>
+              <Flex align={"center"} gap={12}>
+                <Stack gap={0}>
+                  <Text
+                    size={matches ? "sm" : "md"}
+                    styles={(theme) => ({
+                      root: {
+                        color: `${theme.colors.principalTheme[6]}`,
+                        marginBottom: "-0.3rem",
+                      },
+                    })}
+                  >
+                    {cardItem.vehicle}
+                  </Text>
+                  <Text size={matches ? "sm" : "md"}>
+                    Tarifa: {cardItem.tag}$
+                  </Text>
+                </Stack>
+                {/* {itemCardFake.length > 0 ? (
+                <Badge color="blue" radius={"sm"}>
+                  {itemCardFake.length}
+                </Badge>
+              ) : (
+                <></>
+              )}
+              </Flex>
+            </Stack>
+          </Flex>
+          <Stack justify="space-between" align="end">
+            <UnstyledButton>
+              <HiOutlineDotsVertical />
+            </UnstyledButton>
+            <Text size={matches ? "xs" : "sm"}>{cardItem.date}</Text>
+          </Stack>
+        </Group>
+        {cardContainerView(itemCardFake)}
+      </Box>
+    );
+  } */
 
   return (
     <Box
       ref={setNodeRef}
       {...attributes}
       style={{
-        ...style,
+        transform: CSS.Transform.toString(transform),
+        transition,
         border: `1px solid #696969`,
+        backgroundColor: "white",
         borderRadius: "6px",
         position: "relative",
-        cursor: `${itemCardFake.length > 0 ? "move" : "default"}`,
+        cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
         margin: "0.2rem 0",
-        opacity: isDragging ? "0.8" : "1",
+        opacity: isDragging ? "1" : "1",
+        zIndex: isDragging ? "10" : "1",
+        boxShadow: isDragging ? "0px 11px 14px -4px rgba(74,74,74,0.81)" : "",
       }}
       mx="auto"
     >
       <Group
-        onClick={toggle}
         align={"center"}
-        justify={"space-between"}
+        // justify={"space-between"}
+
         styles={(theme) => ({
           root: {
             width: "100%",
@@ -168,8 +290,8 @@ export default function CardProcess({ cardItem }: CardProps): JSX.Element {
         <Divider
           {...listeners}
           orientation="vertical"
-          size="xl"
-          color="red"
+          size="8px"
+          color={colorSelected}
           h={itemCardFake.length > 0 && opened ? "94%" : matches ? 50 : 64}
           style={{
             height: `${opened ? " 91.5%" : "58px"}`,
@@ -183,6 +305,7 @@ export default function CardProcess({ cardItem }: CardProps): JSX.Element {
           }}
         />
         <Flex
+          onClick={toggle}
           align={"center"}
           justify={"center"}
           gap={matches ? 3 : 8}
@@ -197,7 +320,7 @@ export default function CardProcess({ cardItem }: CardProps): JSX.Element {
             color="indigo"
             size={matches ? "md" : "lg"}
             style={{
-              cursor: "move",
+              cursor: "pointer",
             }}
           />
           <Stack align="start" gap={0}>
@@ -221,13 +344,13 @@ export default function CardProcess({ cardItem }: CardProps): JSX.Element {
                   Tarifa: {cardItem.tag}$
                 </Text>
               </Stack>
-              {itemCardFake.length > 0 ? (
+              {/* {itemCardFake.length > 0 ? (
                 <Badge color="blue" radius={"sm"}>
                   {itemCardFake.length}
                 </Badge>
               ) : (
                 <></>
-              )}
+              )} */}
             </Flex>
           </Stack>
         </Flex>
@@ -243,141 +366,5 @@ export default function CardProcess({ cardItem }: CardProps): JSX.Element {
   );
 }
 
-{
-  /* <div ref={setNodeRef} style={style} {...attributes}>
-      <button
-        {...listeners}
-        style={{
-          backgroundColor: "transparent",
-          border: "none",
-          fontSize: "1.5rem",
-        }}
-      >
-        ⣿
-      </button>
-      <div
-        style={{
-          padding: "0.8rem",
-          borderRadius: "10px",
-          backgroundColor: "#2987b6",
-          width: "100%",
-        }}
-      >
-        <p style={{ fontWeight: "bold", color: "white" }}>
-          Item to Drag {cardItem.cardId}
-        </p>
-        <p style={{ color: "white" }}>{cardItem.clientName}</p>
-        <p style={{ fontWeight: "bold", color: "red" }}>{cardItem.columnId}</p>
-      </div>
-    </div> */
-}
-
-{
-  /* <Box
-      ref={setNodeRef}
-      style={{
-        ...style,
-        border: `1px solid #696969`,
-        borderRadius: "6px",
-        position: "relative",
-        cursor: `${itemCardFake.length > 0 ? "move" : "default"}`,
-        margin: "0.2rem 0",
-        opacity: isDragging ? "0.8" : "1",
-      }}
-      {...listeners}
-      {...attributes}
-      mx="auto"
-    >
-      <Group
-        onClick={toggle}
-        align={"center"}
-        justify={"space-between"}
-        styles={(theme) => ({
-          root: {
-            width: "100%",
-          },
-        })}
-        py={5}
-        pl={22}
-        pr={10}
-      >
-        <Divider
-          // {...listeners}
-          orientation="vertical"
-          size="xl"
-          color="red"
-          h={itemCardFake.length > 0 && opened ? "94%" : matches ? 50 : 64}
-          style={{
-            height: `${opened ? " 91.5%" : "58px"}`,
-            transition: "height 0.3s ease-in-out",
-            borderRadius: "15px",
-            marginTop: "0.4rem",
-            position: "absolute",
-            left: "8px",
-            top: "2px",
-            cursor: "move",
-          }}
-        />
-        <Flex
-          align={"center"}
-          justify={"center"}
-          gap={matches ? 3 : 8}
-          style={{
-            cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
-          }}
-        >
-          <Avatar
-            {...listeners}
-            component="button"
-            src={null}
-            alt="no image here"
-            color="indigo"
-            size={matches ? "md" : "lg"}
-            style={{
-              cursor: "move",
-            }}
-          />
-          <Stack align="start" gap={0}>
-            <Title order={matches ? 5 : 4}>
-              {cardItem.clientName} {cardItem.cardId}
-            </Title>
-            <Flex align={"center"} gap={12}>
-              <Stack gap={0}>
-                <Text
-                  size={matches ? "sm" : "md"}
-                  styles={(theme) => ({
-                    root: {
-                      color: `${theme.colors.principalTheme[6]}`,
-                      marginBottom: "-0.3rem",
-                    },
-                  })}
-                >
-                  {cardItem.vehicle}
-                </Text>
-                <Text size={matches ? "sm" : "md"}>
-                  Tarifa: {cardItem.tag}$
-                </Text>
-              </Stack>
-              {itemCardFake.length > 0 ? (
-                <Badge color="blue" radius={"sm"}>
-                  {itemCardFake.length}
-                </Badge>
-              ) : (
-                <></>
-              )}
-            </Flex>
-          </Stack>
-        </Flex>
-        <Stack justify="space-between" align="end">
-          <UnstyledButton>
-            <HiOutlineDotsVertical />
-          </UnstyledButton>
-          <Text size={matches ? "xs" : "sm"}>{cardItem.date}</Text>
-        </Stack>
-      </Group>
-      {cardContainerView(itemCardFake)}
-    </Box> */
-}
-// <div ref={setNodeRef} style={style} {...attributes} {...listeners}></div>
-
 // https://codesandbox.io/p/sandbox/dnd-kit-sortable-example-yhwz3f?file=%2Fsrc%2FSortableItem.jsx%3A12%2C25-12%2C33
+// ----****-------> https://codesandbox.io/p/sandbox/react-drag-drop-todo-rwn8d3?file=%2Fsrc%2Fcomponents%2FBoardSection.tsx

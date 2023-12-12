@@ -1,7 +1,7 @@
 import { TitleLayout } from "@/components/TitleLayout";
 import { CardProcessProps } from "@/interface/interface";
-import { Stack, Grid, ScrollArea } from "@mantine/core";
-import React, { useMemo } from "react";
+import { Stack, Grid } from "@mantine/core";
+import React, { useMemo, useState } from "react";
 import {
   verticalListSortingStrategy,
   SortableContext,
@@ -9,27 +9,40 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import CardProcess from "./CardProcess";
+import { DragOverlay, DragStartEvent, UniqueIdentifier } from "@dnd-kit/core";
+import OverlayCardLayout from "./OverlayCardLayout";
 
 interface ProcessColumnContainerProps {
   titleDescription: string;
+  color: string;
   // arrayItemsBuilder: (arr: any[]) => JSX.Element[];
   // children: React.ReactNode;
   arrItems: CardProcessProps[];
+  cardActive: UniqueIdentifier | string | null;
 }
 
 export const ProcessColumnContainer = ({
   titleDescription,
+  color,
   arrItems,
+  cardActive,
 }: ProcessColumnContainerProps): JSX.Element => {
-  const { setNodeRef, attributes, listeners, transform, transition } =
-    useSortable({
-      id: titleDescription,
-      data: { type: "CardProcessProps", arrItems },
-    });
+  const {
+    setNodeRef,
+    attributes,
+    listeners,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({
+    id: titleDescription,
+    data: { type: "CardProcessProps", arrItems },
+  });
 
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
+    border: "1px solid red",
   };
 
   const cardIds = useMemo(() => {
@@ -42,7 +55,11 @@ export const ProcessColumnContainer = ({
       {...attributes}
       {...listeners}
       ref={setNodeRef}
-      style={style}
+      style={{
+        ...style,
+        width: "100%",
+        // backgroundColor: isDragging ? "#929191" : " White",
+      }}
     >
       <TitleLayout
         color={titleDescription}
@@ -59,18 +76,20 @@ export const ProcessColumnContainer = ({
           // border: "1px solid red",
         }}
       >
-        <ScrollArea type="never">
-          <SortableContext
-            items={cardIds}
-            strategy={verticalListSortingStrategy}
-          >
-            <div ref={setNodeRef}>
-              {arrItems.map((item: CardProcessProps) => {
-                return <CardProcess cardItem={item} key={item.cardId} />;
-              })}
-            </div>
-          </SortableContext>
-        </ScrollArea>
+        {/* <ScrollArea type="never" ></ScrollArea> */}
+        <SortableContext items={cardIds} strategy={verticalListSortingStrategy}>
+          <div style={{ padding: "0.5rem" }} ref={setNodeRef}>
+            {arrItems.map((item: CardProcessProps) => {
+              return (
+                <CardProcess
+                  cardItem={item}
+                  key={item.cardId}
+                  colorCard={color}
+                />
+              );
+            })}
+          </div>
+        </SortableContext>
       </Stack>
     </Grid.Col>
   );

@@ -1,6 +1,8 @@
 "use client";
 import { Divider, Flex, Title, Text } from "@mantine/core";
 import { TitleLayoutProps } from "@/interface/interface";
+import { underScoreColor } from "@/utils/ColorLeads";
+import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
 
 export function TitleLayout({
   onText,
@@ -15,21 +17,7 @@ export function TitleLayout({
     { id: "Entregado", color: "#004EE5" },
   */
 
-  let colorSelected: string = "";
-  function underScoreColor(colorEnum: string): string {
-    if (colorEnum === "Espera") {
-      colorSelected = "#E5DB00";
-    } else if (colorEnum === "Generacion") {
-      colorSelected = "#E56000";
-    } else if (colorEnum === "Pagado") {
-      colorSelected = "#12E500";
-    } else if (colorEnum === "Entregado") {
-      colorSelected = "#004EE5";
-    } else {
-      colorSelected = "";
-    }
-    return colorSelected;
-  }
+  const colorSelected: string = underScoreColor(capitalizeFirstLetter(title));
 
   return (
     <>
@@ -42,18 +30,18 @@ export function TitleLayout({
             textAlign: "center",
           }}
         >
-          {title}
+          {capitalizeFirstLetter(title)}
         </Title>
       </Flex>
       <Divider
         size="md"
         styles={(theme) => ({
           root: {
-            borderColor: !underScoreColor(title)
+            borderColor: !colorSelected
               ? color !== ""
                 ? color
                 : `${theme.colors.principalTheme[6]}`
-              : underScoreColor(title),
+              : colorSelected,
             marginTop: "-0.3rem",
           },
         })}
