@@ -4,8 +4,8 @@ import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 import { HiOutlineDotsVertical } from "@/components/IconsIndex";
 import {
   UnstyledButton,
-  ScrollArea,
-  Collapse,
+  /* ScrollArea,
+  Collapse, */
   Divider,
   Avatar,
   Stack,
@@ -16,11 +16,11 @@ import {
   Flex,
   Box,
 } from "@mantine/core";
-import CardItemProcess from "./CardItemProcess";
+// import CardItemProcess from "./CardItemProcess";
 import { CardProcessItemProps, CardProps } from "@/interface/interface";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { underScoreColor } from "@/utils/ColorLeads";
+import { underScoreColor } from "@/utils/underScoreColor";
 
 const itemCardFake: CardProcessItemProps[] = [
   { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
@@ -37,7 +37,7 @@ export default function CardProcess({
   const [opened, { toggle }] = useDisclosure(false);
   const matches = useMediaQuery("(max-width: 1280px)");
 
-  let data: JSX.Element | null;
+  /*  let data: JSX.Element | null;
   const cardContainerView = (
     arr: CardProcessItemProps[],
   ): JSX.Element | null => {
@@ -109,7 +109,7 @@ export default function CardProcess({
       return null;
     }
     return data;
-  };
+  }; */
 
   if (opened) {
     console.log("abriendo");

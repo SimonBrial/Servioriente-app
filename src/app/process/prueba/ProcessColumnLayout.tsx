@@ -7,10 +7,11 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 import { Task } from "./types";
-import { TaskItem } from "./TaskItem";
+import { CardProcess } from "./CardProcess";
 import { SortableItemContainer } from "./SortableItemContainer";
-import { TitleLayout } from "@/components/TitleLayout";
-import { Grid, Stack } from "@mantine/core";
+import { Badge, Divider, Flex, Grid, Stack, Title } from "@mantine/core";
+import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
+import { underScoreColor } from "../../../utils/underScoreColor";
 
 interface BoardSectionProps {
   id: string;
@@ -32,13 +33,35 @@ export const ProcessColumnLayout = ({
     <Grid.Col
       span={12}
       style={{
-        backgroundColor: "#fafafa",
+        // backgroundColor: "#fafafa",
         padding: "1rem",
-        // backgroundColor: "red",
         width: "100%",
       }}
     >
-      <TitleLayout color="" icon="" onText title={title} />
+      <div>
+        <Flex gap={5} justify={"center"} align={"center"}>
+          <Title
+            order={2}
+            style={{
+              textAlign: "center",
+            }}
+          >
+            {capitalizeFirstLetter(title)}
+          </Title>
+          <Badge radius="sm" styles={{ label: { fontSize: "0.9rem" } }}>
+            {tasks.length}
+          </Badge>
+        </Flex>
+        <Divider
+          size="md"
+          styles={(theme) => ({
+            root: {
+              borderColor: underScoreColor(capitalizeFirstLetter(title)),
+              marginTop: "-0.3rem",
+            },
+          })}
+        />
+      </div>
       <SortableContext
         id={id}
         items={tasks}
@@ -58,7 +81,7 @@ export const ProcessColumnLayout = ({
             {tasks.map((task) => (
               <div key={task.id} style={{ marginBottom: "0.2rem" }}>
                 <SortableItemContainer id={task.id}>
-                  <TaskItem task={task} />
+                  <CardProcess task={task} />
                 </SortableItemContainer>
               </div>
             ))}

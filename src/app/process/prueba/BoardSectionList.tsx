@@ -23,7 +23,7 @@ import { BoardSections as BoardSectionsType } from "./types";
 import { getTaskById } from "./utils/tasks";
 import { findBoardSectionContainer, initializeBoard } from "./utils/board";
 import { ProcessColumnLayout } from "./ProcessColumnLayout";
-import { TaskItem } from "./TaskItem";
+import { CardProcess } from "./CardProcess";
 import { Grid } from "@mantine/core";
 
 export const BoardSectionList = (): JSX.Element => {
@@ -139,16 +139,21 @@ export const BoardSectionList = (): JSX.Element => {
   const task = activeTaskId ? getTaskById(tasks, activeTaskId) : null;
 
   return (
-    <div>
-      <DndContext
-        sensors={sensors}
-        collisionDetection={closestCorners}
-        onDragStart={handleDragStart}
-        onDragOver={handleDragOver}
-        onDragEnd={handleDragEnd}
+    <DndContext
+      sensors={sensors}
+      collisionDetection={closestCorners}
+      onDragStart={handleDragStart}
+      onDragOver={handleDragOver}
+      onDragEnd={handleDragEnd}
+    >
+      <Grid
+        style={{
+          borderRadius: "10px",
+          backgroundColor: "#fafafa",
+        }}
       >
-        <Grid style={{ backgroundColor: "blue", width: "" }}>
-          {Object.keys(boardSections).map((boardSectionKey) => (
+        {Object.keys(boardSections).map((boardSectionKey) => {
+          return (
             <div key={boardSectionKey} style={{ width: "25%" }}>
               <ProcessColumnLayout
                 id={boardSectionKey}
@@ -156,12 +161,12 @@ export const BoardSectionList = (): JSX.Element => {
                 tasks={boardSections[boardSectionKey]}
               />
             </div>
-          ))}
-          <DragOverlay dropAnimation={dropAnimation}>
-            {task ? <TaskItem task={task} /> : null}
-          </DragOverlay>
-        </Grid>
-      </DndContext>
-    </div>
+          );
+        })}
+        <DragOverlay dropAnimation={dropAnimation}>
+          {task ? <CardProcess task={task} /> : null}
+        </DragOverlay>
+      </Grid>
+    </DndContext>
   );
 };

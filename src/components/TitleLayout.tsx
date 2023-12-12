@@ -1,7 +1,7 @@
 "use client";
 import { Divider, Flex, Title, Text } from "@mantine/core";
 import { TitleLayoutProps } from "@/interface/interface";
-import { underScoreColor } from "@/utils/ColorLeads";
+import { underScoreColor } from "@/utils/underScoreColor";
 import { capitalizeFirstLetter } from "../utils/capitalizeFirstLetter";
 
 export function TitleLayout({

@@ -1,7 +1,7 @@
 import { TitleLayout } from "@/components/TitleLayout";
 import { CardProcessProps } from "@/interface/interface";
 import { Stack, Grid } from "@mantine/core";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import {
   verticalListSortingStrategy,
   SortableContext,
@@ -9,8 +9,7 @@ import {
 } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import CardProcess from "./CardProcess";
-import { DragOverlay, DragStartEvent, UniqueIdentifier } from "@dnd-kit/core";
-import OverlayCardLayout from "./OverlayCardLayout";
+import { UniqueIdentifier } from "@dnd-kit/core";
 
 interface ProcessColumnContainerProps {
   titleDescription: string;
@@ -27,17 +26,11 @@ export const ProcessColumnContainer = ({
   arrItems,
   cardActive,
 }: ProcessColumnContainerProps): JSX.Element => {
-  const {
-    setNodeRef,
-    attributes,
-    listeners,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({
-    id: titleDescription,
-    data: { type: "CardProcessProps", arrItems },
-  });
+  const { setNodeRef, attributes, listeners, transform, transition } =
+    useSortable({
+      id: titleDescription,
+      data: { type: "CardProcessProps", arrItems },
+    });
 
   const style = {
     transform: CSS.Transform.toString(transform),

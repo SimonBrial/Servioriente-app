@@ -1,8 +1,8 @@
 export function underScoreColor(colorEnum: string): string {
   if (colorEnum === "Espera") {
-    return "#E5DB00";
+    return "#fad901";
   } else if (colorEnum === "Generacion") {
-    return "#E56000";
+    return "#fd6a01";
   } else if (colorEnum === "Pagado") {
     return "#12E500";
   } else if (colorEnum === "Entregado") {

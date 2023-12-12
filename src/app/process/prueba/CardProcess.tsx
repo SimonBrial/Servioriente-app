@@ -1,24 +1,24 @@
 import { HiOutlineDotsVertical } from "@/components/IconsIndex";
 import { Task } from "./types";
 import {
-  Box,
+  UnstyledButton,
   Divider,
-  Flex,
+  Avatar,
   Group,
   Stack,
   Title,
+  Flex,
   Text,
-  Avatar,
-  UnstyledButton,
+  Box,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
+/* import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter"; */
 
 interface TaskItemProps {
   task: Task;
 }
 
-export const TaskItem = ({ task }: TaskItemProps): JSX.Element => {
+export const CardProcess = ({ task }: TaskItemProps): JSX.Element => {
   const matches = useMediaQuery("(max-width: 1280px)");
   return (
     <Box
@@ -75,23 +75,19 @@ export const TaskItem = ({ task }: TaskItemProps): JSX.Element => {
           />
           <Stack align="start" gap={0}>
             <Title order={matches ? 5 : 4}>{task.title}</Title>
-            <Flex align={"center"} gap={12}>
-              <Stack gap={0}>
-                <Text
-                  size={matches ? "sm" : "md"}
-                  styles={(theme) => ({
-                    root: {
-                      color: `${theme.colors.principalTheme[6]}`,
-                      marginBottom: "-0.3rem",
-                      marginLeft: "0",
-                    },
-                  })}
-                >
-                  1: {task.title}
-                </Text>
-                <Text size={matches ? "sm" : "md"}>Tarifa: {task.title}$</Text>
-              </Stack>
-            </Flex>
+            <Stack gap={0}>
+              <Text
+                size={matches ? "sm" : "md"}
+                styles={(theme) => ({
+                  root: {
+                    color: `${theme.colors.principalTheme[6]}`,
+                    marginBottom: "-0.3rem",
+                    textAlign: "start"
+                  },
+                })}
+              >{task.title}</Text>
+              <Text size={matches ? "sm" : "md"}>Tarifa: {task.title}$</Text>
+            </Stack>
           </Stack>
         </Flex>
         <Stack justify="space-between" align="end">
