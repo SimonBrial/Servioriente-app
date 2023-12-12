@@ -1,4 +1,4 @@
-export const BOARD_SECTIONS = {
+export const COLUMNS_SECTIONS = {
   espera: "Espera",
   generacion: "Generacion",
   pagado: "Pagado",

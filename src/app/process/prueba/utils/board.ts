@@ -1,15 +1,16 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { BoardSections, Status, Task } from "../types";
-import { BOARD_SECTIONS } from "../constantes";
-import { getTasksByStatus } from "./tasks";
+import { BoardSections, Status } from "../types";
+import { COLUMNS_SECTIONS } from "../constantes";
+import { getCardsByStatus } from "./tasks";
+import { CardProcessProps } from "@/interface/interface";
 
-export const initializeBoard = (tasks: Task[]) => {
+export const initializeColumns = (tasks: CardProcessProps[]) => {
   const boardSections: BoardSections = {};
 
-  Object.keys(BOARD_SECTIONS).forEach((boardSectionKey) => {
-    boardSections[boardSectionKey] = getTasksByStatus(
+  Object.keys(COLUMNS_SECTIONS).forEach((columnSectionKey) => {
+    boardSections[columnSectionKey] = getCardsByStatus(
       tasks,
-      boardSectionKey as Status,
+      columnSectionKey as Status,
     );
   });
 

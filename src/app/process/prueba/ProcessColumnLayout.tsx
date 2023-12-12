@@ -6,17 +6,18 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { Task } from "./types";
+// import { Task } from "./types";
 import { CardProcess } from "./CardProcess";
 import { SortableItemContainer } from "./SortableItemContainer";
 import { Badge, Divider, Flex, Grid, Stack, Title } from "@mantine/core";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { underScoreColor } from "../../../utils/underScoreColor";
+import { CardProcessProps } from "@/interface/interface";
 
 interface BoardSectionProps {
   id: string;
   title: string;
-  tasks: Task[];
+  tasks: CardProcessProps[];
 }
 
 // Contiene los elementos que seran organizados, es decir, es el contenedor
@@ -81,7 +82,7 @@ export const ProcessColumnLayout = ({
             {tasks.map((task) => (
               <div key={task.id} style={{ marginBottom: "0.2rem" }}>
                 <SortableItemContainer id={task.id}>
-                  <CardProcess task={task} />
+                  <CardProcess card={task} />
                 </SortableItemContainer>
               </div>
             ))}

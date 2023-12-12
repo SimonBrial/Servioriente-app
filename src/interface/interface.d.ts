@@ -76,7 +76,7 @@ interface CardProcessProps {
   vehicle: string;
   date: string;
   tag: number;
-  cardId: string;
+  id: string;
 }
 
 interface CardProps {

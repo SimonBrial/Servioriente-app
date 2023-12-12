@@ -1,5 +1,5 @@
 import { HiOutlineDotsVertical } from "@/components/IconsIndex";
-import { Task } from "./types";
+// import { Task } from "./types";
 import {
   UnstyledButton,
   Divider,
@@ -12,13 +12,14 @@ import {
   Box,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import { CardProcessProps } from "@/interface/interface";
 /* import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter"; */
 
 interface TaskItemProps {
-  task: Task;
+  card: CardProcessProps;
 }
 
-export const CardProcess = ({ task }: TaskItemProps): JSX.Element => {
+export const CardProcess = ({ card }: TaskItemProps): JSX.Element => {
   const matches = useMediaQuery("(max-width: 1280px)");
   return (
     <Box
@@ -74,7 +75,7 @@ export const CardProcess = ({ task }: TaskItemProps): JSX.Element => {
             }}
           />
           <Stack align="start" gap={0}>
-            <Title order={matches ? 5 : 4}>{task.title}</Title>
+            <Title order={matches ? 5 : 4}>{card.clientName}</Title>
             <Stack gap={0}>
               <Text
                 size={matches ? "sm" : "md"}
@@ -82,11 +83,13 @@ export const CardProcess = ({ task }: TaskItemProps): JSX.Element => {
                   root: {
                     color: `${theme.colors.principalTheme[6]}`,
                     marginBottom: "-0.3rem",
-                    textAlign: "start"
+                    textAlign: "start",
                   },
                 })}
-              >{task.title}</Text>
-              <Text size={matches ? "sm" : "md"}>Tarifa: {task.title}$</Text>
+              >
+                {card.vehicle}
+              </Text>
+              <Text size={matches ? "sm" : "md"}>Tarifa: {card.tag}$</Text>
             </Stack>
           </Stack>
         </Flex>
@@ -94,7 +97,7 @@ export const CardProcess = ({ task }: TaskItemProps): JSX.Element => {
           <UnstyledButton>
             <HiOutlineDotsVertical />
           </UnstyledButton>
-          <Text size={matches ? "xs" : "sm"}>12/12/2023</Text>
+          <Text size={matches ? "xs" : "sm"}>{card.date}</Text>
         </Stack>
       </Group>
     </Box>

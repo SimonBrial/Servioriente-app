@@ -1,3 +1,5 @@
+import { CardProcessProps } from "@/interface/interface";
+
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 export type Status = "espera" | "generacion" | "pagado" | "entregado";
 
@@ -9,5 +11,5 @@ export interface Task {
 }
 
 export interface BoardSections {
-  [name: string]: Task[];
+  [name: string]: CardProcessProps[];
 }

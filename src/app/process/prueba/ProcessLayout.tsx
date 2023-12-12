@@ -18,17 +18,17 @@ import {
   defaultDropAnimation,
 } from "@dnd-kit/core";
 import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
-import { INITIAL_TASKS } from "./data";
+import { INITIAL_CARDS } from "./data";
 import { BoardSections as BoardSectionsType } from "./types";
-import { getTaskById } from "./utils/tasks";
-import { findBoardSectionContainer, initializeBoard } from "./utils/board";
+import { getCardById } from "./utils/tasks";
+import { findBoardSectionContainer, initializeColumns } from "./utils/board";
 import { ProcessColumnLayout } from "./ProcessColumnLayout";
 import { CardProcess } from "./CardProcess";
 import { Grid } from "@mantine/core";
 
-export const BoardSectionList = (): JSX.Element => {
-  const tasks = INITIAL_TASKS;
-  const initialBoardSections = initializeBoard(INITIAL_TASKS);
+export const ProcessLayout = (): JSX.Element => {
+  const tasks = INITIAL_CARDS;
+  const initialBoardSections = initializeColumns(INITIAL_CARDS);
   const [boardSections, setBoardSections] =
     useState<BoardSectionsType>(initialBoardSections);
 
@@ -136,7 +136,7 @@ export const BoardSectionList = (): JSX.Element => {
     ...defaultDropAnimation,
   };
 
-  const task = activeTaskId ? getTaskById(tasks, activeTaskId) : null;
+  const task = activeTaskId ? getCardById(tasks, activeTaskId) : null;
 
   return (
     <DndContext
@@ -164,7 +164,7 @@ export const BoardSectionList = (): JSX.Element => {
           );
         })}
         <DragOverlay dropAnimation={dropAnimation}>
-          {task ? <CardProcess task={task} /> : null}
+          {task ? <CardProcess card={task} /> : null}
         </DragOverlay>
       </Grid>
     </DndContext>

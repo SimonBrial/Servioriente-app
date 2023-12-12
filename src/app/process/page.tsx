@@ -7,7 +7,7 @@ import { Flex, Stack, Container } from "@mantine/core";
 import { CountIndicator } from "../data-base/CountIndicator";
 import { HiOutlineUserCircle } from "@/components/IconsIndex";
 import CreateClientLayout from "./CreateClientLayout";
-import { BoardSectionList } from "./prueba/BoardSectionList";
+import { ProcessLayout } from "./prueba/ProcessLayout";
 
 function page(): JSX.Element {
   return (
@@ -33,7 +33,7 @@ function page(): JSX.Element {
             <CreateClientLayout />
           </BtnAdd>
         </Flex>
-        <BoardSectionList />
+        <ProcessLayout />
       </Stack>
     </Container>
   );

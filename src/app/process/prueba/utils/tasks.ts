@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { Task, Status } from "../types";
+import { Status } from "../types";
+import { CardProcessProps } from "@/interface/interface";
 
-export const getTasksByStatus = (tasks: Task[], status: Status) => {
-  return tasks.filter((task) => task.status === status);
+export const getCardsByStatus = (cards: CardProcessProps[], status: Status) => {
+  return cards.filter((card) => card.columnId === status);
 };
 
-export const getTaskById = (tasks: Task[], id: string) => {
-  return tasks.find((task) => task.id === id);
+export const getCardById = (cards: CardProcessProps[], id: string) => {
+  return cards.find((card) => card.id === id);
 };
