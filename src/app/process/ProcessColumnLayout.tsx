@@ -6,12 +6,11 @@ import {
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-// import { Task } from "./types";
 import { CardProcess } from "./CardProcess";
 import { SortableItemContainer } from "./SortableItemContainer";
 import { Badge, Divider, Flex, Grid, Stack, Title } from "@mantine/core";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
-import { underScoreColor } from "../../../utils/underScoreColor";
+import { underScoreColor } from "../../utils/underScoreColor";
 import { CardProcessProps } from "@/interface/interface";
 
 interface BoardSectionProps {

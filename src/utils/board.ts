@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { BoardSections, Status } from "../types";
-import { COLUMNS_SECTIONS } from "../constantes";
+import { processTitle } from "../types/types";
+import { COLUMNS_SECTIONS } from "./constants";
 import { getCardsByStatus } from "./tasks";
-import { CardProcessProps } from "@/interface/interface";
+import { ColumnSection, CardProcessProps } from "@/interface/interface";
 
 export const initializeColumns = (tasks: CardProcessProps[]) => {
-  const boardSections: BoardSections = {};
+  const boardSections: ColumnSection = {};
 
   Object.keys(COLUMNS_SECTIONS).forEach((columnSectionKey) => {
     boardSections[columnSectionKey] = getCardsByStatus(
       tasks,
-      columnSectionKey as Status,
+      columnSectionKey as processTitle,
     );
   });
 
@@ -18,7 +18,7 @@ export const initializeColumns = (tasks: CardProcessProps[]) => {
 };
 
 export const findBoardSectionContainer = (
-  boardSections: BoardSections,
+  boardSections: ColumnSection,
   id: string,
 ) => {
   if (id in boardSections) {

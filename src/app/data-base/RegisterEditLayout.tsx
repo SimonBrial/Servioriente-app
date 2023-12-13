@@ -12,8 +12,8 @@ import {
   HiOutlineUser,
   AiOutlineCar,
   HiLink,
-} from "../../components/IconsIndex";
-import { TitleLayout } from "@/components/TitleLayout";
+} from "../../components/icons";
+import { TitleLayout } from "@/components/layout/TitleLayout";
 
 export default function RegisterEditLayout(): JSX.Element {
   return (

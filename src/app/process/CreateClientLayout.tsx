@@ -1,9 +1,9 @@
-import { CalendarInput } from "@/components/CalendarInput";
-import HorizontalInputLayout from "@/components/HorizontalInputLayout";
-import { HiOutlineUser } from "@/components/IconsIndex";
-import PhoneInputLayout from "@/components/PhoneInputLayout";
+import { CalendarInput } from "@/components/inputs/CalendarInput";
+import HorizontalInputLayout from "@/components/inputs/HorizontalInputLayout";
+import { HiOutlineUser } from "@/components/icons";
+import PhoneInputLayout from "@/components/inputs/PhoneInputLayout";
 import { SelectSocialRed } from "@/components/SelectSocialRed";
-import { TitleLayout } from "@/components/TitleLayout";
+import { TitleLayout } from "@/components/layout/TitleLayout";
 import UserPhoto from "@/components/UserPhoto";
 import { Container, Stack } from "@mantine/core";
 

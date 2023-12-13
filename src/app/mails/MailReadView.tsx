@@ -16,7 +16,7 @@ import {
   CgCornerUpLeft,
   CgCornerDoubleUpLeft,
   CgCornerUpRight,
-} from "../../components/IconsIndex";
+} from "../../components/icons";
 
 export default function MailReadView(): JSX.Element {
   const { height } = useViewportSize();

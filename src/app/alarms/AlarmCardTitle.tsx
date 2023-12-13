@@ -1,4 +1,4 @@
-import { HiOutlineDotsVertical } from "@/components/IconsIndex";
+import { HiOutlineDotsVertical } from "@/components/icons";
 
 import {
   Center,

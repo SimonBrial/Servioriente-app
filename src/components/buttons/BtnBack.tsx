@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@mantine/core";
-import { IoArrowBackOutline } from "../IconsIndex";
+import { IoArrowBackOutline } from "../icons";
 
 export default function BtnBack({ close }: { close: () => void }): JSX.Element {
   return (

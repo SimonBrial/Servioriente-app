@@ -5,7 +5,7 @@ import {
   HiOutlineTrash,
   HiOutlineStar,
   HiOutlineSave,
-} from "@/components/IconsIndex";
+} from "@/components/icons";
 import {
   Checkbox,
   UnstyledButton,

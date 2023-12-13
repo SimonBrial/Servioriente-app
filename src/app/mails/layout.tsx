@@ -7,9 +7,9 @@ import {
   HiOutlineSave,
   HiOutlineStar,
   BiMailSend,
-} from "../../components/IconsIndex";
-import AutoCompleteFilterContainer from "@/components/AutoCompleteFilterContainer";
-import InsideContainer from "@/components/InsideContainer";
+} from "../../components/icons";
+import AutoCompleteFilterContainer from "@/components/container/AutoCompleteFilterContainer";
+import InsideContainer from "@/components/container/InsideContainer";
 
 export default function MailLayout({
   children,

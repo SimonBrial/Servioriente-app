@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { DateInput } from "@mantine/dates";
 import { Title, Flex } from "@mantine/core";
-import { HiOutlineCalendar } from "./IconsIndex";
+import { HiOutlineCalendar } from "../icons";
 
 export function CalendarInput({
   withTitle,

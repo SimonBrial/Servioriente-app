@@ -1,13 +1,13 @@
-import { AutoCompleteInput } from "@/components/AutoCompleteInput";
-import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";
+import { AutoCompleteInput } from "@/components/inputs/AutoCompleteInput";
+import { GeneralFilterLayout } from "@/components/layout/GeneralFilterLayout";
 import BtnAdd from "@/components/buttons/BtnAdd";
 import { BtnFilter } from "@/components/buttons/BtnFilter";
 import BtnReportGenerate from "@/components/buttons/BtnReportGenerate";
 import { Flex, Stack, Container } from "@mantine/core";
 import { CountIndicator } from "../data-base/CountIndicator";
-import { HiOutlineUserCircle } from "@/components/IconsIndex";
+import { HiOutlineUserCircle } from "@/components/icons";
 import CreateClientLayout from "./CreateClientLayout";
-import { ProcessLayout } from "./prueba/ProcessLayout";
+import { ProcessLayout } from "./ProcessLayout";
 
 function page(): JSX.Element {
   return (

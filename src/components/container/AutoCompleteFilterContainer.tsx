@@ -1,8 +1,8 @@
 "use client";
 
 import { Checkbox, Container, Flex, Title } from "@mantine/core";
-import { BadgeClose } from "./BadgeClose";
-import { BadgeFilter } from "./BadgeFilter";
+import { BadgeClose } from "../BadgeClose";
+import { BadgeFilter } from "../BadgeFilter";
 
 interface AutoCompleteData {
   label: string | string[];

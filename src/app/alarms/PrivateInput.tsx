@@ -5,7 +5,7 @@ import { Checkbox, Flex, Text, Title } from "@mantine/core";
 import {
   HiOutlineLockClosed,
   HiOutlineLockOpen,
-} from "@/components/IconsIndex";
+} from "@/components/icons";
 
 export default function PrivateInput({
   userName,

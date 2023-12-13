@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 import { type ReactNode } from "react";
 import { type tagIcon } from "../types/types";
 
@@ -84,18 +85,21 @@ interface CardProps {
   colorCard: string;
 }
 
+interface ColumnSection {
+  [name: string]: CardProcessProps[];
+}
+
 export type {
-  /* arraySocial, */
   CardProcessItemProps,
   TitleLayoutProps,
   CardProcessProps,
   AlarmCardProps,
+  ColumnSection,
   NavIconProps,
   sidebarItems,
+  BtnAddProps,
   AlarmProps,
   CardProps,
-  /* SocialRed, */
   AlarmObj,
   iconList,
-  BtnAddProps,
 };

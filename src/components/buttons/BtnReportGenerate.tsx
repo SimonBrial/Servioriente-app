@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@mantine/core";
-import { HiOutlineDocumentText } from "../IconsIndex";
+import { HiOutlineDocumentText } from "../icons";
 
 export default function BtnReportGenerate(): JSX.Element {
   return (

@@ -11,7 +11,7 @@ import {
   UnstyledButton,
 } from "@mantine/core";
 import toast, { Toaster } from "react-hot-toast";
-import { IoClose, IoWarningOutline } from "./IconsIndex";
+import { IoClose, IoWarningOutline } from "./icons";
 import React from "react";
 
 type NotificationType = "Aviso" | "Error" | "Completado" | "Informacion";

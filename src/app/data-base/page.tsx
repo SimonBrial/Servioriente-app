@@ -1,12 +1,12 @@
 import { Flex } from "@mantine/core";
 import ListDataBase from "@/app/data-base/ListDataBase";
 import ListLayout from "./layout";
-import { FilterContainer } from "@/components/FilterContainer";
+import { FilterContainer } from "@/components/container/FilterContainer";
 import { CountIndicator } from "@/app/data-base/CountIndicator";
-import { HiOutlineUserCircle } from "@/components/IconsIndex";
-import { AutoCompleteInput } from "@/components/AutoCompleteInput";
+import { HiOutlineUserCircle } from "@/components/icons";
+import { AutoCompleteInput } from "@/components/inputs/AutoCompleteInput";
 import { BtnFilter } from "@/components/buttons/BtnFilter";
-import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";
+import { GeneralFilterLayout } from "@/components/layout/GeneralFilterLayout";
 import BtnReportGenerate from "@/components/buttons/BtnReportGenerate";
 import BtnAdd from "@/components/buttons/BtnAdd";
 import ClientRegister from "@/components/ClientRegister";

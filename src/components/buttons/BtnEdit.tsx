@@ -7,7 +7,7 @@ import {
   UnstyledButton,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { HiOutlinePencil, HiOutlineSave } from "../IconsIndex";
+import { HiOutlinePencil, HiOutlineSave } from "../icons";
 import btnClass from "../../styles/BtnStyles.module.css";
 import BtnActions from "./BtnActions";
 

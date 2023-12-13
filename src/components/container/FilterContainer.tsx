@@ -1,6 +1,6 @@
 import { Container, Flex } from "@mantine/core";
-import { BadgeClose } from "./BadgeClose";
-import { BadgeFilter } from "./BadgeFilter";
+import { BadgeClose } from "../BadgeClose";
+import { BadgeFilter } from "../BadgeFilter";
 
 export function FilterContainer (): JSX.Element {
   return (

@@ -1,5 +1,5 @@
 import { Button, Divider, Flex, Stack, Title } from "@mantine/core";
-import { BsFilter } from "./IconsIndex";
+import { BsFilter } from "../icons";
 
 function DateFilterLayout (): JSX.Element {
   return (

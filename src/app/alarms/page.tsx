@@ -1,9 +1,9 @@
 import { Flex, Stack } from "@mantine/core";
-import InsideContainer from "@/components/InsideContainer";
+import InsideContainer from "@/components/container/InsideContainer";
 import { CountIndicator } from "@/app/data-base/CountIndicator";
-import { HiOutlineExclamationCircle } from "@/components/IconsIndex";
-import { AutoCompleteInput } from "@/components/AutoCompleteInput";
-import { GeneralFilterLayout } from "@/components/GeneralFilterLayout";
+import { HiOutlineExclamationCircle } from "@/components/icons";
+import { AutoCompleteInput } from "@/components/inputs/AutoCompleteInput";
+import { GeneralFilterLayout } from "@/components/layout/GeneralFilterLayout";
 import { BtnFilter } from "@/components/buttons/BtnFilter";
 import BtnAdd from "@/components/buttons/BtnAdd";
 import AlarmDescription from "./AlarmDescription";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AiOutlinePaperClip } from "@/components/IconsIndex";
+import { AiOutlinePaperClip } from "@/components/icons";
 import {
   Avatar,
   Center,

@@ -1,8 +1,8 @@
-import ColorSelectInput from "@/components/ColorSelectInput";
-import { MdOutlineInsertEmoticon, MdTitle } from "@/components/IconsIndex";
+import ColorSelectInput from "@/components/inputs/ColorSelectInput";
+import { MdOutlineInsertEmoticon, MdTitle } from "@/components/icons";
 import TextEditor from "@/components/TextEditor";
-import { TitleLayout } from "@/components/TitleLayout";
-import VerticalInputLayout from "@/components/VerticalInputLayout";
+import { TitleLayout } from "@/components/layout/TitleLayout";
+import VerticalInputLayout from "@/components/inputs/VerticalInputLayout";
 import { ScrollArea, Stack } from "@mantine/core";
 
 export default function CreateFolderLayout({

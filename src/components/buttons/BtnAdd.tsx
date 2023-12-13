@@ -11,7 +11,7 @@ import {
   BiBellPlus,
   LuGoal,
   HiOutlineFolderAdd,
-} from "../IconsIndex";
+} from "../icons";
 import BtnActions from "./BtnActions";
 import { BtnAddProps, iconList } from "@/interface/interface";
 

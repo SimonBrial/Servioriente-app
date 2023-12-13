@@ -6,14 +6,14 @@ import {
   Stack,
   Flex,
 } from "@mantine/core";
-import { TitleLayout } from "./TitleLayout";
+import { TitleLayout } from "./layout/TitleLayout";
 import {
   HiDevicePhoneMobile,
   MdOutlinePlace,
   HiOutlineUser,
   AiOutlineCar,
   HiLink,
-} from "./IconsIndex";
+} from "./icons";
 
 export default function ClientRegister (): JSX.Element {
   return (

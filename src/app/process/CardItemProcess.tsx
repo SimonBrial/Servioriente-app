@@ -1,4 +1,3 @@
-// import { HiOutlineDotsVertical } from "@/components/IconsIndex";
 import {
   Group,
   Text,
@@ -6,8 +5,6 @@ import {
   Divider,
   Avatar,
   Stack,
-  /* UnstyledButton,
-  Center, */
 } from "@mantine/core";
 import { CardProcessItemProps } from "@/interface/interface";
 

@@ -1,14 +1,14 @@
-import { MdOutlineInsertEmoticon, MdTitle } from "@/components/IconsIndex";
-import { TitleLayout } from "@/components/TitleLayout";
-import VerticalInputLayout from "@/components/VerticalInputLayout";
+import { MdOutlineInsertEmoticon, MdTitle } from "@/components/icons";
+import { TitleLayout } from "@/components/layout/TitleLayout";
+import VerticalInputLayout from "@/components/inputs/VerticalInputLayout";
 import { Flex, Stack, Title, Text, ScrollArea } from "@mantine/core";
 import PrivateInput from "./PrivateInput";
 import AutomatedInput from "./AutomatedInput";
 import WarningInfo from "@/components/WarningInfo";
 import TimeSelect from "./TimeSelect";
-import SelectInput from "@/components/SelectInput";
+import SelectInput from "@/components/inputs/SelectInput";
 import TextEditor from "@/components/TextEditor";
-import { CalendarInput } from "@/components/CalendarInput";
+import { CalendarInput } from "@/components/inputs/CalendarInput";
 
 export default function CreateAlarmLayout({
   title,
@@ -23,10 +23,10 @@ export default function CreateAlarmLayout({
           root: { padding: "0 0.2rem" },
         }}
       >
-        <TitleLayout title={title} color="" icon="" onText={ false } />
+        <TitleLayout title={title} color="" icon="" onText={false} />
         <VerticalInputLayout label="Titulo" icon={<MdTitle />} />
         <VerticalInputLayout label="Icono" icon={<MdOutlineInsertEmoticon />} />
-        <CalendarInput />
+        <CalendarInput title="Title" withTitle />
         <Flex justify={"space-between"} align={"center"}>
           <Title order={4}>Fecha de Creacion</Title>
           <Flex gap={4}>

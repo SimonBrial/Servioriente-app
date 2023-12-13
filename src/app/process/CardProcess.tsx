@@ -1,42 +1,26 @@
-"use client";
-
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
-import { HiOutlineDotsVertical } from "@/components/IconsIndex";
+import { HiOutlineDotsVertical } from "@/components/icons";
+// import { Task } from "./types";
 import {
   UnstyledButton,
-  /* ScrollArea,
-  Collapse, */
   Divider,
   Avatar,
+  Group,
   Stack,
   Title,
-  // Badge,
-  Group,
-  Text,
   Flex,
+  Text,
   Box,
 } from "@mantine/core";
-// import CardItemProcess from "./CardItemProcess";
-import { CardProcessItemProps, CardProps } from "@/interface/interface";
-import { useSortable } from "@dnd-kit/sortable";
-import { CSS } from "@dnd-kit/utilities";
-import { underScoreColor } from "@/utils/underScoreColor";
+import { useMediaQuery } from "@mantine/hooks";
+import { CardProcessProps } from "@/interface/interface";
+import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 
-const itemCardFake: CardProcessItemProps[] = [
-  { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
-  { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
-  { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
-  { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
-  { vehicle: "spark", date: "06/11/2023", direction: "Carabobo", tag: 5 },
-];
+interface TaskItemProps {
+  card: CardProcessProps;
+}
 
-export default function CardProcess({
-  cardItem,
-  colorCard,
-}: CardProps): JSX.Element {
-  const [opened, { toggle }] = useDisclosure(false);
+export const CardProcess = ({ card }: TaskItemProps): JSX.Element => {
   const matches = useMediaQuery("(max-width: 1280px)");
-
   /*  let data: JSX.Element | null;
   const cardContainerView = (
     arr: CardProcessItemProps[],
@@ -110,174 +94,24 @@ export default function CardProcess({
     }
     return data;
   }; */
-
-  if (opened) {
-    console.log("abriendo");
-  }
-
-  const colorSelected: string = underScoreColor(colorCard);
-
-  const {
-    setNodeRef,
-    attributes,
-    listeners,
-    transform,
-    transition,
-    isDragging,
-  } = useSortable({
-    id: cardItem.cardId,
-    data: { type: "CardProps", cardItem },
-  });
-
-  /*  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-    border: `1px solid #696969`,
-    backgroundColor: "white",
-    borderRadius: "6px",
-    position: "relative",
-    cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
-    margin: "0.2rem 0",
-    opacity: isDragging ? "1" : "1",
-    zIndex: isDragging ? "10" : "1",
-    boxShadow: isDragging ? "0px 11px 14px -4px rgba(74,74,74,0.81)" : "",
-  }; */
-
-  /* if (isDragging) {
-    return (
-      <Box
-        ref={setNodeRef}
-        {...attributes}
-        style={{
-          transform: CSS.Transform.toString(transform),
-          transition,
-          border: `1px solid #696969`,
-          backgroundColor: "white",
-          borderRadius: "6px",
-          position: "relative",
-          cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
-          margin: "0.2rem 0",
-          opacity: isDragging ? "1" : "1",
-          zIndex: isDragging ? "10" : "1",
-          boxShadow: isDragging ? "0px 11px 14px -4px rgba(74,74,74,0.81)" : "",
-        }}
-        mx="auto"
-      >
-        <Group
-          align={"center"}
-          // justify={"space-between"}
-
-          styles={(theme) => ({
-            root: {
-              width: "100%",
-            },
-          })}
-          py={5}
-          pl={22}
-          pr={10}
-        >
-          <Divider
-            {...listeners}
-            orientation="vertical"
-            size="8px"
-            color={colorSelected}
-            h={itemCardFake.length > 0 && opened ? "94%" : matches ? 50 : 64}
-            style={{
-              height: `${opened ? " 91.5%" : "58px"}`,
-              transition: "height 0.3s ease-in-out",
-              borderRadius: "15px",
-              marginTop: "0.4rem",
-              position: "absolute",
-              left: "8px",
-              top: "2px",
-              cursor: "move",
-            }}
-          />
-          <Flex
-            onClick={toggle}
-            align={"center"}
-            justify={"center"}
-            gap={matches ? 3 : 8}
-            style={{
-              cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
-            }}
-          >
-            <Avatar
-              component="button"
-              src={null}
-              alt="no image here"
-              color="indigo"
-              size={matches ? "md" : "lg"}
-              style={{
-                cursor: "pointer",
-              }}
-            />
-            <Stack align="start" gap={0}>
-              <Title order={matches ? 5 : 4}>
-                {cardItem.clientName} {cardItem.cardId}
-              </Title>
-              <Flex align={"center"} gap={12}>
-                <Stack gap={0}>
-                  <Text
-                    size={matches ? "sm" : "md"}
-                    styles={(theme) => ({
-                      root: {
-                        color: `${theme.colors.principalTheme[6]}`,
-                        marginBottom: "-0.3rem",
-                      },
-                    })}
-                  >
-                    {cardItem.vehicle}
-                  </Text>
-                  <Text size={matches ? "sm" : "md"}>
-                    Tarifa: {cardItem.tag}$
-                  </Text>
-                </Stack>
-                {/* {itemCardFake.length > 0 ? (
-                <Badge color="blue" radius={"sm"}>
-                  {itemCardFake.length}
-                </Badge>
-              ) : (
-                <></>
-              )}
-              </Flex>
-            </Stack>
-          </Flex>
-          <Stack justify="space-between" align="end">
-            <UnstyledButton>
-              <HiOutlineDotsVertical />
-            </UnstyledButton>
-            <Text size={matches ? "xs" : "sm"}>{cardItem.date}</Text>
-          </Stack>
-        </Group>
-        {cardContainerView(itemCardFake)}
-      </Box>
-    );
-  } */
-
   return (
     <Box
-      ref={setNodeRef}
-      {...attributes}
       style={{
-        transform: CSS.Transform.toString(transform),
-        transition,
+        padding: "0rem 0rem",
+        textAlign: "center",
+        width: matches ? "15rem" : "18.5rem",
+        cursor: "pointer",
         border: `1px solid #696969`,
         backgroundColor: "white",
         borderRadius: "6px",
         position: "relative",
-        cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
         margin: "0.2rem 0",
-        opacity: isDragging ? "1" : "1",
-        zIndex: isDragging ? "10" : "1",
-        boxShadow: isDragging ? "0px 11px 14px -4px rgba(74,74,74,0.81)" : "",
       }}
       mx="auto"
     >
       <Group
         align={"center"}
-        // justify={"space-between"}
-
+        justify={"space-between"}
         styles={(theme) => ({
           root: {
             width: "100%",
@@ -288,14 +122,12 @@ export default function CardProcess({
         pr={10}
       >
         <Divider
-          {...listeners}
           orientation="vertical"
-          size="8px"
-          color={colorSelected}
-          h={itemCardFake.length > 0 && opened ? "94%" : matches ? 50 : 64}
+          size="5px"
+          color={"red"}
+          h={matches ? 50 : 64}
           style={{
-            height: `${opened ? " 91.5%" : "58px"}`,
-            transition: "height 0.3s ease-in-out",
+            height: "58px",
             borderRadius: "15px",
             marginTop: "0.4rem",
             position: "absolute",
@@ -304,15 +136,7 @@ export default function CardProcess({
             cursor: "move",
           }}
         />
-        <Flex
-          onClick={toggle}
-          align={"center"}
-          justify={"center"}
-          gap={matches ? 3 : 8}
-          style={{
-            cursor: `${itemCardFake.length > 0 ? "pointer" : "default"}`,
-          }}
-        >
+        <Flex align={"center"} justify={"center"} gap={matches ? 3 : 8}>
           <Avatar
             component="button"
             src={null}
@@ -324,47 +148,31 @@ export default function CardProcess({
             }}
           />
           <Stack align="start" gap={0}>
-            <Title order={matches ? 5 : 4}>
-              {cardItem.clientName} {cardItem.cardId}
-            </Title>
-            <Flex align={"center"} gap={12}>
-              <Stack gap={0}>
-                <Text
-                  size={matches ? "sm" : "md"}
-                  styles={(theme) => ({
-                    root: {
-                      color: `${theme.colors.principalTheme[6]}`,
-                      marginBottom: "-0.3rem",
-                    },
-                  })}
-                >
-                  {cardItem.vehicle}
-                </Text>
-                <Text size={matches ? "sm" : "md"}>
-                  Tarifa: {cardItem.tag}$
-                </Text>
-              </Stack>
-              {/* {itemCardFake.length > 0 ? (
-                <Badge color="blue" radius={"sm"}>
-                  {itemCardFake.length}
-                </Badge>
-              ) : (
-                <></>
-              )} */}
-            </Flex>
+            <Title order={matches ? 5 : 4}>{card.clientName}</Title>
+            <Stack gap={0}>
+              <Text
+                size={matches ? "sm" : "md"}
+                styles={(theme) => ({
+                  root: {
+                    color: `${theme.colors.principalTheme[6]}`,
+                    marginBottom: "-0.3rem",
+                    textAlign: "start",
+                  },
+                })}
+              >
+                {capitalizeFirstLetter(card.vehicle)}
+              </Text>
+              <Text size={matches ? "sm" : "md"}>Tarifa: {card.tag}$</Text>
+            </Stack>
           </Stack>
         </Flex>
         <Stack justify="space-between" align="end">
           <UnstyledButton>
             <HiOutlineDotsVertical />
           </UnstyledButton>
-          <Text size={matches ? "xs" : "sm"}>{cardItem.date}</Text>
+          <Text size={matches ? "xs" : "sm"}>{card.date}</Text>
         </Stack>
       </Group>
-      {/* {cardContainerView(itemCardFake)} */}
     </Box>
   );
-}
-
-// https://codesandbox.io/p/sandbox/dnd-kit-sortable-example-yhwz3f?file=%2Fsrc%2FSortableItem.jsx%3A12%2C25-12%2C33
-// ----****-------> https://codesandbox.io/p/sandbox/react-drag-drop-todo-rwn8d3?file=%2Fsrc%2Fcomponents%2FBoardSection.tsx
+};

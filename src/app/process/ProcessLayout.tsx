@@ -18,10 +18,13 @@ import {
   defaultDropAnimation,
 } from "@dnd-kit/core";
 import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
-import { INITIAL_CARDS } from "./data";
-import { BoardSections as BoardSectionsType } from "./types";
-import { getCardById } from "./utils/tasks";
-import { findBoardSectionContainer, initializeColumns } from "./utils/board";
+import { INITIAL_CARDS } from "../../data";
+import { ColumnSection as BoardSectionsType } from "../../interface/interface";
+import { getCardById } from "../../utils/tasks";
+import {
+  findBoardSectionContainer,
+  initializeColumns,
+} from "../../utils/board";
 import { ProcessColumnLayout } from "./ProcessColumnLayout";
 import { CardProcess } from "./CardProcess";
 import { Grid } from "@mantine/core";

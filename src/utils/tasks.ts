@@ -1,8 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { Status } from "../types";
+import { processTitle } from "../types/types";
 import { CardProcessProps } from "@/interface/interface";
 
-export const getCardsByStatus = (cards: CardProcessProps[], status: Status) => {
+export const getCardsByStatus = (
+  cards: CardProcessProps[],
+  status: processTitle,
+) => {
   return cards.filter((card) => card.columnId === status);
 };
 
