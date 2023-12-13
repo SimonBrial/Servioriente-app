@@ -10,8 +10,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { HiOutlinePencil, HiOutlineSave } from "../icons";
 import btnClass from "../../styles/BtnStyles.module.css";
 import BtnActions from "./BtnActions";
-
-type EditButtonStyles = "normal" | "special" | "unstyled";
+import { EditButtonStyles } from "@/types/types";
 
 export default function BtnEdit({
   children,

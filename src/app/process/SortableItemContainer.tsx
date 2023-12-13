@@ -1,11 +1,6 @@
-import { ReactNode } from "react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-
-interface SortableItemProps {
-  children: ReactNode;
-  id: string;
-}
+import { SortableItemProps } from "@/interface/interface";
 
 export const SortableItemContainer = ({
   children,

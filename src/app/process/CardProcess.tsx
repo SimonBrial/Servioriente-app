@@ -1,5 +1,4 @@
 import { HiOutlineDotsVertical } from "@/components/icons";
-// import { Task } from "./types";
 import {
   UnstyledButton,
   Divider,
@@ -12,15 +11,19 @@ import {
   Box,
 } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import { CardProcessProps } from "@/interface/interface";
+import { TaskItemProps } from "@/interface/interface";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
-
-interface TaskItemProps {
-  card: CardProcessProps;
-}
+import { underScoreColor } from "@/utils/underScoreColor";
+import { useEffect, useState } from "react";
 
 export const CardProcess = ({ card }: TaskItemProps): JSX.Element => {
   const matches = useMediaQuery("(max-width: 1280px)");
+  const [colorDivider, setColorDivider] = useState<string>("red");
+
+  useEffect(() => {
+    setColorDivider(card.columnId);
+  }, [card.columnId]);
+
   /*  let data: JSX.Element | null;
   const cardContainerView = (
     arr: CardProcessItemProps[],
@@ -94,6 +97,8 @@ export const CardProcess = ({ card }: TaskItemProps): JSX.Element => {
     }
     return data;
   }; */
+
+  // console.log(card.columnId);
   return (
     <Box
       style={{
@@ -124,7 +129,7 @@ export const CardProcess = ({ card }: TaskItemProps): JSX.Element => {
         <Divider
           orientation="vertical"
           size="5px"
-          color={"red"}
+          color={underScoreColor(capitalizeFirstLetter(colorDivider))}
           h={matches ? 50 : 64}
           style={{
             height: "58px",

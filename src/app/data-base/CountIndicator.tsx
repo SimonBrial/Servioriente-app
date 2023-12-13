@@ -1,12 +1,7 @@
 "use client";
-import { ReactNode } from "react";
-import { Tooltip, Button } from "@mantine/core";
 
-interface CountIndicatorProps {
-  count: number;
-  iconSection: ReactNode;
-  description: string;
-}
+import { Tooltip, Button } from "@mantine/core";
+import { CountIndicatorProps } from "@/interface/interface";
 
 export function CountIndicator({
   count,

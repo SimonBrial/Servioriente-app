@@ -13,14 +13,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { IoClose, IoWarningOutline } from "./icons";
 import React from "react";
-
-type NotificationType = "Aviso" | "Error" | "Completado" | "Informacion";
-
-interface NotificationIconsProps {
-  title: NotificationType;
-  description: string;
-  children: React.ReactNode;
-}
+import { NotificationIconsProps } from "@/interface/interface";
 
 export default function NotificationInfo({
   title,

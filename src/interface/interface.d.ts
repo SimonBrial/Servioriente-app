@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 import { type ReactNode } from "react";
-import { type tagIcon } from "../types/types";
+import { type tagIcon, NotificationType } from "../types/types";
 
 interface NavIconProps {
   icon: ReactNode;
@@ -89,12 +89,87 @@ interface ColumnSection {
   [name: string]: CardProcessProps[];
 }
 
+interface CountIndicatorProps {
+  count: number;
+  iconSection: ReactNode;
+  description: string;
+}
+
+interface TaskItemProps {
+  card: CardProcessProps;
+}
+
+interface BoardSectionProps {
+  id: string;
+  title: string;
+  tasks: CardProcessProps[];
+}
+
+interface SortableItemProps {
+  children: ReactNode;
+  id: string;
+}
+
+interface NotificationIconsProps {
+  title: NotificationType;
+  description: string;
+  children: React.ReactNode;
+}
+
+interface RegisterInfoProps {
+  keyInput: string;
+  valueInput: string | JSX.Element;
+}
+
+interface TabsSectionesProps {
+  value: string;
+  icon: React.ReactNode;
+  dir: string;
+}
+
+interface SectionsArray {
+  sectionsArray: TabsSectionesProps[];
+}
+
+interface BtnActionProps {
+  title: string;
+  icon: React.ReactNode;
+  close: () => void;
+}
+interface AutoCompleteData {
+  label: string | string[];
+}
+
+interface HorizontalLayoutProps {
+  asterisk: boolean;
+  title: string;
+  inputSize: string;
+  icon: React.ReactNode;
+}
+
+interface verticalInput {
+  label: string;
+  icon?: React.ReactNode;
+}
+
 export type {
+  NotificationIconsProps,
+  HorizontalLayoutProps,
   CardProcessItemProps,
+  CountIndicatorProps,
+  TabsSectionesProps,
+  RegisterInfoProps,
+  BoardSectionProps,
+  SortableItemProps,
+  AutoCompleteData,
   TitleLayoutProps,
   CardProcessProps,
+  BtnActionProps,
   AlarmCardProps,
+  SectionsArray,
   ColumnSection,
+  TaskItemProps,
+  verticalInput,
   NavIconProps,
   sidebarItems,
   BtnAddProps,

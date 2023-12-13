@@ -3,10 +3,7 @@
 import { Checkbox, Container, Flex, Title } from "@mantine/core";
 import { BadgeClose } from "../BadgeClose";
 import { BadgeFilter } from "../BadgeFilter";
-
-interface AutoCompleteData {
-  label: string | string[];
-}
+import { AutoCompleteData } from "@/interface/interface";
 
 export default function AutoCompleteFilterContainer ({
   label,

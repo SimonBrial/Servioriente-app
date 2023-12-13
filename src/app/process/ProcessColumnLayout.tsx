@@ -1,32 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable array-callback-return */
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDroppable } from "@dnd-kit/core";
 import {
-  SortableContext,
   verticalListSortingStrategy,
+  SortableContext,
 } from "@dnd-kit/sortable";
 import { CardProcess } from "./CardProcess";
 import { SortableItemContainer } from "./SortableItemContainer";
 import {
-  Badge,
-  Divider,
-  Flex,
-  Grid,
   ScrollArea,
+  Divider,
+  Badge,
   Stack,
   Title,
+  Flex,
+  Grid,
 } from "@mantine/core";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { underScoreColor } from "../../utils/underScoreColor";
-import { CardProcessProps } from "@/interface/interface";
+import { BoardSectionProps, CardProcessProps } from "@/interface/interface";
 import { useMediaQuery } from "@mantine/hooks";
-
-interface BoardSectionProps {
-  id: string;
-  title: string;
-  tasks: CardProcessProps[];
-}
 
 // Contiene los elementos que seran organizados, es decir, es el contenedor
 export const ProcessColumnLayout = ({
@@ -35,12 +31,33 @@ export const ProcessColumnLayout = ({
   tasks,
 }: BoardSectionProps): JSX.Element => {
   const matches = useMediaQuery("(max-width: 1280px)");
+  const [cardsArray, setCardsArray] = useState<CardProcessProps[]>(tasks);
+
+  // 1. Detectar cual elemento se movio de sitio.
+  // 2. Detectar cuales arrays modificaron sus tamaños.
+  // 3. Cambiar el color del divider de la card movida.
+  // 4. Modificar la propiedad del column id del elemento que se movio.
+
+  function changeProperty(
+    id: string,
+    arr: CardProcessProps[],
+  ): CardProcessProps[] {
+    arr.forEach((arrCards) => {
+      if (arrCards.columnId !== id) {
+        arrCards.columnId = id;
+      }
+    });
+    return arr;
+  }
+  useEffect(() => {
+    setCardsArray(changeProperty(id, tasks));
+  }, [tasks.length]);
+  // console.log("CardsArry: ", cardsArray);
+  // console.log("Tasks: ", tasks);
 
   const { setNodeRef } = useDroppable({
     id,
   });
-
-  console.log(matches);
 
   return (
     <Grid.Col
@@ -96,13 +113,17 @@ export const ProcessColumnLayout = ({
               offsetScrollbars
               scrollHideDelay={100}
             >
-              {tasks.map((task) => (
-                <div key={task.id} style={{ marginBottom: "0.2rem" }}>
-                  <SortableItemContainer id={task.id}>
-                    <CardProcess card={task} />
-                  </SortableItemContainer>
-                </div>
-              ))}
+              {cardsArray.map(
+                (
+                  card, // Si se cambia ese array por el de tasks, el ordenamiento queda en la posicion que se deje
+                ) => (
+                  <div key={card.id} style={{ marginBottom: "0.2rem" }}>
+                    <SortableItemContainer id={card.id}>
+                      <CardProcess card={card} />
+                    </SortableItemContainer>
+                  </div>
+                ),
+              )}
             </ScrollArea>
           </div>
         </Stack>

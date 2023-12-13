@@ -9,4 +9,8 @@ type tagIcon =
 
 type processTitle = "espera" | "generacion" | "pagado" | "entregado";
 
-export type { tagIcon, processTitle };
+type NotificationType = "Aviso" | "Error" | "Completado" | "Informacion";
+
+type EditButtonStyles = "normal" | "special" | "unstyled";
+
+export type { tagIcon, processTitle, NotificationType, EditButtonStyles };

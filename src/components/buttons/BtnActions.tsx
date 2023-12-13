@@ -1,14 +1,14 @@
 "use client";
+
 import { Button, Flex } from "@mantine/core";
 import { IoClose } from "../icons";
+import { BtnActionProps } from "@/interface/interface";
 
-interface BtnActionProps {
-  title: string;
-  icon: React.ReactNode;
-  close: () => void;
-}
-
-export default function BtnActions ({ title, icon, close }: BtnActionProps): JSX.Element {
+export default function BtnActions({
+  title,
+  icon,
+  close,
+}: BtnActionProps): JSX.Element {
   return (
     <Flex align={"center"} gap={"sm"}>
       <Button

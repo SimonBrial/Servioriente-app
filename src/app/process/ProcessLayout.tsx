@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 
 "use client";
@@ -19,7 +20,9 @@ import {
 } from "@dnd-kit/core";
 import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
 import { INITIAL_CARDS } from "../../data";
-import { ColumnSection as BoardSectionsType } from "../../interface/interface";
+import {
+  ColumnSection as BoardSectionsType,
+} from "../../interface/interface";
 import { getCardById } from "../../utils/tasks";
 import {
   findBoardSectionContainer,
@@ -35,7 +38,7 @@ export const ProcessLayout = (): JSX.Element => {
   const [boardSections, setBoardSections] =
     useState<BoardSectionsType>(initialBoardSections);
 
-  const [activeTaskId, setActiveTaskId] = useState<null | string>(null);
+  const [activeCardId, setActiveCardId] = useState<null | string>(null);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -45,7 +48,7 @@ export const ProcessLayout = (): JSX.Element => {
   );
 
   const handleDragStart = ({ active }: DragStartEvent) => {
-    setActiveTaskId(active.id as string);
+    setActiveCardId(active.id as string);
   };
 
   const handleDragOver = ({ active, over }: DragOverEvent) => {
@@ -132,14 +135,14 @@ export const ProcessLayout = (): JSX.Element => {
       }));
     }
 
-    setActiveTaskId(null);
+    setActiveCardId(null);
   };
 
   const dropAnimation: DropAnimation = {
     ...defaultDropAnimation,
   };
 
-  const task = activeTaskId ? getCardById(tasks, activeTaskId) : null;
+  const task = activeCardId ? getCardById(tasks, activeCardId) : null;
 
   return (
     <DndContext
@@ -154,7 +157,6 @@ export const ProcessLayout = (): JSX.Element => {
         style={{
           borderRadius: "10px",
           backgroundColor: "#fafafa",
-          // height: "100%",
         }}
       >
         {Object.keys(boardSections).map((boardSectionKey) => {

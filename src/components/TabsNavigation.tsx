@@ -3,17 +3,9 @@
 import Link from "next/link";
 import { Tabs } from "@mantine/core";
 import React from "react";
+import { SectionsArray, TabsSectionesProps } from "@/interface/interface";
 
-interface TabsSectionesProps {
-  value: string;
-  icon: React.ReactNode;
-  dir: string;
-}
-interface SectionsArray {
-  sectionsArray: TabsSectionesProps[];
-}
-
-export default function TabsNavigation ({
+export default function TabsNavigation({
   sectionsArray,
 }: SectionsArray): JSX.Element {
   const sections = (): JSX.Element => {

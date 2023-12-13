@@ -1,11 +1,7 @@
+import { RegisterInfoProps } from "@/interface/interface";
 import { Flex, Divider, Title } from "@mantine/core";
 
-interface RegisterInfoProps {
-  keyInput: string;
-  valueInput: string | JSX.Element;
-}
-
-export default function RegisterInfo ({
+export default function RegisterInfo({
   keyInput,
   valueInput,
 }: RegisterInfoProps): JSX.Element {

@@ -1,17 +1,11 @@
+import { HorizontalLayoutProps } from "@/interface/interface";
 import { Flex, TextInput, Title } from "@mantine/core";
 
-interface HorizontalLayoutProps {
-  asterisk: boolean;
-  title: string;
-  inputSize: string;
-  icon: React.ReactNode;
-}
-
 export default function HorizontalInputLayout({
+  inputSize,
   asterisk,
   title,
   icon,
-  inputSize
 }: HorizontalLayoutProps): JSX.Element {
   return (
     <Flex align={"center"} justify={"space-between"} w={"100%"}>

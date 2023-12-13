@@ -1,10 +1,6 @@
+import { verticalInput } from "@/interface/interface";
 import { Flex, TextInput, Title } from "@mantine/core";
 import React from "react";
-
-interface verticalInput {
-  label: string;
-  icon?: React.ReactNode;
-}
 
 export default function VerticalInputLayout({
   label,
