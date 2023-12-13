@@ -8,10 +8,19 @@ import {
 } from "@dnd-kit/sortable";
 import { CardProcess } from "./CardProcess";
 import { SortableItemContainer } from "./SortableItemContainer";
-import { Badge, Divider, Flex, Grid, Stack, Title } from "@mantine/core";
+import {
+  Badge,
+  Divider,
+  Flex,
+  Grid,
+  ScrollArea,
+  Stack,
+  Title,
+} from "@mantine/core";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { underScoreColor } from "../../utils/underScoreColor";
 import { CardProcessProps } from "@/interface/interface";
+import { useMediaQuery } from "@mantine/hooks";
 
 interface BoardSectionProps {
   id: string;
@@ -25,9 +34,13 @@ export const ProcessColumnLayout = ({
   title,
   tasks,
 }: BoardSectionProps): JSX.Element => {
+  const matches = useMediaQuery("(max-width: 1280px)");
+
   const { setNodeRef } = useDroppable({
     id,
   });
+
+  console.log(matches);
 
   return (
     <Grid.Col
@@ -72,19 +85,25 @@ export const ProcessColumnLayout = ({
           align="center"
           style={{
             marginTop: "0.5rem",
-            height: "43rem",
+            height: matches ? "78.8vh" : "74.1vh",
             width: "100%",
-            // backgroundColor: "red",
           }}
         >
           <div ref={setNodeRef} style={{ margin: "0.5rem 3rem" }}>
-            {tasks.map((task) => (
-              <div key={task.id} style={{ marginBottom: "0.2rem" }}>
-                <SortableItemContainer id={task.id}>
-                  <CardProcess card={task} />
-                </SortableItemContainer>
-              </div>
-            ))}
+            <ScrollArea
+              h={matches ? "78.8vh" : "74.1vh"}
+              scrollbarSize={6}
+              offsetScrollbars
+              scrollHideDelay={100}
+            >
+              {tasks.map((task) => (
+                <div key={task.id} style={{ marginBottom: "0.2rem" }}>
+                  <SortableItemContainer id={task.id}>
+                    <CardProcess card={task} />
+                  </SortableItemContainer>
+                </div>
+              ))}
+            </ScrollArea>
           </div>
         </Stack>
       </SortableContext>

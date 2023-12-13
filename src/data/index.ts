@@ -82,4 +82,28 @@ export const INITIAL_CARDS: CardProcessProps[] = [
     tag: 8,
     clientName: "Simon 8",
   },
+  {
+    columnId: "entregado",
+    id: crypto.randomUUID(),
+    vehicle: "spark",
+    date: "06/11/2023",
+    tag: 8,
+    clientName: "Simon 9",
+  },
+  {
+    columnId: "entregado",
+    id: crypto.randomUUID(),
+    vehicle: "spark",
+    date: "06/11/2023",
+    tag: 8,
+    clientName: "Simon 9",
+  },
+  {
+    columnId: "entregado",
+    id: crypto.randomUUID(),
+    vehicle: "spark",
+    date: "06/11/2023",
+    tag: 8,
+    clientName: "Simon 9",
+  },
 ];

@@ -148,11 +148,13 @@ export const ProcessLayout = (): JSX.Element => {
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
+      autoScroll={{ layoutShiftCompensation: false }}
     >
       <Grid
         style={{
           borderRadius: "10px",
           backgroundColor: "#fafafa",
+          // height: "100%",
         }}
       >
         {Object.keys(boardSections).map((boardSectionKey) => {
