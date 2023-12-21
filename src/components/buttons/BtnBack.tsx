@@ -3,7 +3,13 @@
 import { Button } from "@mantine/core";
 import { IoArrowBackOutline } from "../icons";
 
-export default function BtnBack({ close }: { close: () => void }): JSX.Element {
+export default function BtnBack({
+  close,
+  label = "Volver",
+}: {
+  close: () => void;
+  label: string;
+}): JSX.Element {
   return (
     <Button
       onClick={close}
@@ -15,7 +21,7 @@ export default function BtnBack({ close }: { close: () => void }): JSX.Element {
         section: { fontSize: "1.2rem" },
       })}
     >
-      Volver
+      {label}
     </Button>
   );
 }

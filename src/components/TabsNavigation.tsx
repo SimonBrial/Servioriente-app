@@ -7,6 +7,7 @@ import { SectionsArray, TabsSectionesProps } from "@/interface/interface";
 
 export default function TabsNavigation({
   sectionsArray,
+  orientation,
 }: SectionsArray): JSX.Element {
   const sections = (): JSX.Element => {
     return (
@@ -24,6 +25,7 @@ export default function TabsNavigation({
 
   return (
     <Tabs
+      orientation={orientation ? "horizontal" : "vertical"}
       color="gray"
       variant="outline"
       defaultValue="Recibidos"

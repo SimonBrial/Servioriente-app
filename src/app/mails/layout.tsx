@@ -39,7 +39,7 @@ export default function MailLayout({
 
   return (
     <ListLayout>
-      <TabsNavigation sectionsArray={mailSections} />
+      <TabsNavigation sectionsArray={mailSections} orientation />
       <AutoCompleteFilterContainer
         label={["correo@correo.com", "correo2@correo.com"]}
       />

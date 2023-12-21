@@ -2,6 +2,7 @@ import {
   HiOutlineExclamationCircle,
   HiOutlineDotsVertical,
   HiOutlineDocumentText,
+  HiOutlineDocumentAdd,
   HiOutlineLockClosed,
   HiOutlineFolderAdd,
   HiOutlineLockOpen,
@@ -23,13 +24,16 @@ import {
   HiOutlineCog,
   HiOutlineEye,
   HiHashtag,
+  HiHeart,
+  HiMenu,
   HiLink,
 } from "react-icons/hi";
 import {
   HiOutlineChatBubbleLeftRight,
   HiOutlineUserCircle,
-  HiOutlineUser,
   HiDevicePhoneMobile,
+  HiOutlineUserGroup,
+  HiOutlineUser,
   HiOutlineStar,
 } from "react-icons/hi2";
 import {
@@ -46,10 +50,11 @@ import {
 } from "react-icons/cg";
 import { TbTemplate, TbMailPlus } from "react-icons/tb";
 import {
+  MdOutlineInsertEmoticon,
+  MdOutlineMarkChatUnread,
   MdOutlineEventNote,
   MdOutlinePlace,
   MdTitle,
-  MdOutlineInsertEmoticon,
 } from "react-icons/md";
 import { BsFilter, BsTelephone } from "react-icons/bs";
 import {
@@ -64,10 +69,12 @@ import { PiRobot, PiFolderSimpleDashed } from "react-icons/pi";
 export {
   HiOutlineChatBubbleLeftRight,
   HiOutlineExclamationCircle,
+  MdOutlineMarkChatUnread,
   MdOutlineInsertEmoticon,
   HiOutlineDotsVertical,
   HiOutlineDocumentText,
   CgCornerDoubleUpLeft,
+  HiOutlineDocumentAdd,
   PiFolderSimpleDashed,
   IoMailUnreadOutline,
   HiOutlineUserCircle,
@@ -77,6 +84,7 @@ export {
   IoArrowBackOutline,
   HiOutlineFolderAdd,
   AiOutlinePaperClip,
+  HiOutlineUserGroup,
   HiOutlineLockOpen,
   HiOutlineDatabase,
   HiOutlineTemplate,
@@ -114,6 +122,8 @@ export {
   PiRobot,
   MdTitle,
   IoClose,
+  HiHeart,
   LuGoal,
   HiLink,
+  HiMenu,
 };

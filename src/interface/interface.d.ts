@@ -129,6 +129,7 @@ interface TabsSectionesProps {
 
 interface SectionsArray {
   sectionsArray: TabsSectionesProps[];
+  orientation: boolean;
 }
 
 interface BtnActionProps {

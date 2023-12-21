@@ -8,6 +8,6 @@ export function underScoreColor(colorEnum: string): string {
   } else if (colorEnum === "Entregado") {
     return "#004EE5";
   } else {
-    return "red";
+    return "#004EE5";
   }
 }
