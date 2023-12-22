@@ -1,5 +1,5 @@
-import { AsideSearch } from "../AsideSearch";
 import { BtnBackSection } from "@/components/buttons/BtnBackSection";
+import { NotReadLayout } from "./NotReadLayout";
 
 const page = (): JSX.Element => {
   return (
@@ -11,7 +11,7 @@ const page = (): JSX.Element => {
           withStyles={false}
         />
       </div>
-      <AsideSearch />
+      <NotReadLayout />
     </div>
   );
 };
