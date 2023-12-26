@@ -2,7 +2,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Checkbox, Flex, Title } from "@mantine/core";
-import { PiRobot } from "@/components/icons";
+import { PiRobot } from "@/icons";
 
 export default function AutomatedInput({
   automatedStatus,

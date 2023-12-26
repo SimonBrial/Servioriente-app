@@ -1,6 +1,6 @@
 import { CalendarInput } from "@/components/inputs/CalendarInput";
 import HorizontalInputLayout from "@/components/inputs/HorizontalInputLayout";
-import { HiOutlineUser } from "@/components/icons";
+import { HiOutlineUser } from "@/icons";
 import PhoneInputLayout from "@/components/inputs/PhoneInputLayout";
 import { SelectSocialRed } from "@/components/SelectSocialRed";
 import { TitleLayout } from "@/components/layout/TitleLayout";

@@ -5,5 +5,5 @@ export const AsideContainer = ({
 }: {
   children: React.ReactNode;
 }): JSX.Element => {
-  return <ContainerInside width="30%">{children}</ContainerInside>;
+  return <ContainerInside width="35%">{children}</ContainerInside>;
 };

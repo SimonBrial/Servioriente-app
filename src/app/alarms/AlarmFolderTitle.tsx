@@ -1,6 +1,6 @@
 "use client";
 
-import { HiOutlinePencil } from "@/components/icons";
+import { HiOutlinePencil } from "@/icons";
 import {
   Badge,
   Center,

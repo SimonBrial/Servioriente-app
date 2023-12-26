@@ -7,7 +7,7 @@ import {
   HiOutlineSave,
   HiOutlineStar,
   BiMailSend,
-} from "../../components/icons";
+} from "../../icons";
 import AutoCompleteFilterContainer from "@/components/container/AutoCompleteFilterContainer";
 import InsideContainer from "@/components/container/InsideContainer";
 

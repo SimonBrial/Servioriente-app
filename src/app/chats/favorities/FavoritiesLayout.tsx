@@ -1,32 +1,46 @@
-"use client";
-
 import { TitleLayout } from "@/components/layout/TitleLayout";
-import { AsideSearch } from "../AsideSearch";
-import InsideContainer from "@/components/container/InsideContainer";
 import {
-  Checkbox,
   Divider,
   Flex,
-  ScrollArea,
   Stack,
+  Tooltip,
   Text,
+  Switch,
+  ScrollArea,
 } from "@mantine/core";
+import React from "react";
+import { AsideSearch } from "../AsideSearch";
+import InsideContainer from "@/components/container/InsideContainer";
 import { UserContactCard } from "../UserContactCard";
 
-export const NotReadLayout = (): JSX.Element => {
+export const FavoritiesLayout = (): JSX.Element => {
   return (
     <Stack gap={3}>
-      <TitleLayout color="blue" icon="" onText={false} title="No Leidos" />
+      <TitleLayout color="" icon="" onText title="Favoritos" />
       <AsideSearch />
-      <Divider style={{ marginBottom: "0.2rem" }} />
-      <Flex
-        justify={"space-between"}
-        align={"center"}
-        style={{ marginBottom: "0.3rem" }}
-      >
-        <Text>Buscar por lista de Favoritos</Text>
-        <Checkbox size="xs" color="#004EE5" />
+      <Divider />
+      <Flex align={"center"} justify={"space-between"}>
+        <Text>Ordenar por: </Text>
+        <Tooltip
+          offset={{ mainAxis: 10, crossAxis: -4 }}
+          label="Ordenar lista de contactos"
+          position="right-start"
+          arrowPosition="side"
+          refProp="rootRef"
+          color="#004EE5"
+          arrowOffset={14}
+          arrowSize={5}
+          withArrow
+        >
+          <Switch
+            size="md"
+            onLabel="Z→A"
+            offLabel="A→Z"
+            color="#004EE5"
+          />
+        </Tooltip>
       </Flex>
+      <Divider style={{ marginBottom: "0.2rem" }} />
       <InsideContainer offset={252}>
         <ScrollArea h={"98%"} maw={"100%"} offsetScrollbars scrollbarSize={2}>
           <Stack gap={5} h={"50%"}>

@@ -13,4 +13,6 @@ type NotificationType = "Aviso" | "Error" | "Completado" | "Informacion";
 
 type EditButtonStyles = "normal" | "special" | "unstyled";
 
-export type { tagIcon, processTitle, NotificationType, EditButtonStyles };
+type CardContainerHeader = "whatsapp" | "instagram" | "facebook";
+
+export type { tagIcon, processTitle, NotificationType, EditButtonStyles, CardContainerHeader };

@@ -1,4 +1,4 @@
-import { HiOutlineDotsVertical } from "@/components/icons";
+import { HiOutlineDotsVertical } from "@/icons";
 import {
   UnstyledButton,
   Divider,

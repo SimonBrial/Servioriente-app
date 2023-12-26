@@ -1,4 +1,4 @@
-import { MdOutlineInsertEmoticon, MdTitle } from "@/components/icons";
+import { MdOutlineInsertEmoticon, MdTitle } from "@/icons";
 import { TitleLayout } from "@/components/layout/TitleLayout";
 import VerticalInputLayout from "@/components/inputs/VerticalInputLayout";
 import { Flex, Stack, Title, Text, ScrollArea } from "@mantine/core";

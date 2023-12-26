@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { ActionIcon, Flex, Title } from "@mantine/core";
 import { TimeInput } from "@mantine/dates";
-import { HiOutlineClock } from "@/components/icons";
+import { HiOutlineClock } from "@/icons";
 
 export default function TimeSelect({ label }: { label: string }): JSX.Element {
   const ref = useRef<HTMLInputElement>(null);

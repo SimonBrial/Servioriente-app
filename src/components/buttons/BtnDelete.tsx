@@ -8,7 +8,7 @@ import {
   Tooltip,
   UnstyledButton,
 } from "@mantine/core";
-import { HiOutlineTrash, HiOutlineCheck } from "../icons";
+import { HiOutlineTrash, HiOutlineCheck } from "../../icons";
 import btnClass from "../../styles/BtnStyles.module.css";
 import { TitleLayout } from "../layout/TitleLayout";
 import RegisterInfo from "../RegisterInfo";

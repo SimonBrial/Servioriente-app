@@ -1,5 +1,5 @@
 import { Flex, Select, TextInput, Title } from "@mantine/core";
-import { BsTelephone } from "../icons";
+import { BsTelephone } from "../../icons";
 
 export default function PhoneInputLayout(): JSX.Element {
   return (

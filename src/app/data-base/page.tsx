@@ -3,7 +3,7 @@ import ListDataBase from "@/app/data-base/ListDataBase";
 import ListLayout from "./layout";
 import { FilterContainer } from "@/components/container/FilterContainer";
 import { CountIndicator } from "@/app/data-base/CountIndicator";
-import { HiOutlineUserCircle } from "@/components/icons";
+import { HiOutlineUserCircle } from "@/icons";
 import { AutoCompleteInput } from "@/components/inputs/AutoCompleteInput";
 import { BtnFilter } from "@/components/buttons/BtnFilter";
 import { GeneralFilterLayout } from "@/components/layout/GeneralFilterLayout";

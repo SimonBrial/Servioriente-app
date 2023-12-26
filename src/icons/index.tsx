@@ -37,10 +37,12 @@ import {
   HiOutlineStar,
 } from "react-icons/hi2";
 import {
-  IoClose,
-  IoArrowBackOutline,
+  IoChevronDownOutline,
   IoMailUnreadOutline,
+  IoArrowBackOutline,
   IoWarningOutline,
+  IoChevronUp,
+  IoClose,
 } from "react-icons/io5";
 import { LuGoal } from "react-icons/lu";
 import {
@@ -76,6 +78,7 @@ export {
   CgCornerDoubleUpLeft,
   HiOutlineDocumentAdd,
   PiFolderSimpleDashed,
+  IoChevronDownOutline,
   IoMailUnreadOutline,
   HiOutlineUserCircle,
   HiDevicePhoneMobile,
@@ -112,6 +115,7 @@ export {
   AiOutlineCar,
   HiOutlineCog,
   HiOutlineEye,
+  IoChevronUp,
   BsTelephone,
   BiBellPlus,
   TbTemplate,

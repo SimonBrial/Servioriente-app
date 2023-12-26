@@ -2,7 +2,7 @@
 import React from "react";
 import { Modal, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { BsFilter } from "../icons";
+import { BsFilter } from "../../icons";
 import btnClass from "../../styles/BtnStyles.module.css";
 
 export function BtnFilter({

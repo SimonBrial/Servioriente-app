@@ -6,7 +6,7 @@ import {
   HiOutlineUserGroup,
   HiHeart,
   HiMenu,
-} from "@/components/icons";
+} from "@/icons";
 import { TabsSectionesProps } from "@/interface/interface";
 import { ActionIcon, Menu } from "@mantine/core";
 import Link from "next/link";

@@ -1,4 +1,4 @@
-import { HiHeart } from "@/components/icons";
+import { HiHeart } from "@/icons";
 import {
   Checkbox,
   Avatar,

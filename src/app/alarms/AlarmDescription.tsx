@@ -15,7 +15,7 @@ import { TitleLayout } from "@/components/layout/TitleLayout";
 import { AlarmProps } from "@/interface/interface";
 import PrivateInput from "./PrivateInput";
 import AutomatedInput from "./AutomatedInput";
-import { IoClose, MdOutlinePlace } from "@/components/icons";
+import { IoClose, MdOutlinePlace } from "@/icons";
 import BtnEdit from "@/components/buttons/BtnEdit";
 import CreateAlarmLayout from "./CreateAlarmLayout";
 

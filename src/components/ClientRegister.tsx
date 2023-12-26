@@ -13,7 +13,7 @@ import {
   HiOutlineUser,
   AiOutlineCar,
   HiLink,
-} from "./icons";
+} from "../icons";
 
 export default function ClientRegister (): JSX.Element {
   return (

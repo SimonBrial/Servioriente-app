@@ -5,18 +5,18 @@
 
 import React, { useState } from "react";
 import {
-  useSensors,
-  useSensor,
-  PointerSensor,
-  KeyboardSensor,
-  DndContext,
-  closestCorners,
-  DragEndEvent,
-  DragStartEvent,
-  DragOverEvent,
-  DragOverlay,
-  DropAnimation,
   defaultDropAnimation,
+  KeyboardSensor,
+  closestCorners,
+  DragStartEvent,
+  PointerSensor,
+  DragOverEvent,
+  DropAnimation,
+  DragEndEvent,
+  DragOverlay,
+  useSensors,
+  DndContext,
+  useSensor,
 } from "@dnd-kit/core";
 import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
 import { INITIAL_CARDS } from "../../data";

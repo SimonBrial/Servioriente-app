@@ -1,7 +1,7 @@
 "use client";
 
 import { Center, Tooltip } from "@mantine/core";
-import { IoWarningOutline } from "./icons";
+import { IoWarningOutline } from "../icons";
 
 export default function WarningInfo({
   description,

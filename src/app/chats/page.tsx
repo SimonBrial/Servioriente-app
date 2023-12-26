@@ -1,10 +1,20 @@
+import { AsideContainer } from "./AsideContainer";
 import { AsideSearch } from "./AsideSearch";
+import { CardsContainer } from "./CardsContainer";
+import { ChatContainer } from "./ChatContainer";
+import { UserChatHeader } from "./chatUserView/UserChatHeader";
 
 function page(): JSX.Element {
   return (
-    <div>
-      <AsideSearch />
-    </div>
+    <>
+      <AsideContainer>
+        <AsideSearch />
+        <CardsContainer />
+      </AsideContainer>
+      <ChatContainer>
+        <UserChatHeader colorUser="instagram" status={true} />
+      </ChatContainer>
+    </>
   );
 }
 

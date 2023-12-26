@@ -1,6 +1,6 @@
 "use client";
 
-import { HiOutlineSearch } from "@/components/icons";
+import { HiOutlineSearch } from "@/icons";
 import { Flex, TextInput, ActionIcon } from "@mantine/core";
 import React from "react";
 import { HamburgerMenu } from "./HamburgerMenu";

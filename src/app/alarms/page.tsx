@@ -1,7 +1,7 @@
 import { Flex, Stack } from "@mantine/core";
 import InsideContainer from "@/components/container/InsideContainer";
 import { CountIndicator } from "@/app/data-base/CountIndicator";
-import { HiOutlineExclamationCircle } from "@/components/icons";
+import { HiOutlineExclamationCircle } from "@/icons";
 import { AutoCompleteInput } from "@/components/inputs/AutoCompleteInput";
 import { GeneralFilterLayout } from "@/components/layout/GeneralFilterLayout";
 import { BtnFilter } from "@/components/buttons/BtnFilter";

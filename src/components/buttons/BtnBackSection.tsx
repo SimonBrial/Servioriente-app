@@ -3,7 +3,7 @@
 import { Button } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
-import { IoArrowBackOutline } from "../icons";
+import { IoArrowBackOutline } from "../../icons";
 
 export const BtnBackSection = ({
   withStyles,

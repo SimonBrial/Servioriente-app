@@ -18,7 +18,7 @@ import {
 import AlarmCard from "./AlarmCard";
 import BtnEdit from "@/components/buttons/BtnEdit";
 import CreateFolderLayout from "./CreateFolderLayout";
-import { PiFolderSimpleDashed } from "@/components/icons";
+import { PiFolderSimpleDashed } from "@/icons";
 
 const arrayTest: AlarmCardProps[] = [
   {

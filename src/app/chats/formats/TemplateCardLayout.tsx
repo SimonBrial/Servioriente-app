@@ -3,7 +3,7 @@
 import {
   HiOutlineDocumentText,
   HiOutlineDotsVertical,
-} from "@/components/icons";
+} from "@/icons";
 import { Box, Center, Flex, Stack, Text, Title } from "@mantine/core";
 import React from "react";
 

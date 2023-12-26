@@ -1,7 +1,7 @@
 "use client";
 
 import { Button, Flex } from "@mantine/core";
-import { IoClose } from "../icons";
+import { IoClose } from "../../icons";
 import { BtnActionProps } from "@/interface/interface";
 
 export default function BtnActions({

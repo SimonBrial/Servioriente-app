@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 import { type ReactNode } from "react";
-import { type tagIcon, NotificationType } from "../types/types";
+import { type tagIcon, NotificationType, CardContainerHeader } from "../types/types";
 
 interface NavIconProps {
   icon: ReactNode;
@@ -153,8 +153,13 @@ interface verticalInput {
   icon?: React.ReactNode;
 }
 
+interface CardChatContainerProps {
+  header: CardContainerHeader;
+}
+
 export type {
   NotificationIconsProps,
+  CardChatContainerProps,
   HorizontalLayoutProps,
   CardProcessItemProps,
   CountIndicatorProps,

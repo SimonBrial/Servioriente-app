@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@mantine/core";
-import { HiOutlineCheck } from "../icons";
+import { HiOutlineCheck } from "../../icons";
 
 export const BtnAcept = (): JSX.Element => {
   return (

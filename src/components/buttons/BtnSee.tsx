@@ -6,7 +6,7 @@ import {
   UnstyledButton,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { HiOutlineEye } from "../icons";
+import { HiOutlineEye } from "../../icons";
 import btnClass from "../../styles/BtnStyles.module.css";
 import { TitleLayout } from "../layout/TitleLayout";
 import RegisterInfo from "../RegisterInfo";

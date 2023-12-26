@@ -1,5 +1,5 @@
 import ColorSelectInput from "@/components/inputs/ColorSelectInput";
-import { MdOutlineInsertEmoticon, MdTitle } from "@/components/icons";
+import { MdOutlineInsertEmoticon, MdTitle } from "@/icons";
 import TextEditor from "@/components/TextEditor";
 import { TitleLayout } from "@/components/layout/TitleLayout";
 import VerticalInputLayout from "@/components/inputs/VerticalInputLayout";

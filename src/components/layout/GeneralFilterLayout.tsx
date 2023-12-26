@@ -2,7 +2,7 @@
 
 import { Checkbox, Divider, Button, Stack, Title, Flex } from "@mantine/core";
 // import { Calendar, DateInput } from "@mantine/dates";
-import { BsFilter } from "../icons";
+import { BsFilter } from "../../icons";
 import { TitleLayout } from "./TitleLayout";
 import { CalendarInput } from "../inputs/CalendarInput";
 
