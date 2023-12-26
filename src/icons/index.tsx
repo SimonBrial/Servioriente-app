@@ -23,6 +23,7 @@ import {
   HiOutlineSave,
   HiOutlineCog,
   HiOutlineEye,
+  HiPaperClip,
   HiHashtag,
   HiHeart,
   HiMenu,
@@ -33,6 +34,7 @@ import {
   HiOutlineUserCircle,
   HiDevicePhoneMobile,
   HiOutlineUserGroup,
+  HiOutlineFaceSmile,
   HiOutlineUser,
   HiOutlineStar,
 } from "react-icons/hi2";
@@ -43,6 +45,7 @@ import {
   IoWarningOutline,
   IoChevronUp,
   IoClose,
+  IoSend,
 } from "react-icons/io5";
 import { LuGoal } from "react-icons/lu";
 import {
@@ -88,6 +91,7 @@ export {
   HiOutlineFolderAdd,
   AiOutlinePaperClip,
   HiOutlineUserGroup,
+  HiOutlineFaceSmile,
   HiOutlineLockOpen,
   HiOutlineDatabase,
   HiOutlineTemplate,
@@ -117,6 +121,7 @@ export {
   HiOutlineEye,
   IoChevronUp,
   BsTelephone,
+  HiPaperClip,
   BiBellPlus,
   TbTemplate,
   TbMailPlus,
@@ -130,4 +135,5 @@ export {
   LuGoal,
   HiLink,
   HiMenu,
+  IoSend,
 };

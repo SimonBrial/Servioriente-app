@@ -31,6 +31,11 @@ export const SearchInChat = (): JSX.Element => {
         trapFocus
         arrowPosition="center"
         closeOnClickOutside={false}
+        /* styles={(theme) => ({
+          dropdown: {
+            boxShadow: `0px 5px 5px -1px ${theme.colors.principalTheme[6]}`,
+          },
+        })} */
       >
         <Popover.Target>
           <ActionIcon

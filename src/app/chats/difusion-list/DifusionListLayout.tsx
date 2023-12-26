@@ -26,16 +26,18 @@ export const DifusionListLayout = (): JSX.Element => {
         title="Crear lista de Difusion"
       />
       <AsideSearch />
-      <Flex align={"center"} gap={6}>
+      <Flex align={"center"} gap={10}>
         <Text>Contactos: </Text>
         <Select
           variant="unstyled"
           placeholder="Select placeholder"
           defaultValue="Whatsapp"
           data={["Whatsapp", "Facebook", "Instagram"]}
+          style={{ width: "100%" }}
           styles={(theme) => ({
             input: {
               color: `${theme.colors.principalTheme[6]}`,
+              width: "100%",
             },
             options: {
               color: `${theme.colors.principalTheme[6]}`,

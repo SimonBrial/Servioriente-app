@@ -1,7 +1,7 @@
 "use client";
 
 import { CustomDivider } from "@/components/CustomDivider";
-import { HiOutlineStar } from "@/icons";
+import { HiHeart } from "@/icons";
 import { CardContainerHeader } from "@/types/types";
 import {
   Avatar,
@@ -48,18 +48,32 @@ export const UserChatHeader = ({
         <Stack gap={0}>
           <Text style={{ fontSize: "1.2rem" }}>Nombre de Usuario</Text>
           {status ? (
-            <Text style={{ fontSize: "0.8rem" }}>En linea</Text>
+            <Text
+              style={{ fontSize: "0.8rem" }}
+              styles={(theme) => ({
+                root: { color: `${theme.colors.principalTheme[6]}` },
+              })}
+            >
+              En linea
+            </Text>
           ) : (
-            <Text style={{ fontSize: "0.8rem" }}>Desconectado</Text>
+            <Text
+              style={{ fontSize: "0.8rem" }}
+              styles={(theme) => ({
+                root: { color: `${theme.colors.principalTheme[6]}` },
+              })}
+            >
+              Desconectado
+            </Text>
           )}
         </Stack>
       </Flex>
       <UnstyledButton
         styles={(theme) => ({
-          root: { color: "#CDCDCD", fontSize: "2rem" },
+          root: { color: "#CDCDCD", fontSize: "2rem", marginRight: "0.5rem" },
         })}
       >
-        <HiOutlineStar />
+        <HiHeart />
       </UnstyledButton>
       <Divider orientation="vertical" style={{ margin: "0 0.2rem" }} />
       <SearchInChat />
