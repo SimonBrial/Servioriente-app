@@ -2,6 +2,8 @@ import { BtnBackSection } from "@/components/buttons/BtnBackSection";
 import { FormatsLayout } from "./FormatsLayout";
 import { AsideContainer } from "../AsideContainer";
 import { ChatContainer } from "../ChatContainer";
+import { FormatsEditor } from "./FormatsEditor";
+import { FormatsHeader } from "./FormatsHeader";
 
 const page = (): JSX.Element => {
   return (
@@ -16,7 +18,10 @@ const page = (): JSX.Element => {
         </div>
         <FormatsLayout />
       </AsideContainer>
-      <ChatContainer />
+      <ChatContainer>
+        <FormatsHeader />
+        <FormatsEditor />
+      </ChatContainer>
     </>
   );
 };

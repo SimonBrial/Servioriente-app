@@ -34,7 +34,7 @@ export default function TextEditor(): JSX.Element {
     <RichTextEditor editor={editor}>
       <RichTextEditor.Toolbar
         sticky
-        stickyOffset={60}
+        stickyOffset={10}
         styles={{ toolbar: { padding: "1rem 0.8rem" } }}
       >
         <RichTextEditor.ControlsGroup

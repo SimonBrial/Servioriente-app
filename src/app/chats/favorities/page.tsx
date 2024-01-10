@@ -2,6 +2,9 @@ import { BtnBackSection } from "@/components/buttons/BtnBackSection";
 import { FavoritiesLayout } from "./FavoritiesLayout";
 import { AsideContainer } from "../AsideContainer";
 import { ChatContainer } from "../ChatContainer";
+import { UserChatHeader } from "../chatUserView/UserChatHeader";
+import { ConversationContainer } from "../chatUserView/ConversationContainer";
+import { ChatInputText } from "../chatUserView/ChatInputText";
 
 const page = (): JSX.Element => {
   return (
@@ -16,7 +19,11 @@ const page = (): JSX.Element => {
         </div>
         <FavoritiesLayout />
       </AsideContainer>
-      <ChatContainer />
+      <ChatContainer>
+        <UserChatHeader colorUser="instagram" status={true} />
+        <ConversationContainer />
+        <ChatInputText />
+      </ChatContainer>
     </>
   );
 };

@@ -2,9 +2,9 @@ import { TitleLayout } from "@/components/layout/TitleLayout";
 import { AsideSearch } from "../AsideSearch";
 import { BtnBackSection } from "@/components/buttons/BtnBackSection";
 import InsideContainer from "@/components/container/InsideContainer";
-import { Button, Divider, Flex, ScrollArea, Stack } from "@mantine/core";
+import { Divider, Flex, ScrollArea, Stack } from "@mantine/core";
 import { TemplateCardLayout } from "./TemplateCardLayout";
-import { HiOutlineDocumentAdd } from "@/icons";
+import { BtnCreateTemplate } from "@/components/buttons/BtnCreateTemplate";
 
 export const FormatsLayout = (): JSX.Element => {
   return (
@@ -40,14 +40,7 @@ export const FormatsLayout = (): JSX.Element => {
       </InsideContainer>
       <Flex style={{ width: "100%" }} gap={5}>
         <BtnBackSection label="Volver" dir="/chats" withStyles />
-        <Button
-          leftSection={<HiOutlineDocumentAdd />}
-          variant={"blue"}
-          size="xs"
-          fullWidth
-        >
-          Crear Plantilla
-        </Button>
+        <BtnCreateTemplate complete withStyles={false} />
       </Flex>
     </Stack>
   );

@@ -2,6 +2,9 @@ import { BtnBackSection } from "@/components/buttons/BtnBackSection";
 import { NotReadLayout } from "./NotReadLayout";
 import { AsideContainer } from "../AsideContainer";
 import { ChatContainer } from "../ChatContainer";
+import { UserChatHeader } from "../chatUserView/UserChatHeader";
+import { ConversationContainer } from "../chatUserView/ConversationContainer";
+import { ChatInputText } from "../chatUserView/ChatInputText";
 
 const page = (): JSX.Element => {
   return (
@@ -16,7 +19,11 @@ const page = (): JSX.Element => {
         </div>
         <NotReadLayout />
       </AsideContainer>
-      <ChatContainer />
+      <ChatContainer>
+        <UserChatHeader colorUser="instagram" status={true} />
+        <ConversationContainer />
+        <ChatInputText />
+      </ChatContainer>
     </>
   );
 };

@@ -38,6 +38,7 @@ import {
   HiOutlineUser,
   HiOutlineStar,
 } from "react-icons/hi2";
+import { IoIosSend } from "react-icons/io";
 import {
   IoChevronDownOutline,
   IoMailUnreadOutline,
@@ -127,6 +128,7 @@ export {
   TbMailPlus,
   BiMailSend,
   HiHashtag,
+  IoIosSend,
   BsFilter,
   PiRobot,
   MdTitle,

@@ -1,5 +1,5 @@
 "use client";
-import { Divider, Flex, Title, Text } from "@mantine/core";
+import { Divider, Flex, Title, Text, Stack } from "@mantine/core";
 import { TitleLayoutProps } from "@/interface/interface";
 import { underScoreColor } from "@/utils/underScoreColor";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
@@ -20,7 +20,7 @@ export function TitleLayout({
   const colorSelected: string = underScoreColor(capitalizeFirstLetter(title));
 
   return (
-    <>
+    <Stack gap={2}>
       <Flex gap={5} justify={"center"} align={"center"}>
         <Text size="1.5rem">{icon}</Text>
         <Title
@@ -46,6 +46,6 @@ export function TitleLayout({
           },
         })}
       />
-    </>
+    </Stack>
   );
 }

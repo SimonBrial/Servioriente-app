@@ -28,6 +28,7 @@ export const BtnBackSection = ({
               ? `2px solid ${theme.colors.principalTheme[6]}`
               : ``,
           },
+          section: { fontSize: "1.1rem" },
         })}
       >
         {label}

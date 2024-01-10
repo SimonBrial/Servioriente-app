@@ -3,6 +3,7 @@ import { BtnBackSection } from "@/components/buttons/BtnBackSection";
 import { DifusionListLayout } from "./DifusionListLayout";
 import { AsideContainer } from "../AsideContainer";
 import { ChatContainer } from "../ChatContainer";
+import { DifusionListChat } from "./DifusionListChat";
 
 const page = (): JSX.Element => {
   return (
@@ -19,7 +20,9 @@ const page = (): JSX.Element => {
           <DifusionListLayout />
         </Stack>
       </AsideContainer>
-      <ChatContainer />
+      <ChatContainer>
+        <DifusionListChat />
+      </ChatContainer>
     </>
   );
 };
