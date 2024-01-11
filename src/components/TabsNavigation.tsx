@@ -28,7 +28,7 @@ export default function TabsNavigation({
       orientation={orientation ? "horizontal" : "vertical"}
       color="gray"
       variant="outline"
-      defaultValue="Recibidos"
+      defaultValue={sectionsArray[0].value}
       styles={{
         root: {
           color: "#696969",

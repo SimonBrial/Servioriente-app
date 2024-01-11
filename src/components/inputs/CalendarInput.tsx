@@ -8,9 +8,11 @@ import { HiOutlineCalendar } from "../../icons";
 export function CalendarInput({
   withTitle,
   title,
+  width,
 }: {
   withTitle: boolean;
   title: string;
+  width: string;
 }): JSX.Element {
   const [value, setValue] = useState<Date | null>(null);
 
@@ -18,6 +20,7 @@ export function CalendarInput({
     <Flex justify={"space-between"} align={"center"} w={"100%"}>
       <Title order={4}>{withTitle ? <>{title}</> : <></>}</Title>
       <DateInput
+        w={width}
         size="sm"
         leftSection={<HiOutlineCalendar />}
         value={value}
@@ -26,7 +29,6 @@ export function CalendarInput({
         placeholder={title}
         styles={(theme) => ({
           input: { cursor: "pointer" },
-          root: { width: "200px" },
         })}
       />
     </Flex>

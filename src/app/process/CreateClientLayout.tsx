@@ -50,7 +50,7 @@ export default function CreateClientLayout(): JSX.Element {
           title="Email"
         />
         <SelectSocialRed />
-        <CalendarInput withTitle title="Cumpleaños" />
+        <CalendarInput withTitle title="Cumpleaños" width={200} />
         <PhoneInputLayout />
       </Stack>
     </Container>

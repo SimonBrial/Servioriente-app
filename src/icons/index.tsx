@@ -3,6 +3,7 @@ import {
   HiOutlineDotsVertical,
   HiOutlineDocumentText,
   HiOutlineDocumentAdd,
+  HiOutlineExclamation,
   HiOutlineLockClosed,
   HiOutlineFolderAdd,
   HiOutlineLockOpen,
@@ -37,6 +38,7 @@ import {
   HiOutlineFaceSmile,
   HiOutlineUser,
   HiOutlineStar,
+  HiOutlineSun,
 } from "react-icons/hi2";
 import { IoIosSend } from "react-icons/io";
 import {
@@ -54,22 +56,24 @@ import {
   CgCornerDoubleUpLeft,
   CgCornerUpRight,
 } from "react-icons/cg";
-import { TbTemplate, TbMailPlus } from "react-icons/tb";
+import { TbTemplate, TbMailPlus, TbWorld, TbEdit } from "react-icons/tb";
 import {
   MdOutlineInsertEmoticon,
   MdOutlineMarkChatUnread,
   MdOutlineEventNote,
+  MdOutlineCategory,
   MdOutlinePlace,
+  MdCircle,
   MdTitle,
 } from "react-icons/md";
-import { BsFilter, BsTelephone } from "react-icons/bs";
+import { BsFilter, BsTelephone, BsMoonStars } from "react-icons/bs";
 import {
   AiOutlineIdcard,
   AiOutlineCar,
   AiOutlinePlus,
   AiOutlinePaperClip,
 } from "react-icons/ai";
-import { BiMailSend, BiBellPlus } from "react-icons/bi";
+import { BiMailSend, BiBellPlus, BiCrown } from "react-icons/bi";
 import { PiRobot, PiFolderSimpleDashed } from "react-icons/pi";
 
 export {
@@ -83,6 +87,7 @@ export {
   HiOutlineDocumentAdd,
   PiFolderSimpleDashed,
   IoChevronDownOutline,
+  HiOutlineExclamation,
   IoMailUnreadOutline,
   HiOutlineUserCircle,
   HiDevicePhoneMobile,
@@ -99,6 +104,7 @@ export {
   HiOutlineCalendar,
   HiOutlineChartBar,
   HiOutlineMailOpen,
+  MdOutlineCategory,
   HiOutlineUserAdd,
   IoWarningOutline,
   CgCornerUpRight,
@@ -120,9 +126,11 @@ export {
   AiOutlineCar,
   HiOutlineCog,
   HiOutlineEye,
+  HiOutlineSun,
   IoChevronUp,
   BsTelephone,
   HiPaperClip,
+  BsMoonStars,
   BiBellPlus,
   TbTemplate,
   TbMailPlus,
@@ -130,11 +138,15 @@ export {
   HiHashtag,
   IoIosSend,
   BsFilter,
+  MdCircle,
   PiRobot,
   MdTitle,
   IoClose,
   HiHeart,
+  BiCrown,
+  TbWorld,
   LuGoal,
+  TbEdit,
   HiLink,
   HiMenu,
   IoSend,
