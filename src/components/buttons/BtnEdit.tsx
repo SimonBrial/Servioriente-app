@@ -5,6 +5,7 @@ import {
   Stack,
   Tooltip,
   UnstyledButton,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { HiOutlinePencil, HiOutlineSave } from "../../icons";
@@ -20,6 +21,7 @@ export default function BtnEdit({
   buttonStyles: EditButtonStyles;
 }): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
+  const { colorScheme } = useMantineColorScheme();
 
   let buttonSty: JSX.Element;
 
@@ -49,7 +51,11 @@ export default function BtnEdit({
           position="top"
           styles={(theme) => ({
             tooltip: {
-              background: `${theme.colors.principalTheme[6]}`,
+              background:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[6]}`
+                  : `${theme.colors.darkTheme[1]}`,
+              color: "#fff",
             },
           })}
         >
@@ -57,7 +63,11 @@ export default function BtnEdit({
             variant="transparent"
             color="gray"
             aria-label="Editar"
-            className={btnClass.btnEditEdit_item}
+            className={
+              colorScheme === "light"
+                ? btnClass.btnEdit_item
+                : btnClass.btnEdit_item_dark
+            }
             onClick={open}
           >
             <HiOutlinePencil />
@@ -83,8 +93,11 @@ export default function BtnEdit({
         onClose={close}
         position="right"
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+        withCloseButton={false}
         styles={{
-          header: { display: "none" },
+          body: {
+            backgroundColor: colorScheme === "light" ? "#F8F8F8" : "#9a90ef1a",
+          },
         }}
       >
         <Stack

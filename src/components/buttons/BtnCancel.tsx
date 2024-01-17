@@ -7,7 +7,7 @@ import React from "react";
 export const BtnCancel = () => {
   return (
     <Button
-      onClick={close}
+      // onClick={close}
       fullWidth
       variant="white"
       leftSection={<IoClose />}

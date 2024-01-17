@@ -10,9 +10,30 @@
   background-color: #f8f8f8;
 }
 
+.sidebar_dark {
+  width: 70px;
+  height: 100vh;
+  border-right: 1px solid #192229;
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #9a90ef1a;
+}
+
 .iconContainer {
-  background-color: #f8f8f8;
   color: #000;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconContainer_dark {
+  color: #eff3f5;
   height: 2.5rem;
   width: 2.5rem;
   padding: 0.8rem;
@@ -25,6 +46,13 @@
   border-radius: 6px;
   background-color: #fff;
   color: #004ee5;
+  transition: 0.3s ease-in-out all;
+}
+
+.iconContainer_dark:hover {
+  border-radius: 6px;
+  background-color: #9a90ef2f;
+  color: #fff;
   transition: 0.3s ease-in-out all;
 }
 
@@ -49,6 +77,14 @@
 
 .iconContainer[data-active],
 .iconContainer[data-active]:hover {
+  border-radius: 6px;
+  background-color: #fff;
+  color: #004ee5;
+  transition: 0.3s ease-in-out all;
+}
+
+.iconContainer_dark[data-active],
+.iconContainer_dark[data-active]:hover {
   border-radius: 6px;
   background-color: #fff;
   color: #004ee5;

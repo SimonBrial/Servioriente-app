@@ -16,7 +16,7 @@ import React from "react";
 
 export const AdminDescriptionContainer = () => {
   return (
-    <ContainerInside width="70%">
+    <ContainerInside width="70%" allWhite>
       <Stack justify="space-between" style={{ height: "100%" }}>
         <Stack gap={6} style={{ padding: "0 1rem" }}>
           <TitleLayout color="" icon="" onText title="Datos del Usuario" />

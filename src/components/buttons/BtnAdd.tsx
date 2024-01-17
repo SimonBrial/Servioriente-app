@@ -1,7 +1,7 @@
 "use client";
 
 import { useDisclosure } from "@mantine/hooks";
-import { Button, Drawer, Stack } from "@mantine/core";
+import { Button, Drawer, Stack, useMantineColorScheme } from "@mantine/core";
 import {
   MdOutlineEventNote,
   HiOutlineUserAdd,
@@ -17,6 +17,7 @@ import { BtnAddProps, iconList } from "@/interface/interface";
 
 function BtnAdd({ iconTag, label, children, addFn }: BtnAddProps): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
+  const { colorScheme } = useMantineColorScheme();
 
   const iconList: iconList[] = [
     {
@@ -71,6 +72,11 @@ function BtnAdd({ iconTag, label, children, addFn }: BtnAddProps): JSX.Element {
         position="right"
         overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         withCloseButton={false}
+        styles={{
+          body: {
+            backgroundColor: colorScheme === "light" ? "#F8F8F8" : "#9a90ef1a",
+          },
+        }}
       >
         <Stack
           justify="space-between"
@@ -87,7 +93,7 @@ function BtnAdd({ iconTag, label, children, addFn }: BtnAddProps): JSX.Element {
         leftSection={selectIcon(iconTag)}
         styles={(theme) => ({
           root: {
-            backgroundColor: `${theme.colors.principalTheme[6]}`,
+            backgroundColor: `${theme.colors.lightTheme[6]}`,
             height: "100%",
           },
           section: { fontSize: "1.2rem" },

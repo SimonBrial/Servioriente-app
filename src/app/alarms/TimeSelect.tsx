@@ -1,12 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { ActionIcon, Flex, Title } from "@mantine/core";
+import { ActionIcon, Flex, Title, useMantineColorScheme } from "@mantine/core";
 import { TimeInput } from "@mantine/dates";
 import { HiOutlineClock } from "@/icons";
 
 export default function TimeSelect({ label }: { label: string }): JSX.Element {
   const ref = useRef<HTMLInputElement>(null);
+  const { colorScheme } = useMantineColorScheme();
 
   const pickerControl = (
     <ActionIcon
@@ -14,7 +15,7 @@ export default function TimeSelect({ label }: { label: string }): JSX.Element {
       color="gray"
       onClick={() => ref.current?.showPicker()}
     >
-      <HiOutlineClock />
+      <HiOutlineClock style={{ color: "#696969" }} />
     </ActionIcon>
   );
 
@@ -26,8 +27,10 @@ export default function TimeSelect({ label }: { label: string }): JSX.Element {
         leftSection={pickerControl}
         styles={(theme) => ({
           root: { width: "200px" },
-          input: { color: "#696969" },
-          section: { color: "#696969" },
+          input: {
+            backgroundColor: colorScheme === "light" ? "#FFFFFF" : "#EFF3F5",
+            color: `${theme.colors.lightTheme[3]}`,
+          },
         })}
       />
     </Flex>

@@ -6,7 +6,7 @@ export default function ListLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <Stack align="stretch" justify="flex-start" gap="xs">
+    <Stack align="stretch" justify="flex-start" gap={8}>
       {children}
     </Stack>
   );

@@ -1,5 +1,12 @@
 "use client";
-import { Divider, Flex, Title, Text, Stack } from "@mantine/core";
+import {
+  useMantineColorScheme,
+  Divider,
+  Title,
+  Stack,
+  Text,
+  Flex,
+} from "@mantine/core";
 import { TitleLayoutProps } from "@/interface/interface";
 import { underScoreColor } from "@/utils/underScoreColor";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
@@ -16,8 +23,8 @@ export function TitleLayout({
     { id: "Pagado", color: "#12E500" },
     { id: "Entregado", color: "#004EE5" },
   */
-
   const colorSelected: string = underScoreColor(capitalizeFirstLetter(title));
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <Stack gap={2}>
@@ -26,7 +33,18 @@ export function TitleLayout({
         <Title
           order={2}
           style={{
-            color: `${onText ? (color !== "" ? color : "#696969") : "#696969"}`,
+            color:
+              colorScheme === "light"
+                ? onText
+                  ? color !== ""
+                    ? color
+                    : "#696969"
+                  : `${color}`
+                : onText
+                  ? color !== ""
+                    ? color
+                    : "#EFF3F5"
+                  : `${color}`,
             textAlign: "center",
           }}
         >
@@ -37,11 +55,14 @@ export function TitleLayout({
         size="md"
         styles={(theme) => ({
           root: {
-            borderColor: !colorSelected
-              ? color !== ""
-                ? color
-                : `${theme.colors.principalTheme[6]}`
-              : colorSelected,
+            borderColor:
+              colorSelected !== "Espera"
+                ? color !== ""
+                  ? color
+                  : colorScheme === "light"
+                    ? `${theme.colors.lightTheme[6]}`
+                    : `${theme.colors.darkTheme[1]}`
+                : colorSelected,
             marginTop: "-0.3rem",
           },
         })}

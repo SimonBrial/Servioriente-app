@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  useMantineColorScheme,
   ScrollArea,
   Container,
   Stack,
@@ -22,6 +23,7 @@ import CreateAlarmLayout from "./CreateAlarmLayout";
 export default function AlarmDescription({
   objAlarm,
 }: AlarmProps): JSX.Element {
+  const { colorScheme } = useMantineColorScheme();
   const { height } = useViewportSize();
   const {
     privateAlarm,
@@ -41,15 +43,26 @@ export default function AlarmDescription({
       style={{
         width: "30%",
         height: "100%",
-        backgroundColor: "#F8F8F8",
-        borderRadius: "6px",
-        border: "1px solid #CDCDCD",
       }}
+      styles={(theme) => ({
+        root: {
+          backgroundColor:
+            colorScheme === "light"
+              ? `${theme.colors.lightTheme[0]}`
+              : `${theme.colors.darkTheme[7]}`,
+          borderRadius: "6px",
+        },
+      })}
     >
       {objAlarm ? (
         <Stack h={"100%"} justify={"space-between"}>
           <Stack gap={height <= 720 ? 1 : 2} mah={"90%"}>
-            <TitleLayout title={title} color={color} icon={icon} onText />
+            <TitleLayout
+              title={title}
+              color={color}
+              icon={icon}
+              onText={false}
+            />
             <Flex justify={"space-between"}>
               <Title order={4}>Titulo:</Title>
               <Text style={{ color: `${color}` }}>{title}</Text>
@@ -64,7 +77,10 @@ export default function AlarmDescription({
                 size="sm"
                 styles={(theme) => ({
                   root: {
-                    color: theme.colors.principalTheme[6],
+                    color:
+                      colorScheme === "light"
+                        ? `${theme.colors.lightTheme[6]}`
+                        : `${theme.colors.darkTheme[1]}`,
                   },
                 })}
               >
@@ -77,7 +93,10 @@ export default function AlarmDescription({
                 size="sm"
                 styles={(theme) => ({
                   root: {
-                    color: theme.colors.principalTheme[6],
+                    color:
+                      colorScheme === "light"
+                        ? `${theme.colors.lightTheme[6]}`
+                        : `${theme.colors.darkTheme[1]}`,
                   },
                 })}
               >
@@ -92,7 +111,12 @@ export default function AlarmDescription({
             <AutomatedInput automatedStatus={automated} />
             <Stack gap={1} h={height <= 720 ? "54%" : "65%"}>
               <Title order={4}>Descripción:</Title>
-              <ScrollArea h={"100%"} maw={"100%"} offsetScrollbars>
+              <ScrollArea
+                h={"100%"}
+                maw={"100%"}
+                offsetScrollbars
+                scrollbarSize={2}
+              >
                 <Box>
                   <Text>{description}</Text>
                 </Box>

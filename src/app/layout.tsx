@@ -3,10 +3,14 @@ import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
 import { theme } from "../theme/CustomTheme";
-import styles from "./layout.module.css";
 import "@mantine/tiptap/styles.css";
 import "@mantine/dates/styles.css";
 import { Sidebar } from "@/components/sidebar/Sidebar";
+
+import { Inter } from "next/font/google";
+import { GlobalContainer } from "@/components/container/GlobalContainer";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,13 +27,13 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
-        <MantineProvider theme={theme}>
+      <body className={inter.className}>
+        <MantineProvider theme={theme} defaultColorScheme="light">
           <Container fluid size={"100%"} px={"0"} display={"flex"}>
             <Sidebar />
-            <Container mx={"1rem"} className={styles.containerLayout}>
+            <GlobalContainer>
               {children}
-            </Container>
+            </GlobalContainer>
           </Container>
         </MantineProvider>
       </body>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useDisclosure } from "@mantine/hooks";
 import {
   Container,
@@ -7,6 +9,7 @@ import {
   Title,
   Tooltip,
   UnstyledButton,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { HiOutlineTrash, HiOutlineCheck } from "../../icons";
 import btnClass from "../../styles/BtnStyles.module.css";
@@ -20,10 +23,21 @@ export default function BtnDelete({
   children: React.ReactNode;
 }): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <>
-      <Modal opened={opened} onClose={close} withCloseButton={false}>
+      <Modal
+        opened={opened}
+        onClose={close}
+        withCloseButton={false}
+        closeOnClickOutside={false}
+        styles={{
+          body: {
+            backgroundColor: colorScheme === "light" ? "#F8F8F8" : "#9a90ef1a",
+          },
+        }}
+      >
         <Stack style={{ padding: "1rem" }}>
           <TitleLayout
             title="Eliminar Registro"
@@ -31,7 +45,18 @@ export default function BtnDelete({
             color=""
             onText={false}
           />
-          <Title order={5} style={{ color: "#696969", textAlign: "center" }}>
+          <Title
+            order={5}
+            styles={(theme) => ({
+              root: {
+                color:
+                  colorScheme === "light"
+                    ? `${theme.colors.lightTheme[3]}`
+                    : `${theme.colors.darkTheme[2]}`,
+                textAlign: "center",
+              },
+            })}
+          >
             {" "}
             Estas seguro que quiere eliminar este registro?
           </Title>
@@ -58,7 +83,11 @@ export default function BtnDelete({
         position="top"
         styles={(theme) => ({
           tooltip: {
-            background: `${theme.colors.principalTheme[6]}`,
+            color: "white",
+            background:
+              colorScheme === "light"
+                ? `${theme.colors.lightTheme[8]}`
+                : `${theme.colors.darkTheme[1]}`,
           },
         })}
       >
@@ -67,7 +96,11 @@ export default function BtnDelete({
           color="gray"
           onClick={open}
           aria-label="Borrar"
-          className={btnClass.btnEditDelete_item}
+          className={
+            colorScheme === "light"
+              ? btnClass.btnDelete_item
+              : btnClass.btnDelete_item_dark
+          }
         >
           <HiOutlineTrash />
         </UnstyledButton>

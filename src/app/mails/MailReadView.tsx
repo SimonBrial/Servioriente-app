@@ -1,38 +1,41 @@
 "use client";
+
 import {
-  Avatar,
-  Container,
-  Flex,
-  ScrollArea,
-  Title,
-  Text,
-  Stack,
+  useMantineColorScheme,
   UnstyledButton,
+  ScrollArea,
+  Container,
+  Avatar,
+  Stack,
+  Title,
+  Flex,
+  Text,
+  Center,
 } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
+// import { useViewportSize } from "@mantine/hooks";
 import {
-  HiOutlineStar,
   HiOutlineDotsVertical,
-  CgCornerUpLeft,
   CgCornerDoubleUpLeft,
   CgCornerUpRight,
+  CgCornerUpLeft,
+  HiOutlineStar,
 } from "../../icons";
+import mailReadViewClasses from "../../styles/BtnStyles.module.css";
 
 export default function MailReadView(): JSX.Element {
-  const { height } = useViewportSize();
-  console.log(height * 0.88);
+  // const { height } = useViewportSize();
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <>
       <Container
-        style={{
-          height: "12%",
-          padding: "0.2rem 0.2rem 0.5rem 0.2rem",
-        }}
+        styles={(theme) => ({
+          root: { height: "12%", padding: "0.2rem 0.2rem 0.5rem 0.2rem" },
+        })}
       >
         <Flex style={{}} gap={"sm"} w={"100%"} align={"center"}>
           <Avatar src={null} alt="no image here" color="indigo" size="lg" />
-          <Stack justify={"space-between"} w={"100%"}>
+          <Stack justify={"space-between"} w={"100%"} gap={12}>
             <Flex
               justify={"space-between"}
               w={"100%"}
@@ -40,10 +43,15 @@ export default function MailReadView(): JSX.Element {
             >
               <Title
                 order={4}
-                style={{
-                  color: "#696969",
-                  marginBottom: "-0.25rem",
-                }}
+                styles={(theme) => ({
+                  root: {
+                    color:
+                      colorScheme === "light"
+                        ? `${theme.colors.lightTheme[2]}`
+                        : `${theme.colors.darkTheme[2]}`,
+                    marginBottom: "-0.25rem",
+                  },
+                })}
               >
                 Title - Email
               </Title>
@@ -51,22 +59,67 @@ export default function MailReadView(): JSX.Element {
                 style={{ marginBottom: "-0.25rem" }}
                 align={"center"}
                 justify={"end"}
-                gap={"xs"}
+                gap={2}
               >
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <HiOutlineStar size="1.5rem" />
+                <UnstyledButton
+                  classNames={{
+                    root:
+                      colorScheme === "light"
+                        ? mailReadViewClasses.btnMail
+                        : mailReadViewClasses.btnMail_dark,
+                  }}
+                >
+                  <Center style={{ fontSize: "1.5rem" }}>
+                    <HiOutlineStar />
+                  </Center>
                 </UnstyledButton>
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <CgCornerUpLeft size="1.5rem" />
+                <UnstyledButton
+                  classNames={{
+                    root:
+                      colorScheme === "light"
+                        ? mailReadViewClasses.btnMail
+                        : mailReadViewClasses.btnMail_dark,
+                  }}
+                >
+                  <Center style={{ fontSize: "1.5rem" }}>
+                    <CgCornerUpLeft />
+                  </Center>
                 </UnstyledButton>
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <CgCornerDoubleUpLeft size="1.5rem" />
+                <UnstyledButton
+                  classNames={{
+                    root:
+                      colorScheme === "light"
+                        ? mailReadViewClasses.btnMail
+                        : mailReadViewClasses.btnMail_dark,
+                  }}
+                >
+                  <Center style={{ fontSize: "1.5rem" }}>
+                    <CgCornerDoubleUpLeft />
+                  </Center>
                 </UnstyledButton>
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <CgCornerUpRight size="1.5rem" />
+                <UnstyledButton
+                  classNames={{
+                    root:
+                      colorScheme === "light"
+                        ? mailReadViewClasses.btnMail
+                        : mailReadViewClasses.btnMail_dark,
+                  }}
+                >
+                  <Center style={{ fontSize: "1.5rem" }}>
+                    <CgCornerUpRight />
+                  </Center>
                 </UnstyledButton>
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <HiOutlineDotsVertical size="1.5rem" />
+                <UnstyledButton
+                  classNames={{
+                    root:
+                      colorScheme === "light"
+                        ? mailReadViewClasses.btnMail
+                        : mailReadViewClasses.btnMail_dark,
+                  }}
+                >
+                  <Center style={{ fontSize: "1.5rem" }}>
+                    <HiOutlineDotsVertical />
+                  </Center>
                 </UnstyledButton>
               </Flex>
             </Flex>
@@ -75,17 +128,53 @@ export default function MailReadView(): JSX.Element {
                 <Text
                   styles={(theme) => ({
                     root: {
-                      color: theme.colors.principalTheme[6],
+                      color:
+                        colorScheme === "light"
+                          ? theme.colors.lightTheme[6]
+                          : theme.colors.darkTheme[1],
                     },
                   })}
                 >
                   Para:
                 </Text>
-                <Text>(correo@correo.com)</Text>
+                <Text
+                  styles={(theme) => ({
+                    root: {
+                      color:
+                        colorScheme === "light"
+                          ? `${theme.colors.lightTheme[2]}`
+                          : `${theme.colors.darkTheme[2]}`,
+                    },
+                  })}
+                >
+                  (correo@correo.com)
+                </Text>
               </Flex>
-              <Flex align={"center"}>
-                <Text>Para:</Text>
-                <Text>(correo@correo.com)</Text>
+              <Flex align={"center"} gap={2}>
+                <Text
+                  styles={(theme) => ({
+                    root: {
+                      color:
+                        colorScheme === "light"
+                          ? `${theme.colors.lightTheme[2]}`
+                          : `${theme.colors.darkTheme[2]}`,
+                    },
+                  })}
+                >
+                  Para:
+                </Text>
+                <Text
+                  styles={(theme) => ({
+                    root: {
+                      color:
+                        colorScheme === "light"
+                          ? `${theme.colors.lightTheme[2]}`
+                          : `${theme.colors.darkTheme[2]}`,
+                    },
+                  })}
+                >
+                  (correo@correo.com)
+                </Text>
               </Flex>
             </Flex>
           </Stack>
@@ -93,14 +182,27 @@ export default function MailReadView(): JSX.Element {
       </Container>
       <Container
         p={10}
-        style={{
-          height: "88%",
-          border: "1px solid #696969",
-          borderRadius: "6px",
-          backgroundColor: "#fff",
-        }}
+        styles={(theme) => ({
+          root: {
+            height: "88%",
+            border:
+              colorScheme === "light"
+                ? `1px solid ${theme.colors.lightTheme[3]}`
+                : `1px solid ${theme.colors.darkTheme[5]}`,
+            borderRadius: "6px",
+            backgroundColor:
+              colorScheme === "light"
+                ? "#FFFFFF"
+                : `${theme.colors.darkTheme[7]}`,
+          },
+        })}
       >
-        <ScrollArea h={"100%"} style={{ borderRadius: "6px" }} offsetScrollbars>
+        <ScrollArea
+          h={"100%"}
+          style={{ borderRadius: "6px" }}
+          offsetScrollbars
+          scrollbarSize={2}
+        >
           <ul>
             <li>Prueba</li>
             <li>Prueba</li>

@@ -18,11 +18,13 @@ import {
   Title,
   Flex,
   Grid,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { capitalizeFirstLetter } from "@/utils/capitalizeFirstLetter";
 import { underScoreColor } from "../../utils/underScoreColor";
 import { BoardSectionProps, CardProcessProps } from "@/interface/interface";
 import { useMediaQuery } from "@mantine/hooks";
+import classes from "../../styles/cardProcess.module.css";
 
 // Contiene los elementos que seran organizados, es decir, es el contenedor
 export const ProcessColumnLayout = ({
@@ -32,6 +34,7 @@ export const ProcessColumnLayout = ({
 }: BoardSectionProps): JSX.Element => {
   const matches = useMediaQuery("(max-width: 1280px)");
   const [cardsArray, setCardsArray] = useState<CardProcessProps[]>(tasks);
+  const { colorScheme } = useMantineColorScheme();
 
   // 1. Detectar cual elemento se movio de sitio.
   // 2. Detectar cuales arrays modificaron sus tamaños.
@@ -61,10 +64,15 @@ export const ProcessColumnLayout = ({
 
   return (
     <Grid.Col
+      className={
+        colorScheme === "light"
+          ? `${classes.process_col}`
+          : `${classes.process_col_dark}`
+      }
       span={12}
       style={{
         // backgroundColor: "#fafafa",
-        padding: "1rem",
+        padding: "0.5rem",
         width: "100%",
       }}
     >

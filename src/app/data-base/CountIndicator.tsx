@@ -1,6 +1,6 @@
 "use client";
 
-import { Tooltip, Button } from "@mantine/core";
+import { Tooltip, Button, useMantineColorScheme } from "@mantine/core";
 import { CountIndicatorProps } from "@/interface/interface";
 
 export function CountIndicator({
@@ -8,6 +8,7 @@ export function CountIndicator({
   iconSection,
   description,
 }: CountIndicatorProps): JSX.Element {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Tooltip
       withArrow
@@ -16,19 +17,31 @@ export function CountIndicator({
       position="bottom"
       color="#004EE5"
       transitionProps={{ transition: "skew-up", duration: 300 }}
+      style={{ color: "#FFF" }}
     >
       <Button
         leftSection={iconSection}
-        /* className={countClass.countIndicator} */
         styles={(theme) => ({
           section: {
             fontSize: "1.6rem",
-            color: `${theme.colors.principalTheme[6]}`,
+            color:
+              colorScheme === "light"
+                ? `${theme.colors.lightTheme[6]}`
+                : `${theme.colors.darkTheme[1]}`,
           },
           root: {
-            backgroundColor: "#F8F8F8",
-            border: "1px solid #CDCDCD",
-            color: "#696969",
+            backgroundColor:
+              colorScheme === "light"
+                ? `${theme.colors.lightTheme[0]}`
+                : `${theme.colors.darkTheme[7]}`,
+            border:
+              colorScheme === "light"
+                ? `1px solid ${theme.colors.lightTheme[2]}`
+                : `1px solid ${theme.colors.darkTheme[6]}`,
+            color:
+              colorScheme === "light"
+                ? `${theme.colors.lightTheme[3]}`
+                : `${theme.colors.darkTheme[2]}`,
             fontSize: "1.2rem",
             display: "flex",
             justifyContent: "center",

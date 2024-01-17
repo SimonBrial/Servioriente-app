@@ -1,19 +1,24 @@
 "use client";
 
 import InsideContainer from "@/components/container/InsideContainer";
-import { Container, Stack } from "@mantine/core";
+import { Container, Stack, useMantineColorScheme } from "@mantine/core";
 import React, { ReactNode } from "react";
 
 export const GlobalLayout = ({ children }: { children: ReactNode }) => {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <InsideContainer offset={130}>
       <Container
         styles={(theme) => ({
           root: {
-            border: "1px solid #696969",
+            // border: "1px solid #cdcdcd",
             borderRadius: "6px",
             padding: "1rem",
             height: "100%",
+            border:
+              colorScheme === "light"
+                ? "1px solid #cdcdcd"
+                : `1px solid ${theme.colors.darkTheme[7]}`,
           },
         })}
       >

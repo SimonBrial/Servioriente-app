@@ -1,4 +1,10 @@
-import { Drawer, Stack, Tooltip, UnstyledButton } from "@mantine/core";
+import {
+  useMantineColorScheme,
+  UnstyledButton,
+  Tooltip,
+  Drawer,
+  Stack,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { HiOutlineEye } from "../../icons";
 import btnClass from "../../styles/BtnStyles.module.css";
@@ -10,16 +16,20 @@ export default function BtnSee({
   children: React.ReactNode;
 }): JSX.Element {
   const [opened, { open, close }] = useDisclosure(false);
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <>
       <Drawer
+        overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
+        withCloseButton={false}
+        position="right"
         opened={opened}
         onClose={close}
-        position="right"
-        overlayProps={{ backgroundOpacity: 0.5, blur: 4 }}
         styles={{
-          header: { display: "none" },
+          body: {
+            backgroundColor: colorScheme === "light" ? "#F8F8F8" : "#9a90ef1a",
+          },
         }}
       >
         <Stack justify="space-between" style={{ height: "100%" }}>
@@ -33,7 +43,11 @@ export default function BtnSee({
         position="top"
         styles={(theme) => ({
           tooltip: {
-            background: `${theme.colors.principalTheme[6]}`,
+            background:
+              colorScheme === "light"
+                ? `${theme.colors.lightTheme[6]}`
+                : `${theme.colors.darkTheme[1]}`,
+            color: "#fff",
           },
         })}
       >
@@ -41,7 +55,11 @@ export default function BtnSee({
           variant="transparent"
           color="gray"
           aria-label="Ver"
-          className={btnClass.btnEditView_item}
+          className={
+            colorScheme === "light"
+              ? btnClass.btnView_item
+              : btnClass.btnView_item_dark
+          }
           onClick={open}
         >
           <HiOutlineEye />

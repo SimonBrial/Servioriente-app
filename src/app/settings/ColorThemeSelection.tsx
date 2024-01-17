@@ -1,10 +1,11 @@
 "use client";
 
 import { BtnColorPicker } from "@/components/buttons/BtnColorPicker";
-import { Divider, Flex, Stack, Text } from "@mantine/core";
+import { Divider, Flex, Stack, Text, useMantineColorScheme } from "@mantine/core";
 import React from "react";
 
 export const ColorThemeSelection = () => {
+  const { colorScheme } = useMantineColorScheme();
   const colorArr: string[] = [
     "#F06418",
     "#FFA903",
@@ -30,7 +31,7 @@ export const ColorThemeSelection = () => {
         <Text>Color del Tema</Text>
         <Flex gap={2} align={"center"}>{colorPickerGenerator(colorArr)}</Flex>
       </Flex>
-      <Divider />
+      <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
     </Stack>
   );
 };

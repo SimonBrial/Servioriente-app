@@ -31,7 +31,7 @@ export const SuperAdminUserLayout = () => {
         icon={<HiOutlineMail />}
         title="Correo"
       />
-      <CalendarInput title="Fecha de Cumpleaños" withTitle width={200} />
+      <CalendarInput title="Fecha de Cumpleaños" withTitle width={"200px"} />
       <AgeInput inputSize="200px" />
       <AdminTypeSelect inputSize="200px" />
       <StateSelect inputSize="200px" />

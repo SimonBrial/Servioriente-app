@@ -1,4 +1,14 @@
 .containerLayout {
+  background-color: #fff;
+  width: 100%;
+  border: 2px solid #cdcdcd;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 6px;
+}
+
+.containerLayout_dark {
+  background-color: #9a90ef1a;
   width: 100%;
   border: 2px solid #cdcdcd;
   padding: 1rem;

@@ -1,5 +1,7 @@
+"use client"
+
 import { HorizontalLayoutProps } from "@/interface/interface";
-import { Flex, TextInput, Title } from "@mantine/core";
+import { Flex, TextInput, Title, useMantineColorScheme } from "@mantine/core";
 
 export default function HorizontalInputLayout({
   inputSize,
@@ -7,6 +9,7 @@ export default function HorizontalInputLayout({
   title,
   icon,
 }: HorizontalLayoutProps): JSX.Element {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Flex align={"center"} justify={"space-between"} w={"100%"}>
       <Flex>
@@ -14,11 +17,17 @@ export default function HorizontalInputLayout({
         {asterisk ? <span style={{ color: "red" }}>*</span> : <></>}
       </Flex>
       <TextInput
-        w={inputSize}
-        size="sm"
         leftSectionPointerEvents="none"
         leftSection={icon}
         placeholder={title}
+        w={inputSize}
+        size="sm"
+        styles={(theme) => ({
+          input: {
+            backgroundColor: colorScheme === "light" ? "#FFFFFF" : "#EFF3F5",
+            color: `${theme.colors.lightTheme[3]}`,
+          },
+        })}
       />
     </Flex>
   );

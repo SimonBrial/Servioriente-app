@@ -1,29 +1,30 @@
 "use client";
 
-import { Flex, NumberInput, Title, useMantineColorScheme } from "@mantine/core";
-import React, { useState } from "react";
+import { Flex, Select, Title, useMantineColorScheme } from "@mantine/core";
+import React from "react";
 
-export const AgeInput = ({ inputSize }: { inputSize: string }) => {
-  const [value, setValue] = useState<string | number>("");
+export const StatusSelect = ({ inputSize }: { inputSize: string }) => {
   const { colorScheme } = useMantineColorScheme();
   return (
     <Flex justify={"space-between"} align={"center"}>
-      <Title order={4}>Edad</Title>
-      <NumberInput
+      <Title order={5}>Estatus</Title>
+      <Select
         w={inputSize}
-        placeholder="Indique su edad"
-        clampBehavior="strict"
-        onChange={setValue}
-        value={value}
-        max={100}
-        min={0}
+        placeholder="Estatus"
+        data={[
+          "Muy Importante",
+          "Importante",
+          "Normal",
+          "Poco Importante",
+          "Muy Poco Importante",
+        ]}
         styles={(theme) => ({
           input: {
             cursor: "pointer",
             backgroundColor: colorScheme === "light" ? "#FFFFFF" : "#EFF3F5",
             color: colorScheme === "light" ? "#696969" : "#696969",
           },
-          control: {
+          section: {
             color: colorScheme === "light" ? "#696969" : "#696969",
           },
         })}

@@ -1,20 +1,20 @@
 "use client";
 
 import React, { useState } from "react";
-import { Stack } from "@mantine/core";
+import { Stack, useMantineColorScheme } from "@mantine/core";
 import {
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineExclamationCircle,
   HiOutlineDatabase,
   HiOutlineTemplate,
   HiOutlineCalendar,
   HiOutlineChartBar,
-  HiOutlineMail,
-  HiOutlineExclamationCircle,
-  HiOutlineCog,
-  HiOutlineBell,
   HiOutlineLogout,
   AiOutlineIdcard,
-  HiOutlineChatBubbleLeftRight,
+  HiOutlineMail,
+  HiOutlineBell,
   HiOutlineUser,
+  HiOutlineCog,
 } from "../../icons";
 import sidebarClass from "../../styles/sidebar.module.css";
 import NavIcon from "./NavIcon";
@@ -75,6 +75,7 @@ const sections: sidebarItems[] = [
 
 export function Sidebar(): JSX.Element {
   const [active, setActive] = useState<number>(2);
+  const { colorScheme } = useMantineColorScheme();
 
   const links = sections.map((section: sidebarItems, index) => {
     return (
@@ -92,7 +93,11 @@ export function Sidebar(): JSX.Element {
   });
 
   return (
-    <nav className={sidebarClass.sidebar}>
+    <nav
+      className={
+        colorScheme === "light" ? sidebarClass.sidebar : sidebarClass.sidebar_dark
+      }
+    >
       <Stack justify="center" gap={"sm"}>
         {links}
       </Stack>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ScrollArea, Stack, Table } from "@mantine/core";
+import { ScrollArea, Stack, Table, useMantineColorScheme } from "@mantine/core";
 import StatusBadge from "./StatusBadge";
 import BtnFn from "../../components/buttons/BtnFn";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import classes from "../../styles/listStyles.module.css";
 
 export default function ListDataBase(): JSX.Element {
   const [scrolled, setScrolled] = useState(false);
+  const { colorScheme } = useMantineColorScheme();
 
   const elements = [
     {
@@ -301,7 +302,13 @@ export default function ListDataBase(): JSX.Element {
   ];
 
   const rows = elements.map((element) => (
-    <Table.Tr key={element.id} style={{ color: "#000" }}>
+    <Table.Tr
+      key={element.id}
+      style={{ color: colorScheme === "light" ? "#000" : "white" }}
+      classNames={{
+        tr: colorScheme === "light" ? classes.row : classes.row_dark,
+      }}
+    >
       <Table.Td style={{ paddingRight: "0", width: "2.5rem" }}>
         <BtnFn />
       </Table.Td>
@@ -318,33 +325,55 @@ export default function ListDataBase(): JSX.Element {
   ));
 
   return (
-    <Stack>
+    <Stack gap={2}>
       <ScrollArea
         h={520}
         offsetScrollbars
-        scrollbarSize={10}
+        scrollbarSize={6}
         onScrollPositionChange={({ y }) => {
           setScrolled(y !== 0);
         }}
       >
-        <Table highlightOnHover>
+        <Table
+          highlightOnHover
+          styles={(theme) => ({
+            td: {
+              borderTop:
+                colorScheme === "light"
+                  ? `1px solid ${theme.colors.lightTheme[2]}`
+                  : `1px solid ${theme.colors.darkTheme[8]}`,
+              textAlign: "center",
+            },
+            thead: {
+              color: "#000",
+            },
+            th: { textAlign: "center" },
+          })}
+          classNames={{
+            thead: classes.thead_row,
+          }}
+        >
           <Table.Thead
-            className={`${classes.header} ${scrolled && classes.scrolled}}`}
+            className={
+              colorScheme === "light"
+                ? `${classes.header} ${scrolled && classes.scrolled}`
+                : `${classes.header_dark} ${scrolled && classes.scrolled}`
+            }
           >
             <Table.Tr
-              style={{
-                color: "#000",
-                backgroundColor: "#fff",
-                borderBottom: "2px solid #004EE5",
+              classNames={{
+                tr:
+                  colorScheme === "light"
+                    ? classes.thead_row
+                    : classes.thead_row_dark,
               }}
             >
               <Table.Th
                 style={{
-                  backgroundColor: "#fff",
                   zIndex: "100",
                 }}
               ></Table.Th>
-              <Table.Th>Nombre</Table.Th>
+              <Table.Th style={{ textAlign: "center" }}>Nombre</Table.Th>
               <Table.Th>Apellido</Table.Th>
               <Table.Th>Vehiculo</Table.Th>
               <Table.Th>ID Vehiculo</Table.Th>

@@ -20,9 +20,7 @@ import {
 } from "@dnd-kit/core";
 import { sortableKeyboardCoordinates, arrayMove } from "@dnd-kit/sortable";
 import { INITIAL_CARDS } from "../../data";
-import {
-  ColumnSection as BoardSectionsType,
-} from "../../interface/interface";
+import { ColumnSection as BoardSectionsType } from "../../interface/interface";
 import { getCardById } from "../../utils/tasks";
 import {
   findBoardSectionContainer,
@@ -30,9 +28,11 @@ import {
 } from "../../utils/board";
 import { ProcessColumnLayout } from "./ProcessColumnLayout";
 import { CardProcess } from "./CardProcess";
-import { Grid } from "@mantine/core";
+import { Container, Grid, useMantineColorScheme } from "@mantine/core";
+import InsideContainer from "@/components/container/InsideContainer";
 
 export const ProcessLayout = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   const tasks = INITIAL_CARDS;
   const initialBoardSections = initializeColumns(INITIAL_CARDS);
   const [boardSections, setBoardSections] =
@@ -145,35 +145,49 @@ export const ProcessLayout = (): JSX.Element => {
   const task = activeCardId ? getCardById(tasks, activeCardId) : null;
 
   return (
-    <DndContext
-      sensors={sensors}
-      collisionDetection={closestCorners}
-      onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDragEnd={handleDragEnd}
-      autoScroll={{ layoutShiftCompensation: false }}
-    >
-      <Grid
-        style={{
-          borderRadius: "10px",
-          backgroundColor: "#fafafa",
-        }}
+    <InsideContainer offset={124} >
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCorners}
+        onDragStart={handleDragStart}
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
+        autoScroll={{ layoutShiftCompensation: false }}
       >
-        {Object.keys(boardSections).map((boardSectionKey) => {
-          return (
-            <div key={boardSectionKey} style={{ width: "25%" }}>
-              <ProcessColumnLayout
-                id={boardSectionKey}
-                title={boardSectionKey}
-                tasks={boardSections[boardSectionKey]}
-              />
-            </div>
-          );
-        })}
-        <DragOverlay dropAnimation={dropAnimation}>
-          {task ? <CardProcess card={task} /> : null}
-        </DragOverlay>
-      </Grid>
-    </DndContext>
+        <Container
+          styles={(theme) => ({
+            root: {
+              border:
+                colorScheme === "light"
+                  ? `1px solid ${theme.colors.lightTheme[2]}`
+                  : `1px solid ${theme.colors.darkTheme[9]}`,
+              backgroundColor:
+                colorScheme === "light"
+                  ? "#fff"
+                  : `${theme.colors.darkTheme[7]}`,
+              borderRadius: "16px",
+              padding: "0.5rem"
+            },
+          })}
+        >
+          <Grid >
+            {Object.keys(boardSections).map((boardSectionKey) => {
+              return (
+                <div key={boardSectionKey} style={{ width: "25%" }}>
+                  <ProcessColumnLayout
+                    id={boardSectionKey}
+                    title={boardSectionKey}
+                    tasks={boardSections[boardSectionKey]}
+                  />
+                </div>
+              );
+            })}
+            <DragOverlay dropAnimation={dropAnimation}>
+              {task ? <CardProcess card={task} /> : null}
+            </DragOverlay>
+          </Grid>
+        </Container>
+      </DndContext>
+    </InsideContainer>
   );
 };

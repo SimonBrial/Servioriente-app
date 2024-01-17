@@ -1,10 +1,18 @@
 "use client";
 
-import { Divider, Flex, Select, Stack, Text } from "@mantine/core";
+import {
+  Divider,
+  Flex,
+  Select,
+  Stack,
+  Text,
+  useMantineColorScheme,
+} from "@mantine/core";
 import React, { useState } from "react";
 
 export const FontSizeSelection = () => {
   const [value, setValue] = useState<string | null>("");
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Stack gap={8}>
       <Flex justify={"space-between"} align={"center"}>
@@ -13,9 +21,19 @@ export const FontSizeSelection = () => {
           data={["sm", "md", "lg", "xl"]}
           value={value}
           onChange={setValue}
+          styles={(theme) => ({
+            input: {
+              cursor: "pointer",
+              backgroundColor: colorScheme === "light" ? "#FFFFFF" : "#EFF3F5",
+              color: colorScheme === "light" ? "#696969" : "#696969",
+            },
+            section: {
+              color: colorScheme === "light" ? "#696969" : "#696969",
+            },
+          })}
         />
       </Flex>
-      <Divider />
+      <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
     </Stack>
   );
 };

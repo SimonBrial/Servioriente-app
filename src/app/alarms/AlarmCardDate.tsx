@@ -14,7 +14,14 @@ export default function AlarmCardDate({
   return (
     <Stack gap={1} w={"100%"}>
       <Flex align={"center"} gap={10}>
-        <Text size="sm">{label}:</Text>
+        <Text
+          size="sm"
+          styles={(theme) => ({
+            root: { color: `${theme.colors.lightTheme[3]}` },
+          })}
+        >
+          {label}:
+        </Text>
         <Text
           size="xs"
           styles={(theme) => ({

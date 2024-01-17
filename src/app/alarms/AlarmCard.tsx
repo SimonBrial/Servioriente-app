@@ -43,9 +43,14 @@ export default function AlarmCard({
         />
         <Container h={"2rem"} style={{ overflow: "hidden" }} p={0}>
           <Text
-            styles={{
-              root: { width: "100%", lineHeight: "16px", fontSize: "0.8rem" },
-            }}
+            styles={(theme) => ({
+              root: {
+                width: "100%",
+                lineHeight: "16px",
+                fontSize: "0.8rem",
+                color: `${theme.colors.lightTheme[3]}`,
+              },
+            })}
           >
             {description}
           </Text>

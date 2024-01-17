@@ -1,13 +1,23 @@
 "use client";
 
-import { Checkbox, Container, Flex, Title } from "@mantine/core";
+import {
+  Checkbox,
+  Container,
+  Divider,
+  Flex,
+  Stack,
+  Title,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { BadgeClose } from "../BadgeClose";
 import { BadgeFilter } from "../BadgeFilter";
 import { AutoCompleteData } from "@/interface/interface";
+import checkboxClasses from "../../styles/sidebarSectionSelection.module.css";
 
-export default function AutoCompleteFilterContainer ({
+export default function AutoCompleteFilterContainer({
   label,
 }: AutoCompleteData): JSX.Element {
+  const { colorScheme } = useMantineColorScheme();
   let resolve: JSX.Element | JSX.Element[];
 
   const pills = (label: string | string[]): JSX.Element | JSX.Element[] => {
@@ -25,19 +35,40 @@ export default function AutoCompleteFilterContainer ({
     <Container
       style={{
         width: "100%",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        gap: "0.5rem",
-        borderBottom: "1px solid #696969",
+        padding: "0",
       }}
     >
-      <Flex justify="flex-start" align="center" direction="row" gap={"xs"}>
-        <Checkbox />
-        <Title order={5}>Buscar: </Title>
-        {pills(label)}
-      </Flex>
-      <BadgeClose status={true} />
+      <Stack style={{ width: "100%" }} gap={4}>
+        <Flex justify="space-between" align="center">
+          <Flex justify="flex-start" align="center" gap={"xs"}>
+            <Checkbox
+              color={colorScheme === "light" ? "#115dfe" : "#52A5E0"}
+              classNames={{
+                input:
+                  colorScheme === "light"
+                    ? checkboxClasses.checkbox
+                    : checkboxClasses.checkbox_dark,
+              }}
+            />
+            <Title
+              order={5}
+              styles={(theme) => ({
+                root: {
+                  color:
+                    colorScheme === "light"
+                      ? `1px solid ${theme.colors.lightTheme[2]}`
+                      : `1px solid ${theme.colors.darkTheme[2]}`,
+                },
+              })}
+            >
+              Buscar:{" "}
+            </Title>
+            {pills(label)}
+          </Flex>
+          <BadgeClose status={true} />
+        </Flex>
+        <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+      </Stack>
     </Container>
   );
 }

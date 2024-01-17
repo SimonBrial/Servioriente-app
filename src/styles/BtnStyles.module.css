@@ -32,32 +32,85 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.btnEditEdit_item {
+.btnEdit_item {
   color: #696969;
   font-size: 1.2rem;
 }
+.btnEdit_item_dark {
+  color: #f8f8f8;
+  font-size: 1.2rem;
+}
 
-.btnEditEdit_item:hover {
+.btnEdit_item:hover {
   color: orange;
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
 }
-.btnEditDelete_item {
+.btnEdit_item_dark:hover {
+  color: orange;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btnDelete_item {
   color: #696969;
   font-size: 1.2rem;
 }
 
-.btnEditDelete_item:hover {
+.btnDelete_item_dark {
+  color: #f8f8f8;
+  font-size: 1.2rem;
+}
+
+.btnDelete_item_dark:hover {
   color: red;
   transition: color 0.3s ease-in-out;
 }
-.btnEditView_item {
+
+.btnDelete_item:hover {
+  color: red;
+  transition: color 0.3s ease-in-out;
+}
+
+.btnView_item {
   color: #696969;
   font-size: 1.2rem;
 }
+.btnView_item_dark {
+  color: #f8f8f8;
+  font-size: 1.2rem;
+}
 
-.btnEditView_item:hover {
+.btnView_item:hover {
   color: #004ee5;
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
+}
+.btnView_item_dark:hover {
+  color: #52a5e0;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btnMail {
+  color: #cdcdcd;
+  margin-bottom: "-0.25rem";
+  padding: 0.3rem;
+  border-radius: 6px;
+}
+.btnMail:hover {
+  color: #cdcdcd;
+  background-color: #efefef;
+  transition: all 0.2s ease-in-out;
+}
+.btnMail_dark {
+  color: #eff3f5;
+  margin-bottom: 0.25rem;
+  padding: 0.3rem;
+  border-radius: 6px;
+}
+.btnMail_dark:hover {
+  color: #cdcdcd;
+  background-color: #bbb5f43b;
+  transition: all 0.2s ease-in-out;
 }

@@ -1,26 +1,42 @@
 "use client";
 
-import { Container } from "@mantine/core";
+import { Container, useMantineColorScheme } from "@mantine/core";
 import React, { ReactNode } from "react";
+import containerInside from "../../styles/containerInside.module.css";
 
 export const ContainerInside = ({
   children,
   width,
+  allWhite,
 }: {
   children: ReactNode;
   width: string;
+  allWhite: boolean;
 }): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Container
-      w={width}
       styles={(theme) => ({
         root: {
-          border: `1px solid #CDCDCD`,
-          padding: "0.8rem",
-          borderRadius: "10px",
-          backgroundColor: "#F8F8F8",
+          border:
+            colorScheme === "light"
+              ? `1px solid ${theme.colors.lightTheme[2]}`
+              : `1px solid ${theme.colors.darkTheme[9]}`,
+          backgroundColor:
+            colorScheme === "light"
+              ? allWhite
+                ? "#fff"
+                : `${theme.colors.lightTheme[0]}`
+              : `${theme.colors.darkTheme[7]}`,
         },
       })}
+      w={width}
+      classNames={{
+        root:
+          colorScheme === "light"
+            ? containerInside.container_inside
+            : containerInside.container_inside_dark,
+      }}
     >
       {children}
     </Container>

@@ -15,10 +15,10 @@ import CreateFolderLayout from "./CreateFolderLayout";
 const fakeAlarmDescription: AlarmObj = {
   id: crypto.randomUUID(),
   title: "Cumpleaños",
-  color: "red",
+  color: "#FD0E78",
   icon: "😎",
   createAt: "20/9/2023 - 10:58 AM",
-  createdTo: "21/9/2023 - 10:00 AM",
+  createdTo: "Simon Briceño",
   privateAlarm: true,
   privateUser: "Simon Briceño",
   description: `t is a long established fact that a reader

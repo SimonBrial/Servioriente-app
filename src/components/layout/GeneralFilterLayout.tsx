@@ -1,10 +1,10 @@
 "use client";
 
-import { Checkbox, Divider, Button, Stack, Title, Flex } from "@mantine/core";
-// import { Calendar, DateInput } from "@mantine/dates";
+import { Button, Stack } from "@mantine/core";
 import { BsFilter } from "../../icons";
 import { TitleLayout } from "./TitleLayout";
 import { CalendarInput } from "../inputs/CalendarInput";
+import { ItemFilterLayout } from "./ItemFilterLayout";
 
 export function GeneralFilterLayout(): JSX.Element {
   return (
@@ -14,62 +14,15 @@ export function GeneralFilterLayout(): JSX.Element {
         root: { padding: "1rem" },
       }}
     >
-      <TitleLayout title="FILTRAR CATEGORIA" color="" icon="" onText={false} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Nombre
-        </Title>
-        <Checkbox aria-label="My checkbox" />
-      </Flex>
-      <Divider size={"xs"} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Apellido
-        </Title>
-        <Checkbox aria-label="My checkbox" />
-      </Flex>
-      <Divider size={"xs"} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Vehiculo
-        </Title>
-        <Checkbox aria-label="My checkbox" />
-      </Flex>
-      <Divider size={"xs"} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Estado
-        </Title>
-        <Checkbox aria-label="My checkbox" />
-      </Flex>
-      <Divider size={"xs"} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Telefono
-        </Title>
-        <Checkbox aria-label="My checkbox" />
-      </Flex>
-      <Divider size={"xs"} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Red Social
-        </Title>
-        <Checkbox aria-label="My checkbox" />
-      </Flex>
-      <Divider size={"xs"} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Estatus
-        </Title>
-        <Checkbox aria-label="My checkbox" />
-      </Flex>
-      <Divider size={"xs"} />
-      <Flex justify={"space-between"} align={"center"}>
-        <Title order={5} style={{ color: "#696969" }}>
-          Desde
-        </Title>
-        <CalendarInput withTitle={false} title="Fecha"/>
-      </Flex>
+      <TitleLayout title="Filtrar Categoria" color="" icon="" onText={false} />
+      <ItemFilterLayout label="Nombre" />
+      <ItemFilterLayout label="Apellido" />
+      <ItemFilterLayout label="Vehiculo" />
+      <ItemFilterLayout label="Estado" />
+      <ItemFilterLayout label="Telefono" />
+      <ItemFilterLayout label="Red Social" />
+      <ItemFilterLayout label="Estatus" />
+      <CalendarInput title="Desde" width="200px" withTitle />
       <Button
         leftSection={<BsFilter />}
         styles={(theme) => ({

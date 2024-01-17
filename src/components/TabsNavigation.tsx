@@ -1,20 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { Tabs } from "@mantine/core";
-import React from "react";
+import { Tabs, useMantineColorScheme } from "@mantine/core";
 import { SectionsArray, TabsSectionesProps } from "@/interface/interface";
+import classTabs from "../styles/tabNavigation.module.css";
 
 export default function TabsNavigation({
   sectionsArray,
   orientation,
 }: SectionsArray): JSX.Element {
+  const { colorScheme } = useMantineColorScheme();
+
   const sections = (): JSX.Element => {
     return (
-      <Tabs.List>
+      <Tabs.List
+      /* classNames={{
+          list: classTabs.tab_list_dark,
+        }} */
+      >
         {sectionsArray.map((section: TabsSectionesProps, index: number) => (
           <Link href={section.dir} key={index}>
-            <Tabs.Tab value={section.value} leftSection={section.icon}>
+            <Tabs.Tab
+              value={section.value}
+              leftSection={section.icon}
+              className={
+                colorScheme === "light"
+                  ? classTabs.tab_label
+                  : classTabs.tab_label_dark
+              }
+              classNames={{
+                tab:
+                  colorScheme === "light"
+                    ? classTabs.tab_item
+                    : classTabs.tab_item_dark,
+              }}
+            >
               {section.value}
             </Tabs.Tab>
           </Link>
@@ -26,13 +46,11 @@ export default function TabsNavigation({
   return (
     <Tabs
       orientation={orientation ? "horizontal" : "vertical"}
-      color="gray"
-      variant="outline"
       defaultValue={sectionsArray[0].value}
+      /* classNames={{
+        tab: classTabs.tab_item,
+      }} */
       styles={{
-        root: {
-          color: "#696969",
-        },
         tabSection: {
           fontSize: "1.2rem",
         },

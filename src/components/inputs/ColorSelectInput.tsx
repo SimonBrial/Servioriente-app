@@ -1,15 +1,22 @@
-import { Flex, ColorInput, Title } from "@mantine/core";
+"use client";
+
+import { Flex, ColorInput, Title, useMantineColorScheme } from "@mantine/core";
 
 export default function ColorSelectInput(): JSX.Element {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Flex justify={"space-between"} align={"center"}>
-      <Title order={4}>Seleccion un color</Title>
+      <Title order={4}>Selecciona un color</Title>
       <ColorInput
         placeholder="Selecciona un color"
-        styles={{
+        styles={(theme) => ({
           root: { width: "200px" },
           eyeDropperButton: { display: "none" },
-        }}
+          input: {
+            backgroundColor: colorScheme === "light" ? "#FFFFFF" : "#EFF3F5",
+            color: `${theme.colors.lightTheme[3]}`,
+          },
+        })}
         format="rgba"
         swatches={[
           "rgb(37, 38, 43)",

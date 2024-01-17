@@ -7,36 +7,50 @@ import {
   HiOutlineSave,
 } from "@/icons";
 import {
-  Checkbox,
   UnstyledButton,
-  Flex,
-  Group,
-  Text,
-  Title,
+  Checkbox,
   Avatar,
-  Stack,
   Center,
+  Group,
+  Title,
+  Stack,
+  Flex,
+  Text,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
 
 export default function MailItem(): JSX.Element {
   const { hovered, ref } = useHover();
+  const { colorScheme } = useMantineColorScheme();
 
   return (
     <Group
       ref={ref}
       mb={5}
-      styles={{
+      styles={(theme) => ({
         root: {
           padding: "0.3rem 0.8rem",
-          border: `1px solid ${hovered ? "#696969" : "#CDCDCD"} `,
-          backgroundColor: `${
-            hovered ? "rgba(239, 239, 239, 0.3)" : "#FFFFFF"
-          }`,
+          border:
+            colorScheme === "light"
+              ? hovered
+                ? `1px solid ${theme.colors.lightTheme[3]}`
+                : `1px solid ${theme.colors.lightTheme[2]}`
+              : hovered
+                ? `1px solid ${theme.colors.lightTheme[3]}`
+                : `1px solid ${theme.colors.darkTheme[5]}`,
+          backgroundColor:
+            colorScheme === "light"
+              ? hovered
+                ? "#efefef4c"
+                : "#FFFFFF"
+              : hovered
+                ? "#efefef4c"
+                : `${theme.colors.darkTheme[7]}`,
           borderRadius: "6px",
           transition: "0.3s all ease-in-out",
         },
-      }}
+      })}
     >
       <Flex
         justify={"start"}
@@ -63,17 +77,68 @@ export default function MailItem(): JSX.Element {
 
         <Stack gap={0} style={{ width: "100%" }}>
           <Flex justify={"space-between"} style={{ margin: "-0.2rem" }}>
-            <Title order={5}>Titulo del mail</Title>
+            <Title
+              order={5}
+              styles={(theme) => ({
+                root: {
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[2]}`
+                      : `${theme.colors.darkTheme[2]}`,
+                },
+              })}
+            >
+              Titulo del mail
+            </Title>
             {hovered ? (
               <Flex align={"center"} justify={"end"} style={{ gap: "0.3rem" }}>
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <HiOutlineMailOpen />
+                <UnstyledButton
+                  style={{
+                    color:
+                      colorScheme === "light"
+                        ? hovered
+                          ? "#696969"
+                          : "#696969"
+                        : hovered
+                          ? "#F8F8F8"
+                          : "#696969",
+                  }}
+                >
+                  <Center>
+                    <HiOutlineMailOpen />
+                  </Center>
                 </UnstyledButton>
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <HiOutlineStar />
+                <UnstyledButton
+                  style={{
+                    color:
+                      colorScheme === "light"
+                        ? hovered
+                          ? "#696969"
+                          : "#696969"
+                        : hovered
+                          ? "#F8F8F8"
+                          : "#696969",
+                  }}
+                >
+                  <Center>
+                    <HiOutlineStar />
+                  </Center>
                 </UnstyledButton>
-                <UnstyledButton style={{ color: "#696969" }}>
-                  <HiOutlineSave />
+                <UnstyledButton
+                  style={{
+                    color:
+                      colorScheme === "light"
+                        ? hovered
+                          ? "#696969"
+                          : "#696969"
+                        : hovered
+                          ? "#F8F8F8"
+                          : "#696969",
+                  }}
+                >
+                  <Center>
+                    <HiOutlineSave />
+                  </Center>
                 </UnstyledButton>
               </Flex>
             ) : (
@@ -84,7 +149,10 @@ export default function MailItem(): JSX.Element {
             <Text
               styles={(theme) => ({
                 root: {
-                  color: `${theme.colors.principalTheme[6]}`,
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[6]}`
+                      : `${theme.colors.darkTheme[1]}`,
                 },
               })}
             >
@@ -94,7 +162,10 @@ export default function MailItem(): JSX.Element {
               size="xs"
               styles={(theme) => ({
                 root: {
-                  color: `${theme.colors.principalTheme[6]}`,
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[6]}`
+                      : `${theme.colors.darkTheme[1]}`,
                 },
               })}
             >

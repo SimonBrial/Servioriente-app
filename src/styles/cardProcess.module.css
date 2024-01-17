@@ -1,0 +1,26 @@
+.card_container:hover {
+  background-color: #9a90ef1a;
+  transition: all 0.2s ease-in-out;
+}
+
+.process_col {
+  border-radius: 6px;
+}
+.process_col:hover {
+  background-color: #f8f8f8;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+.card_container_dark:hover {
+  background-color: #9a90ef1a;
+  transition: all 0.2s ease-in-out;
+}
+
+.process_col {
+  border-radius: 6px;
+}
+.process_col_dark:hover {
+  background-color: #9a90ef1a;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}

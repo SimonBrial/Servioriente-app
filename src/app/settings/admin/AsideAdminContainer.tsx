@@ -2,12 +2,19 @@
 
 import { ContainerInside } from "@/components/container/ContainerInside";
 import { TbEdit } from "@/icons";
-import { Avatar, Button, Stack, Text } from "@mantine/core";
+import {
+  useMantineColorScheme,
+  Avatar,
+  Button,
+  Stack,
+  Text,
+} from "@mantine/core";
 import React from "react";
 
 export const AsideAdminContainer = () => {
+  const { colorScheme } = useMantineColorScheme();
   return (
-    <ContainerInside width="30%">
+    <ContainerInside width="30%" allWhite={false}>
       <Stack justify="space-between" style={{ height: "100%" }}>
         <Stack style={{ height: "100%", paddingTop: "9.8rem" }} align="center">
           <Avatar size={"7rem"} />
@@ -17,7 +24,10 @@ export const AsideAdminContainer = () => {
               styles={(theme) => ({
                 root: {
                   fontSize: "0.8rem",
-                  color: `${theme.colors.principalTheme[6]}`,
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.principalTheme[6]}`
+                      : theme.colors.darkTheme[1],
                 },
               })}
             >

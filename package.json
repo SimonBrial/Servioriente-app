@@ -30,6 +30,7 @@
     "@tiptap/pm": "^2.1.12",
     "@tiptap/react": "^2.1.11",
     "@tiptap/starter-kit": "^2.1.11",
+    "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
     "next": "latest",
     "react": "latest",
