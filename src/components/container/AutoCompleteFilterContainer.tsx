@@ -1,18 +1,18 @@
 "use client";
 
 import {
-  Checkbox,
+  useMantineColorScheme,
   Container,
-  Divider,
-  Flex,
+  Checkbox,
   Stack,
   Title,
-  useMantineColorScheme,
+  Flex,
 } from "@mantine/core";
 import { BadgeClose } from "../BadgeClose";
 import { BadgeFilter } from "../BadgeFilter";
 import { AutoCompleteData } from "@/interface/interface";
 import checkboxClasses from "../../styles/sidebarSectionSelection.module.css";
+import { GeneralDivider } from "../GeneralDivider";
 
 export default function AutoCompleteFilterContainer({
   label,
@@ -67,7 +67,7 @@ export default function AutoCompleteFilterContainer({
           </Flex>
           <BadgeClose status={true} />
         </Flex>
-        <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+        <GeneralDivider />
       </Stack>
     </Container>
   );

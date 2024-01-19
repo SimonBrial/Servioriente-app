@@ -23,6 +23,7 @@
     "multiline-ternary": "off",
     "no-lone-blocks": "off",
     "react-hooks/exhaustive-deps": "off",
+    "array-callback-return": "off",
 
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/quotes": "off",
@@ -36,6 +37,7 @@
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off"
   }
 }

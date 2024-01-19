@@ -7,6 +7,7 @@ import {
   HiOutlineSave,
 } from "@/icons";
 import {
+  useMantineColorScheme,
   UnstyledButton,
   Checkbox,
   Avatar,
@@ -16,7 +17,6 @@ import {
   Stack,
   Flex,
   Text,
-  useMantineColorScheme,
 } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
 

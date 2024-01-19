@@ -10,7 +10,7 @@ const page = (): JSX.Element => {
   return (
     <>
       <AsideContainer>
-        <div style={{ width: "40%" }}>
+        <div style={{ width: "50%" }}>
           <BtnBackSection
             label="Volver a Chats"
             dir="/chats"

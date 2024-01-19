@@ -1,15 +1,13 @@
-"use client";
-
 import React from "react";
 import { SidebarSectionSelection } from "./SidebarSectionSelection";
-import { Divider, Stack, Text, useMantineColorScheme } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
+import { GeneralDivider } from "@/components/GeneralDivider";
 
 export const SidebarSectionContainer = () => {
-  const { colorScheme } = useMantineColorScheme();
   return (
     <Stack gap={4}>
       <Text>Secciones de la Sidebar</Text>
-      <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+      <GeneralDivider />
       <SidebarSectionSelection label="Dashboard" />
       <SidebarSectionSelection label="Process" />
       <SidebarSectionSelection label="Chats" />
@@ -18,7 +16,7 @@ export const SidebarSectionContainer = () => {
       <SidebarSectionSelection label="Correo" />
       <SidebarSectionSelection label="Recordatorios" />
       <SidebarSectionSelection label="Bloc de Notas" />
-      <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+      <GeneralDivider />
     </Stack>
   );
 };

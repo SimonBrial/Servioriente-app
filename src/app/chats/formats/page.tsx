@@ -2,14 +2,14 @@ import { BtnBackSection } from "@/components/buttons/BtnBackSection";
 import { FormatsLayout } from "./FormatsLayout";
 import { AsideContainer } from "../AsideContainer";
 import { ChatContainer } from "../ChatContainer";
-import { FormatsEditor } from "./FormatsEditor";
 import { FormatsHeader } from "./FormatsHeader";
+import { FormatsContainer } from "./FormatsContainer";
 
 const page = (): JSX.Element => {
   return (
     <>
       <AsideContainer>
-        <div style={{ width: "40%" }}>
+        <div style={{ width: "50%", marginBottom: "-0.4rem" }}>
           <BtnBackSection
             label="Volver a Chats"
             dir="/chats"
@@ -20,7 +20,7 @@ const page = (): JSX.Element => {
       </AsideContainer>
       <ChatContainer>
         <FormatsHeader />
-        <FormatsEditor />
+        <FormatsContainer />
       </ChatContainer>
     </>
   );

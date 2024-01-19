@@ -1,29 +1,48 @@
 "use client";
 
+import { HiOutlineDocumentText, HiOutlineDotsVertical } from "@/icons";
 import {
-  HiOutlineDocumentText,
-  HiOutlineDotsVertical,
-} from "@/icons";
-import { Box, Center, Flex, Stack, Text, Title } from "@mantine/core";
+  useMantineColorScheme,
+  Center,
+  Title,
+  Stack,
+  Flex,
+  Text,
+  Container,
+} from "@mantine/core";
 import React from "react";
+import classes from "../../../styles/container.module.css";
 
 export const TemplateCardLayout = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   return (
-    <Box
+    <Container
+      classNames={{
+        root:
+          colorScheme === "light"
+            ? classes.UserContactContainer
+            : classes.UserContactContainer_dark,
+      }}
       style={{
-        border: "1px solid #696969",
         borderRadius: "6px",
-        backgroundColor: "white",
         padding: "0.3rem 0.5rem",
       }}
     >
       <Flex justify={"space-between"}>
         <Flex gap={5}>
-          <Center>
+          <Center
+            styles={(theme) => ({
+              root: {
+                color:
+                  colorScheme === "light"
+                    ? `${theme.colors.lightTheme[3]}`
+                    : `${theme.colors.darkTheme[2]}`,
+              },
+            })}
+          >
             <HiOutlineDocumentText
               style={{
                 fontSize: "2.5rem",
-                color: "#696969",
                 strokeWidth: "1",
               }}
             />
@@ -31,14 +50,24 @@ export const TemplateCardLayout = (): JSX.Element => {
           <Stack gap={0}>
             <Title
               order={5}
-              styles={(theme) => ({ root: { color: "#696969" } })}
+              styles={(theme) => ({
+                root: {
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[3]}`
+                      : `${theme.colors.darkTheme[2]}`,
+                },
+              })}
             >
               Mario Hurtado
             </Title>
             <Text
               styles={(theme) => ({
                 root: {
-                  color: `${theme.colors.principalTheme[6]}`,
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[6]}`
+                      : `${theme.colors.darkTheme[1]}`,
                   fontSize: "0.8rem",
                 },
               })}
@@ -53,6 +82,6 @@ export const TemplateCardLayout = (): JSX.Element => {
           />
         </Center>
       </Flex>
-    </Box>
+    </Container>
   );
 };

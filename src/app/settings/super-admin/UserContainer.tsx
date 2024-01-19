@@ -4,7 +4,6 @@ import { useDisclosure } from "@mantine/hooks";
 import {
   Container,
   Collapse,
-  Divider,
   Center,
   Stack,
   Badge,
@@ -17,6 +16,7 @@ import { BiCrown } from "@/icons";
 import BtnAdd from "@/components/buttons/BtnAdd";
 import { SuperAdminCard } from "./SuperAdminCard";
 import { AdminDescriptionLayout } from "../admin/AdminDescriptionLayout";
+import { GeneralDivider } from "@/components/GeneralDivider";
 
 type labelType = "Super Admin" | "Admin";
 
@@ -99,7 +99,7 @@ export const UserContainer = ({ label }: { label: labelType }) => {
               </BtnAdd>
             </Box>
           </Flex>
-          <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+          <GeneralDivider />
         </Stack>
         <Collapse in={opened}>
           <Stack gap={5}>

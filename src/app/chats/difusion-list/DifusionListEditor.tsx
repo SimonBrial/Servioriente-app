@@ -4,7 +4,13 @@
 import { BtnPreview } from "@/components/buttons/BtnPreview";
 import { BtnSend } from "@/components/buttons/BtnSend";
 import InsideContainer from "@/components/container/InsideContainer";
-import { Container, Flex, ScrollArea, Stack } from "@mantine/core";
+import {
+  Container,
+  Flex,
+  ScrollArea,
+  Stack,
+  useMantineColorScheme,
+} from "@mantine/core";
 import React from "react";
 import { RichTextEditor, Link } from "@mantine/tiptap";
 import { useEditor } from "@tiptap/react";
@@ -16,11 +22,13 @@ import Underline from "@tiptap/extension-underline";
 import TextAlign from "@tiptap/extension-text-align";
 import Superscript from "@tiptap/extension-superscript";
 import SubScript from "@tiptap/extension-subscript";
+import classes from "../../../styles/container.module.css";
 
 const content =
   '<h2 style="text-align: center;">Welcome to Mantine rich text editor</h2><p><code>RichTextEditor</code> component focuses on usability and is designed to be as simple as possible to bring a familiar editing experience to regular users. <code>RichTextEditor</code> is based on <a href="https://tiptap.dev/" rel="noopener noreferrer" target="_blank">Tiptap.dev</a> and supports all of its features:</p><ul><li>General text formatting: <strong>bold</strong>, <em>italic</em>, <u>underline</u>, <s>strike-through</s> </li><li>Headings (h1-h6)</li><li>Sub and super scripts (<sup>&lt;sup /&gt;</sup> and <sub>&lt;sub /&gt;</sub> tags)</li><li>Ordered and bullet lists</li><li>Text align&nbsp;</li><li>And all <a href="https://tiptap.dev/extensions" target="_blank" rel="noopener noreferrer">other extensions</a></li></ul>';
 
 export const DifusionListEditor = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   const editor = useEditor({
     extensions: [
       Superscript,
@@ -39,12 +47,16 @@ export const DifusionListEditor = (): JSX.Element => {
     <Stack justify="space-between">
       <InsideContainer offset={245}>
         <Container
+          classNames={{
+            root:
+              colorScheme === "light"
+                ? classes.UserContactContainer
+                : classes.UserContactContainer_dark,
+          }}
           styles={(theme) => ({
             root: {
-              border: "1px solid #CDCDCD",
               padding: "0.6rem",
               borderRadius: "6px",
-              backgroundColor: "white",
               width: "100%",
               height: "100%",
             },
@@ -58,7 +70,21 @@ export const DifusionListEditor = (): JSX.Element => {
           >
             <RichTextEditor
               editor={editor}
-              style={{ borderColor: "transparent" }}
+              styles={(theme) => ({
+                root: {
+                  backgroundColor: "transparent",
+                  borderColor: "transparent",
+                },
+                toolbar: {
+                  backgroundColor:
+                    colorScheme === "light"
+                      ? "#fff"
+                      : `${theme.colors.darkTheme[7]}`,
+                  borderBottom: "none",
+                  backdropFilter: "blur(5px)",
+                },
+                content: { backgroundColor: "transparent" },
+              })}
             >
               <RichTextEditor.Toolbar
                 sticky
@@ -66,12 +92,16 @@ export const DifusionListEditor = (): JSX.Element => {
                 styles={{
                   toolbar: {
                     padding: "1rem 0.8rem",
-                    backgroundColor: "white",
                   },
                 }}
               >
                 <RichTextEditor.ControlsGroup
-                  styles={{ controlsGroup: { margin: "-0.2rem" } }}
+                  styles={{
+                    controlsGroup: {
+                      margin: "-0.2rem",
+                      opacity: "1",
+                    },
+                  }}
                 >
                   <RichTextEditor.Bold />
                   <RichTextEditor.Italic />
@@ -81,6 +111,7 @@ export const DifusionListEditor = (): JSX.Element => {
                   <RichTextEditor.ColorPicker
                     colors={[
                       "#25262b",
+                      "#ffffff",
                       "#868e96",
                       "#fa5252",
                       "#e64980",
@@ -105,7 +136,12 @@ export const DifusionListEditor = (): JSX.Element => {
                 </RichTextEditor.ControlsGroup>
 
                 <RichTextEditor.ControlsGroup
-                  styles={{ controlsGroup: { margin: "-0.2rem" } }}
+                  styles={{
+                    controlsGroup: {
+                      margin: "-0.2rem",
+                      backgroundColor: "transparent",
+                    },
+                  }}
                 >
                   <RichTextEditor.Blockquote />
                   <RichTextEditor.Hr />
@@ -122,7 +158,9 @@ export const DifusionListEditor = (): JSX.Element => {
                 </RichTextEditor.ControlsGroup>
               </RichTextEditor.Toolbar>
 
-              <RichTextEditor.Content />
+              <RichTextEditor.Content
+                style={{ backgroundColor: "transparent" }}
+              />
             </RichTextEditor>
           </ScrollArea>
         </Container>

@@ -1,12 +1,12 @@
 "use client";
 
+import { GeneralDivider } from "@/components/GeneralDivider";
 import {
-  Divider,
-  Flex,
+  useMantineColorScheme,
   Select,
   Stack,
   Text,
-  useMantineColorScheme,
+  Flex,
 } from "@mantine/core";
 import React, { useState } from "react";
 
@@ -33,7 +33,7 @@ export const UserDBCountView = () => {
           onChange={setValue}
         />
       </Flex>
-      <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+      <GeneralDivider />
     </Stack>
   );
 };

@@ -7,7 +7,8 @@ import {
   IoClose,
 } from "@/icons";
 import {
-  ActionIcon,
+  useMantineColorScheme,
+  UnstyledButton,
   TextInput,
   Popover,
   Divider,
@@ -15,8 +16,11 @@ import {
   Flex,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import btnStyles from "../../../styles/BtnStyles.module.css";
+import classes from "../../../styles/menu.module.css";
 
 export const SearchInChat = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   const [opened, { close, open }] = useDisclosure(false);
 
   return (
@@ -24,73 +28,108 @@ export const SearchInChat = (): JSX.Element => {
       <Popover
         opened={opened}
         shadow="md"
-        width={350}
+        width={380}
         position="bottom-end"
         offset={5}
         withArrow
         trapFocus
         arrowPosition="center"
         closeOnClickOutside={false}
-        /* styles={(theme) => ({
-          dropdown: {
-            boxShadow: `0px 5px 5px -1px ${theme.colors.principalTheme[6]}`,
-          },
-        })} */
+        classNames={{
+          dropdown:
+            colorScheme === "light"
+              ? classes.menuDropdown
+              : classes.menuDropdown_dark,
+        }}
       >
         <Popover.Target>
-          <ActionIcon
+          <UnstyledButton
             variant="transparent"
             size={"xl"}
             aria-label="Search"
             styles={(theme) => ({
-              root: { color: "#696969" },
+              root: { margin: "0 0.2rem" },
             })}
             onClick={open}
+            classNames={{
+              root:
+                colorScheme === "light"
+                  ? btnStyles.btnMail
+                  : btnStyles.btnMail_dark,
+            }}
           >
-            <HiOutlineSearch style={{ fontSize: "2rem", color: "#696969" }} />
-          </ActionIcon>
+            <Center style={{ fontSize: "2rem" }}>
+              <HiOutlineSearch />
+            </Center>
+          </UnstyledButton>
         </Popover.Target>
         <Popover.Dropdown>
           <Flex gap={5} align={"center"}>
             <TextInput
               placeholder="Buscar en el chat"
+              leftSection={<HiOutlineSearch />}
               style={{ width: "100%" }}
-              size="sm"
+              styles={(theme) => ({
+                root: {
+                  padding: "0 0.2rem",
+                },
+                input: {
+                  backgroundColor:
+                    colorScheme === "light" ? "#FFFFFF" : "#EFF3F5",
+                  color: `${theme.colors.lightTheme[3]}`,
+                },
+              })}
             />
-            <ActionIcon
+            <UnstyledButton
               variant="transparent"
               size={"md"}
               aria-label="Search"
-              styles={(theme) => ({
-                root: { color: "#696969" },
-              })}
+              classNames={{
+                root:
+                  colorScheme === "light"
+                    ? btnStyles.btnMail
+                    : btnStyles.btnMail_dark,
+              }}
             >
-              <IoChevronDownOutline
-                style={{ fontSize: "1.5rem", color: "#696969" }}
-              />
-            </ActionIcon>
-            <ActionIcon
+              <Center>
+                <IoChevronDownOutline style={{ fontSize: "1.5rem" }} />
+              </Center>
+            </UnstyledButton>
+            <UnstyledButton
               variant="transparent"
               size={"md"}
               aria-label="Search"
-              styles={(theme) => ({
-                root: { color: "#696969" },
-              })}
+              classNames={{
+                root:
+                  colorScheme === "light"
+                    ? btnStyles.btnMail
+                    : btnStyles.btnMail_dark,
+              }}
             >
-              <IoChevronUp style={{ fontSize: "1.5rem", color: "#696969" }} />
-            </ActionIcon>
-            <Divider orientation="vertical" />
-            <ActionIcon
+              <Center>
+                <IoChevronUp style={{ fontSize: "1.5rem" }} />
+              </Center>
+            </UnstyledButton>
+            <Divider
+              orientation="vertical"
+              color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"}
+            />
+            <UnstyledButton
               variant="transparent"
               size={"md"}
               aria-label="Search"
-              styles={(theme) => ({
-                root: { color: "#696969" },
-              })}
               onClick={close}
+              classNames={{
+                root:
+                  colorScheme === "light"
+                    ? btnStyles.btnMail
+                    : btnStyles.btnMail_dark,
+              }}
             >
-              <IoClose style={{ fontSize: "1.5rem", color: "#696969" }} />
-            </ActionIcon>
+              <Center>
+                <IoClose style={{ fontSize: "1.5rem" }} />
+              </Center>
+            </UnstyledButton>
           </Flex>
         </Popover.Dropdown>
       </Popover>

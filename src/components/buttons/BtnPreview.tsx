@@ -20,14 +20,13 @@ export const BtnPreview = (): JSX.Element => {
           <TitleLayout color="" icon="" onText title="Vista Previa" />
           {/* Aqui adentro va la descripcion del mensaje */}
           <Button
-            size="xs"
             onClick={close}
             fullWidth
             variant="#004EE5"
             leftSection={<IoClose />}
             styles={(theme) => ({
               section: { fontSize: "1.2rem" },
-              root: { backgroundColor: `${theme.colors.principalTheme[6]}` },
+              root: { backgroundColor: `${theme.colors.lightTheme[6]}` },
             })}
           >
             Cerrar
@@ -35,9 +34,9 @@ export const BtnPreview = (): JSX.Element => {
         </Stack>
       </Drawer>
       <Button
-        size="xs"
         onClick={open}
         variant="#004EE5"
+        fullWidth
         leftSection={<HiOutlineEye />}
         styles={(theme) => ({
           section: { fontSize: "1.2rem" },

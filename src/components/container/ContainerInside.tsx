@@ -6,8 +6,8 @@ import containerInside from "../../styles/containerInside.module.css";
 
 export const ContainerInside = ({
   children,
-  width,
   allWhite,
+  width,
 }: {
   children: ReactNode;
   width: string;
@@ -18,6 +18,7 @@ export const ContainerInside = ({
     <Container
       styles={(theme) => ({
         root: {
+          height: "100%",
           border:
             colorScheme === "light"
               ? `1px solid ${theme.colors.lightTheme[2]}`

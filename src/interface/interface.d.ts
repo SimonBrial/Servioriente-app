@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/consistent-indexed-object-style */
 import { type ReactNode } from "react";
-import { type tagIcon, NotificationType, CardContainerHeader } from "../types/types";
+import {
+  type tagIcon,
+  NotificationType,
+  CardContainerHeader,
+} from "../types/types";
 
 interface NavIconProps {
   icon: ReactNode;
@@ -157,6 +161,25 @@ interface CardChatContainerProps {
   header: CardContainerHeader;
 }
 
+interface colorBackgroundArr {
+  type: NotificationsTypes;
+  colorStr: string;
+  icon: React.ReactNode;
+}
+
+interface ReturnFn {
+  colorStr: string;
+  icon: React.ReactNode;
+}
+
+interface NotitifacionProps {
+  // icon: React.ReactNode;
+  type: NotificationsTypes;
+  title: string;
+  description: string;
+  close: () => void;
+}
+
 export type {
   NotificationIconsProps,
   CardChatContainerProps,
@@ -164,6 +187,8 @@ export type {
   CardProcessItemProps,
   CountIndicatorProps,
   TabsSectionesProps,
+  colorBackgroundArr,
+  NotitifacionProps,
   RegisterInfoProps,
   BoardSectionProps,
   SortableItemProps,
@@ -181,6 +206,7 @@ export type {
   BtnAddProps,
   AlarmProps,
   CardProps,
+  ReturnFn,
   AlarmObj,
   iconList,
 };

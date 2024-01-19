@@ -8,8 +8,8 @@ export const ChatContainer = ({
   children: React.ReactNode;
 }): JSX.Element => {
   return (
-    <ContainerInside width="70%">
-      <Stack>{children}</Stack>
+    <ContainerInside width="70%" allWhite={false}>
+      <Stack gap={8}>{children}</Stack>
     </ContainerInside>
   );
 };

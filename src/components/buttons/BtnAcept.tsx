@@ -8,7 +8,6 @@ export const BtnAcept = (): JSX.Element => {
     <Button
       leftSection={<HiOutlineCheck />}
       variant="#004EE5"
-      size="xs"
       fullWidth
       style={(theme) => ({ leftSection: { fontSize: "1.5rem" } })}
     >

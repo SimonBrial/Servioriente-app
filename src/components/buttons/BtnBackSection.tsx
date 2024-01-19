@@ -1,9 +1,10 @@
 "use client";
 
-import { Button } from "@mantine/core";
+import { Button, useMantineColorScheme } from "@mantine/core";
 import Link from "next/link";
 import React from "react";
 import { IoArrowBackOutline } from "../../icons";
+import btnClasses from "../../styles/BtnStyles.module.css";
 
 export const BtnBackSection = ({
   withStyles,
@@ -14,22 +15,26 @@ export const BtnBackSection = ({
   label: string;
   dir: string;
 }): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Link href={dir} style={{ width: "100%" }}>
       <Button
         leftSection={<IoArrowBackOutline />}
         variant={withStyles ? "white" : "transparent"}
-        size="xs"
         fullWidth
-        styles={(theme) => ({
-          root: {
-            color: withStyles ? `${theme.colors.principalTheme[6]}` : `#696969`,
-            border: withStyles
-              ? `2px solid ${theme.colors.principalTheme[6]}`
-              : ``,
-          },
+        styles={{
           section: { fontSize: "1.1rem" },
-        })}
+        }}
+        classNames={{
+          root:
+            colorScheme === "light"
+              ? withStyles
+                ? btnClasses.btnBackSection_withStyles
+                : btnClasses.btnBackSection
+              : withStyles
+                ? btnClasses.btnBackSection_withStyles
+                : btnClasses.btnBackSection_dark,
+        }}
       >
         {label}
       </Button>

@@ -2,11 +2,11 @@
 /* eslint-disable @typescript-eslint/no-confusing-void-expression */
 "use client";
 
+import { GeneralDivider } from "@/components/GeneralDivider";
 import { BsMoonStars, HiOutlineSun } from "@/icons";
 import {
   useComputedColorScheme,
   useMantineColorScheme,
-  Divider,
   Switch,
   Center,
   Stack,
@@ -41,7 +41,7 @@ export const GlobalTheme = () => {
           </Center>
         </Flex>
       </Flex>
-      <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+      <GeneralDivider />
     </Stack>
   );
 };

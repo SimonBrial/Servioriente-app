@@ -1,4 +1,16 @@
-import { Divider, Avatar, Badge, Stack, Flex, Box, Text } from "@mantine/core";
+"use client";
+
+import { GeneralDivider } from "@/components/GeneralDivider";
+import {
+  useMantineColorScheme,
+  Divider,
+  Avatar,
+  Badge,
+  Stack,
+  Flex,
+  Box,
+  Text,
+} from "@mantine/core";
 
 export const AvatarGroup = ({
   usersArr,
@@ -6,6 +18,7 @@ export const AvatarGroup = ({
   usersArr: string[];
 }): JSX.Element => {
   // let avatarGroup: JSX.Element[] = [];
+  const { colorScheme } = useMantineColorScheme();
   let nameGroup: JSX.Element[] = [];
   function generateAvatarGroup(
     usersArr: string[],
@@ -14,10 +27,15 @@ export const AvatarGroup = ({
       return (
         <Box style={{ position: "relative" }}>
           <Flex>
-            <Avatar size={"lg"} variant="filled" />
             <Avatar
               size={"lg"}
               variant="filled"
+              color={colorScheme === "light" ? "#696969" : "#3a4c5a"}
+            />
+            <Avatar
+              size={"lg"}
+              variant="filled"
+              color={colorScheme === "light" ? "#696969" : "#3a4c5a"}
               style={{
                 position: "absolute",
                 marginLeft: "2.9rem",
@@ -27,6 +45,7 @@ export const AvatarGroup = ({
             <Avatar
               size={"lg"}
               variant="filled"
+              color={colorScheme === "light" ? "#696969" : "#3a4c5a"}
               style={{
                 position: "absolute",
                 marginLeft: "calc(2.9rem*2)",
@@ -36,6 +55,7 @@ export const AvatarGroup = ({
             <Avatar
               size={"lg"}
               variant="filled"
+              color={colorScheme === "light" ? "#696969" : "#3a4c5a"}
               style={{
                 position: "absolute",
                 marginLeft: "calc(2.9rem*3)",
@@ -45,10 +65,13 @@ export const AvatarGroup = ({
             <Badge
               size="md"
               radius={"sm"}
-              style={{
-                position: "absolute",
-                marginLeft: "12.5rem",
-                marginTop: "1rem",
+              color={colorScheme === "light" ? "#004EE5" : "#52A5E0"}
+              styles={{
+                root: {
+                  position: "absolute",
+                  marginLeft: "12.5rem",
+                  marginTop: "1rem",
+                },
               }}
             >
               {usersArr.length - 4} +
@@ -65,11 +88,11 @@ export const AvatarGroup = ({
                 key={index}
                 size={"lg"}
                 variant="filled"
-                style={{
+                style={(theme) => ({
                   position: "absolute",
                   marginLeft: `calc(2.9rem*${index})`,
                   borderLeft: "3px solid white",
-                }}
+                })}
               />
             ))}
           </Flex>
@@ -80,11 +103,25 @@ export const AvatarGroup = ({
   function generateNameGroup(usersArr: string[]): JSX.Element[] {
     nameGroup = usersArr.map((user, index) => (
       <Flex gap={4} key={crypto.randomUUID()}>
-        <Text style={{ fontSize: "0.8rem", color: "#696969" }} key={index}>
+        <Text
+          styles={(theme) => ({
+            root: {
+              fontSize: "0.8rem",
+              color:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[3]}`
+                  : `${theme.colors.darkTheme[2]}`,
+            },
+          })}
+          key={index}
+        >
           {user}
         </Text>
         {index !== usersArr.length - 1 ? (
-          <Divider orientation="vertical" />
+          <Divider
+            orientation="vertical"
+            color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"}
+          />
         ) : (
           <></>
         )}
@@ -96,7 +133,7 @@ export const AvatarGroup = ({
   return (
     <Stack style={{ width: "100%" }} gap={5}>
       {generateAvatarGroup(usersArr)}
-      <Divider />
+      <GeneralDivider />
       <Flex gap={4}>{generateNameGroup(usersArr)}</Flex>
     </Stack>
   );

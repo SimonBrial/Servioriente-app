@@ -1,11 +1,15 @@
-import { Box, Stack, Text } from "@mantine/core";
+"use client";
+
+import { Box, Stack, Text, useMantineColorScheme } from "@mantine/core";
 import React from "react";
+import classes from "../../../styles/container.module.css";
 
 export const CloudDialogue = ({
   ubication,
 }: {
   ubication: "left" | "right";
 }): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Box
       style={{
@@ -18,19 +22,12 @@ export const CloudDialogue = ({
         gap={0}
         align={"center"}
         // justify={ubication === "left" ? "start" : "end"}
-        styles={(theme) => ({
-          root: {
-            border: "1px solid #CDCDCD",
-            boxShadow: "0px 5px 5px -1px #cdcdcd",
-            padding: "0.5rem",
-            marginBottom: "0.4rem",
-            maxWidth: "350px",
-            backgroundColor: "#f8f8f8",
-            marginRight: "0",
-            borderRadius: "10px",
-            overflowWrap: "anywhere",
-          },
-        })}
+        classNames={{
+          root:
+            colorScheme === "light"
+              ? classes.cloudContainer
+              : classes.cloudContainer_dark,
+        }}
       >
         <Text style={{ maxWidth: "100%" }}>
           is a long established fact that a reader will be distracted by the

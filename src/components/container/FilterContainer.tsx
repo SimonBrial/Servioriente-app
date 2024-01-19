@@ -1,15 +1,15 @@
 "use client";
 
 import {
+  useMantineColorScheme,
   Container,
-  Divider,
-  Flex,
   Stack,
   Title,
-  useMantineColorScheme,
+  Flex,
 } from "@mantine/core";
 import { BadgeClose } from "../BadgeClose";
 import { BadgeFilter } from "../BadgeFilter";
+import { GeneralDivider } from "../GeneralDivider";
 
 export function FilterContainer(): JSX.Element {
   const { colorScheme } = useMantineColorScheme();
@@ -41,7 +41,7 @@ export function FilterContainer(): JSX.Element {
           </Flex>
           <BadgeClose status={true} />
         </Flex>
-        <Divider color={colorScheme === "light" ? "#cdcdcd" : "#f8f8f8"} />
+        <GeneralDivider />
       </Stack>
     </Container>
   );

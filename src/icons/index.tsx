@@ -32,6 +32,7 @@ import {
 } from "react-icons/hi";
 import {
   HiOutlineChatBubbleLeftRight,
+  HiOutlineExclamationTriangle,
   HiOutlineUserCircle,
   HiDevicePhoneMobile,
   HiOutlineUserGroup,
@@ -42,7 +43,9 @@ import {
 } from "react-icons/hi2";
 import { IoIosSend } from "react-icons/io";
 import {
+  IoCheckmarkCircleOutline,
   IoChevronDownOutline,
+  IoCloseCircleOutline,
   IoMailUnreadOutline,
   IoArrowBackOutline,
   IoWarningOutline,
@@ -80,7 +83,9 @@ import { PiRobot, PiFolderSimpleDashed } from "react-icons/pi";
 
 export {
   HiOutlineChatBubbleLeftRight,
+  HiOutlineExclamationTriangle,
   HiOutlineExclamationCircle,
+  IoCheckmarkCircleOutline,
   MdOutlineMarkChatUnread,
   MdOutlineInsertEmoticon,
   HiOutlineDotsVertical,
@@ -89,6 +94,7 @@ export {
   HiOutlineDocumentAdd,
   PiFolderSimpleDashed,
   IoChevronDownOutline,
+  IoCloseCircleOutline,
   HiOutlineExclamation,
   IoMailUnreadOutline,
   HiOutlineUserCircle,

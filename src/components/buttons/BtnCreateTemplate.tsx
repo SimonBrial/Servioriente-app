@@ -22,7 +22,6 @@ export const BtnCreateTemplate = ({
             border: `2px solid ${theme.colors.principalTheme[6]}`,
           },
         })}
-        size="xs"
         fullWidth={complete}
       >
         Crear Plantilla
@@ -40,7 +39,6 @@ export const BtnCreateTemplate = ({
           color: "white",
         },
       })}
-      size="xs"
       fullWidth={complete}
     >
       Crear Plantilla

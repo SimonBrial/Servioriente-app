@@ -4,53 +4,77 @@ import { TitleLayout } from "@/components/layout/TitleLayout";
 import { AsideSearch } from "../AsideSearch";
 import InsideContainer from "@/components/container/InsideContainer";
 import {
-  Checkbox,
-  Divider,
-  Flex,
+  useMantineColorScheme,
   ScrollArea,
+  Checkbox,
   Stack,
+  Flex,
   Text,
 } from "@mantine/core";
 import { UserContactCard } from "../UserContactCard";
+import checkboxClasses from "../../../styles/sidebarSectionSelection.module.css";
+import { GeneralDivider } from "@/components/GeneralDivider";
 
 export const NotReadLayout = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Stack gap={3}>
-      <TitleLayout color="blue" icon="" onText={false} title="No Leidos" />
+      <TitleLayout color="" icon="" onText title="No Leidos" />
       <AsideSearch />
-      <Divider style={{ marginBottom: "0.2rem" }} />
+      <GeneralDivider />
       <Flex
         justify={"space-between"}
         align={"center"}
         style={{ marginBottom: "0.3rem" }}
       >
-        <Text>Buscar por lista de Favoritos</Text>
-        <Checkbox size="xs" color="#004EE5" />
+        <Text
+          styles={(theme) => ({
+            root: {
+              color:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[3]}`
+                  : `${theme.colors.darkTheme[2]}`,
+            },
+          })}
+        >
+          Buscar por lista de Favoritos
+        </Text>
+        <Checkbox
+          size="sm"
+          classNames={{
+            input:
+              colorScheme === "light"
+                ? checkboxClasses.checkbox
+                : checkboxClasses.checkbox_dark,
+          }}
+        />
       </Flex>
-      <InsideContainer offset={252}>
-        <ScrollArea h={"98%"} maw={"100%"} offsetScrollbars scrollbarSize={2}>
-          <Stack gap={5} h={"50%"}>
-            <UserContactCard favorite />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite />
-            <UserContactCard favorite />
-            <UserContactCard favorite />
-            <UserContactCard favorite />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite />
-            <UserContactCard favorite={false} />
-            <UserContactCard favorite={false} />
-          </Stack>
-        </ScrollArea>
-      </InsideContainer>
+      <Stack gap={8}>
+        <InsideContainer offset={257}>
+          <ScrollArea h={"98%"} maw={"100%"} offsetScrollbars scrollbarSize={2}>
+            <Stack gap={5} h={"50%"} p={6}>
+              <UserContactCard favorite />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite />
+              <UserContactCard favorite />
+              <UserContactCard favorite />
+              <UserContactCard favorite />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite />
+              <UserContactCard favorite={false} />
+              <UserContactCard favorite={false} />
+            </Stack>
+          </ScrollArea>
+        </InsideContainer>
+      </Stack>
     </Stack>
   );
 };

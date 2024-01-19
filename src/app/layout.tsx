@@ -28,12 +28,13 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider theme={theme} defaultColorScheme="light">
+        <MantineProvider
+          theme={theme}
+          defaultColorScheme="light"
+        >
           <Container fluid size={"100%"} px={"0"} display={"flex"}>
             <Sidebar />
-            <GlobalContainer>
-              {children}
-            </GlobalContainer>
+            <GlobalContainer>{children}</GlobalContainer>
           </Container>
         </MantineProvider>
       </body>

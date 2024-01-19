@@ -8,10 +8,12 @@ import {
   HiMenu,
 } from "@/icons";
 import { TabsSectionesProps } from "@/interface/interface";
-import { ActionIcon, Menu } from "@mantine/core";
+import { ActionIcon, Menu, useMantineColorScheme } from "@mantine/core";
 import Link from "next/link";
+import classes from "../../styles/menu.module.css";
 
 export const HamburgerMenu = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   const menuOptions = [
     {
       value: "Lista de Difusion",
@@ -56,11 +58,31 @@ export const HamburgerMenu = (): JSX.Element => {
       styles={(theme) => ({
         root: { color: "#696969" },
         itemSection: {
-          color: `${theme.colors.principalTheme[6]}`,
+          color:
+            colorScheme === "light"
+              ? `${theme.colors.lightTheme[6]}`
+              : `${theme.colors.darkTheme[1]}`,
           fontSize: "1.3rem",
           marginRight: "0.5rem",
         },
+        label: {
+          color:
+            colorScheme === "light"
+              ? `${theme.colors.lightTheme[2]}`
+              : `${theme.colors.darkTheme[3]}`,
+          fontSize: "0.9rem",
+        },
       })}
+      classNames={{
+        dropdown:
+          colorScheme === "light"
+            ? classes.menuDropdown
+            : classes.menuDropdown_dark,
+        item:
+          colorScheme === "light"
+            ? classes.menuDropdown_item
+            : classes.menuDropdown_item_dark,
+      }}
     >
       <Menu.Target>
         <ActionIcon
@@ -68,7 +90,12 @@ export const HamburgerMenu = (): JSX.Element => {
           size={"xl"}
           aria-label="Search"
           styles={(theme) => ({
-            root: { color: "#696969" },
+            root: {
+              color:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[3]}`
+                  : `${theme.colors.darkTheme[2]}`,
+            },
           })}
         >
           <HiMenu style={{ fontSize: "2rem" }} />

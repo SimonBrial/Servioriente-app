@@ -1,4 +1,4 @@
-import { Stack, Flex } from "@mantine/core";
+import { Stack, } from "@mantine/core";
 import { AvatarGroup } from "./AvatarGroup";
 import { DifusionListEditor } from "./DifusionListEditor";
 
@@ -16,10 +16,8 @@ export const DifusionListChat = (): JSX.Element => {
     "Mario H.",
   ];
   return (
-    <Stack>
-      <Flex>
-        <AvatarGroup usersArr={userFakeData} />
-      </Flex>
+    <Stack gap={6}>
+      <AvatarGroup usersArr={userFakeData} />
       <DifusionListEditor />
     </Stack>
   );

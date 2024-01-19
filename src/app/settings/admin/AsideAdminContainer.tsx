@@ -16,7 +16,13 @@ export const AsideAdminContainer = () => {
   return (
     <ContainerInside width="30%" allWhite={false}>
       <Stack justify="space-between" style={{ height: "100%" }}>
-        <Stack style={{ height: "100%", paddingTop: "9.8rem" }} align="center">
+        <Stack
+          style={{
+            height: "100%",
+          }}
+          align="center"
+          justify="center"
+        >
           <Avatar size={"7rem"} />
           <Stack gap={4} align="center">
             <Text style={{ fontSize: "1.2rem" }}>Simon Briceño</Text>

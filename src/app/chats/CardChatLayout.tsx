@@ -4,14 +4,15 @@ import { CustomDivider } from "@/components/CustomDivider";
 import { HiHeart } from "@/icons";
 import { CardContainerHeader } from "@/types/types";
 import {
+  useMantineColorScheme,
+  Container,
   Avatar,
   Center,
   Stack,
   Title,
+  Badge,
   Flex,
   Text,
-  Box,
-  Badge,
 } from "@mantine/core";
 import React from "react";
 
@@ -20,14 +21,25 @@ export const CardChatLayout = ({
 }: {
   colorUser: CardContainerHeader;
 }): JSX.Element => {
-  console.log(colorUser);
+  const { colorScheme } = useMantineColorScheme();
+  // console.log(colorUser);
   return (
-    <Box
-      style={{
-        border: "1px solid #696969",
-        borderRadius: "6px",
-        padding: "0.5rem",
-      }}
+    <Container
+      styles={(theme) => ({
+        root: {
+          border:
+            colorScheme === "light"
+              ? `1px solid ${theme.colors.lightTheme[3]}`
+              : `1px solid ${theme.colors.darkTheme[9]}`,
+          borderRadius: "6px",
+          padding: "0.5rem",
+          width: "100%",
+          backgroundColor:
+            colorScheme === "light"
+              ? "#FFFFFF"
+              : `${theme.colors.darkTheme[7]}`,
+        },
+      })}
     >
       <Flex justify={"space-between"} align={"center"}>
         <Flex gap={5} align={"center"}>
@@ -38,8 +50,32 @@ export const CardChatLayout = ({
           />
           <Avatar />
           <Stack gap={0}>
-            <Title order={6}>Nombre del Usuario</Title>
-            <Text style={{ fontSize: "0.8rem" }}>Ultimo mensaje</Text>
+            <Title
+              order={6}
+              styles={(theme) => ({
+                root: {
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[3]}`
+                      : `${theme.colors.darkTheme[2]}`,
+                },
+              })}
+            >
+              Nombre del Usuario
+            </Title>
+            <Text
+              styles={(theme) => ({
+                root: {
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[3]}`
+                      : `${theme.colors.darkTheme[2]}`,
+                  fontSize: "0.8rem",
+                },
+              })}
+            >
+              Ultimo mensaje
+            </Text>
           </Stack>
         </Flex>
         <Stack align="end">
@@ -47,7 +83,10 @@ export const CardChatLayout = ({
             <Center
               styles={(theme) => ({
                 root: {
-                  color: `${theme.colors.principalTheme[6]}`,
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[6]}`
+                      : `${theme.colors.darkTheme[1]}`,
                   fontSize: "0.8rem",
                 },
               })}
@@ -56,12 +95,15 @@ export const CardChatLayout = ({
             </Center>
             <Text style={{ fontSize: "0.6rem" }}>10:30 AM</Text>
           </Flex>
-          <Badge color="#1F7BF2" radius="sm">
+          <Badge
+            color={colorScheme === "light" ? "#1F7BF2" : "#52A5E0"}
+            radius="sm"
+          >
             +1
           </Badge>
         </Stack>
       </Flex>
-    </Box>
+    </Container>
   );
 };
 

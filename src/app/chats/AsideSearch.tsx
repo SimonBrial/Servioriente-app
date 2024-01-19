@@ -1,35 +1,58 @@
 "use client";
 
 import { HiOutlineSearch } from "@/icons";
-import { Flex, TextInput, ActionIcon } from "@mantine/core";
+import {
+  useMantineColorScheme,
+  UnstyledButton,
+  TextInput,
+  Center,
+  Flex,
+} from "@mantine/core";
 import React from "react";
 import { HamburgerMenu } from "./HamburgerMenu";
+import btnStyles from "../../styles/BtnStyles.module.css";
 
 export const AsideSearch = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   return (
-    <Flex align={"center"}>
-      <ActionIcon
+    <Flex align={"center"} gap={4}>
+      <UnstyledButton
         variant="transparent"
         size={"xl"}
         aria-label="Search"
-        styles={(theme) => ({
-          root: { color: "#696969" },
-        })}
+        classNames={{
+          root:
+            colorScheme === "light"
+              ? btnStyles.btnMail
+              : btnStyles.btnMail_dark,
+        }}
       >
-        <HiOutlineSearch style={{ fontSize: "1.5rem" }} />
-      </ActionIcon>
-      <TextInput placeholder="Input placeholder" w={"100%"} />
-      {/* <ActionIcon
-        variant="transparent"
-        size={"xl"}
-        aria-label="Search"
+        <Center
+          styles={(theme) => ({
+            root: {
+              color:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[3]}`
+                  : `${theme.colors.darkTheme[2]}`,
+            },
+          })}
+        >
+          <HiOutlineSearch style={{ fontSize: "1.5rem" }} />
+        </Center>
+      </UnstyledButton>
+      <TextInput
+        placeholder="Insertar nombre de usuario"
+        w={"100%"}
         styles={(theme) => ({
-          root: { color: "#696969" },
+          input: {
+            backgroundColor:
+              colorScheme === "light"
+                ? "#FFFFFF"
+                : `${theme.colors.darkTheme[2]}`,
+            color: `${theme.colors.lightTheme[3]}`,
+          },
         })}
-      >
-        <HiMenu style={{ fontSize: "2rem" }} />
-      </ActionIcon> */}
-
+      />
       <HamburgerMenu />
     </Flex>
   );

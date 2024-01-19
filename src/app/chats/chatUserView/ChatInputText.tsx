@@ -1,25 +1,44 @@
 "use client";
 
-import { Box, Flex, Center, TextInput, FileInput } from "@mantine/core";
+import {
+  Box,
+  Flex,
+  Center,
+  TextInput,
+  FileInput,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { IoSend, HiOutlineFaceSmile, HiPaperClip } from "@/icons";
 
 export const ChatInputText = (): JSX.Element => {
+  const { colorScheme } = useMantineColorScheme();
   return (
     <Box>
       <Flex
         gap={8}
         styles={(theme) => ({
           root: {
-            border: `1px solid #696969`,
+            border:
+              colorScheme === "light"
+                ? `1px solid ${theme.colors.lightTheme[3]}`
+                : `1px solid ${theme.colors.darkTheme[5]}`,
             padding: "0.5rem 1rem",
             borderRadius: "35px",
-            backgroundColor: `white`,
+            backgroundColor:
+              colorScheme === "light"
+                ? "#efefef4c"
+                : `${theme.colors.darkTheme[7]}`,
           },
         })}
       >
         <Center
           styles={(theme) => ({
-            root: { color: `${theme.colors.principalTheme[6]}` },
+            root: {
+              color:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[6]}`
+                  : `${theme.colors.darkTheme[1]}`,
+            },
             cursor: "pointer",
           })}
         >
@@ -34,7 +53,10 @@ export const ChatInputText = (): JSX.Element => {
             <Center
               styles={(theme) => ({
                 root: {
-                  color: `${theme.colors.principalTheme[6]}`,
+                  color:
+                    colorScheme === "light"
+                      ? `${theme.colors.lightTheme[6]}`
+                      : `${theme.colors.darkTheme[1]}`,
                   cursor: "pointer",
                 },
               })}
@@ -45,11 +67,27 @@ export const ChatInputText = (): JSX.Element => {
         />
         <TextInput
           style={{ width: "100%" }}
-          styles={(theme) => ({ input: { backgroundColor: "#f8f8f8" } })}
+          styles={(theme) => ({
+            input: {
+              backgroundColor:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[0]}`
+                  : `${theme.colors.darkTheme[2]}`,
+              color:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[3]}`
+                  : `${theme.colors.darkTheme[5]}`,
+            },
+          })}
         />
         <Center
           styles={(theme) => ({
-            root: { color: `${theme.colors.principalTheme[6]}` },
+            root: {
+              color:
+                colorScheme === "light"
+                  ? `${theme.colors.lightTheme[6]}`
+                  : `${theme.colors.darkTheme[1]}`,
+            },
             cursor: "pointer",
           })}
         >

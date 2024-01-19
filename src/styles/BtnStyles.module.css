@@ -36,6 +36,7 @@
   color: #696969;
   font-size: 1.2rem;
 }
+
 .btnEdit_item_dark {
   color: #f8f8f8;
   font-size: 1.2rem;
@@ -46,6 +47,7 @@
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
 }
+
 .btnEdit_item_dark:hover {
   color: orange;
   transform: scale(1.1);
@@ -76,6 +78,7 @@
   color: #696969;
   font-size: 1.2rem;
 }
+
 .btnView_item_dark {
   color: #f8f8f8;
   font-size: 1.2rem;
@@ -86,6 +89,7 @@
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
 }
+
 .btnView_item_dark:hover {
   color: #52a5e0;
   transform: scale(1.1);
@@ -98,19 +102,102 @@
   padding: 0.3rem;
   border-radius: 6px;
 }
+
 .btnMail:hover {
   color: #cdcdcd;
   background-color: #efefef;
   transition: all 0.2s ease-in-out;
 }
+
 .btnMail_dark {
   color: #eff3f5;
   margin-bottom: 0.25rem;
   padding: 0.3rem;
   border-radius: 6px;
 }
+
 .btnMail_dark:hover {
   color: #cdcdcd;
   background-color: #bbb5f43b;
   transition: all 0.2s ease-in-out;
 }
+
+.btnFavorite {
+  color: #696969;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  padding: 0.2rem;
+}
+
+.btnFavorite:hover {
+  color: #004ee5;
+  background-color: #efefef;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnFavorite_dark {
+  color: #efefef;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  padding: 0.2rem;
+}
+
+.btnFavorite_dark:hover {
+  color: #52a5e0;
+  background-color: #bbb5f43b;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnBackSection {
+  background-color: transparent;
+  color: #696969;
+}
+
+.btnBackSection:hover {
+  background-color: #efefef;
+  color: #696969;
+  transition: all 0.2s ease-in-out;
+}
+.btnBackSection_withStyles {
+  background-color: white;
+  color: #004ee5;
+  border: 2px solid #004ee5;
+}
+
+.btnBackSection_withStyles:hover {
+  background-color: #cdcdcd;
+  color: #004ee5;
+  border: 2px solid #004ee5;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnBackSection_dark {
+  background-color: transparent;
+  color: #eff3f5;
+}
+
+.btnBackSection_dark:hover {
+  background-color: #efefef59;
+  color: #eff3f5;
+  transition: all 0.2s ease-in-out;
+}
+
+/* .btnFavorite_icon {
+  color: #cdcdcd;
+}
+
+.btnFavorite_icon:hover {
+  color: #004ee5;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnFavorite_icon_dark {
+  color: #cdcdcd;
+}
+
+.btnFavorite_icon_dark:hover {
+  color: #52a5e0;
+  transition: all 0.2s ease-in-out;
+} */

@@ -8,7 +8,7 @@ export const BtnSend = () => {
       leftSection={<IoIosSend />}
       variant="white"
       // color="#004EE5"
-      size="xs"
+      fullWidth
       styles={(theme) => ({
         section: { fontSize: "1.2rem" },
         root: {
