@@ -43,9 +43,6 @@ export function CountIndicator({
                 ? `${theme.colors.lightTheme[3]}`
                 : `${theme.colors.darkTheme[2]}`,
             fontSize: "1.2rem",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
             height: "100%",
           },
         })}

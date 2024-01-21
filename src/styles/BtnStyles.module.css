@@ -1,11 +1,7 @@
 .btnFilter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #f8f8f8;
   border: 1px solid #cdcdcd;
   color: #696969;
-  gap: 0.6rem;
   padding: 0.2rem 0.8rem;
   border-radius: 6px;
   height: 100%;
@@ -13,6 +9,20 @@
 
 .btnFilter:hover {
   background-color: #efefef;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+.btnFilter_dark {
+  background-color: #9a90ef1a;
+  border: 1px solid #2a3b47;
+  color: #eff3f5;
+  padding: 0.2rem 0.8rem;
+  border-radius: 6px;
+  height: 100%;
+}
+/* Corregir los colores cuando se le haga hover */
+.btnFilter_dark:hover {
+  background-color: #3a4c5a;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -182,6 +192,61 @@
   background-color: #efefef59;
   color: #eff3f5;
   transition: all 0.2s ease-in-out;
+}
+
+.btnMonth {
+  background-color: white;
+  color: #004ee5;
+  border: 1px solid #004ee5;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
+}
+.btnMonth:hover {
+  background-color: #f8f8f8;
+  color: #033eb2;
+  border: 1px solid #033eb2;
+  transition: all 0.2s ease-in-out;
+}
+.btnMonth_dark {
+  background-color: #bbb5f43b;
+  color: #52a5e0;
+  border: 1px solid #52a5e0;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
+}
+.btnMonth_dark:hover {
+  background-color: #efefef59;
+  color: #52a5e0;
+  border: 1px solid #52a5e0;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnViewCalendar {
+  padding: 0.5rem;
+  background-color: #f8f8f8;
+  border: 1px solid #cdcdcd;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  color: #696969;
+}
+.btnViewCalendar:hover {
+  background-color: #efefef;
+  border: 1px solid #cdcdcd;
+  transition: all 0.2s ease-in-out;
+  color: #696969;
+}
+.btnViewCalendar_dark {
+  padding: 0.5rem;
+  background-color: #9a90ef1a;
+  border: 1px solid #2a3b47;
+  border-radius: 6px;
+  font-size: 1.2rem;
+}
+.btnViewCalendar_dark:hover {
+  background-color: #3a4c5a;
+  transition: all 0.3s ease-in-out;
 }
 
 /* .btnFavorite_icon {

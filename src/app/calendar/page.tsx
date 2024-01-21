@@ -1,5 +1,3 @@
-function page(): JSX.Element {
-  return <div>calendario</div>;
+export default function page(): JSX.Element {
+  return <div>Aqui se va a implementar todo el calendario</div>;
 }
-
-export default page;
