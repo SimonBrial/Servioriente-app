@@ -1,20 +1,22 @@
 "use client";
 
 import {
+  useMantineColorScheme,
+  UnstyledButton,
   Center,
   Flex,
-  UnstyledButton,
-  useMantineColorScheme,
 } from "@mantine/core";
 import React, { useRef, useState } from "react";
-import { HiOutlineViewGrid, HiOutlineViewBoards } from "react-icons/hi";
 import classes from "../../styles/BtnStyles.module.css";
+import { useRouter } from "next/navigation";
+import { HiOutlineViewBoards, HiOutlineViewGrid } from "@/icons";
 
 export const ViewCalendarSelection = () => {
   const [btnSelected, setBtnSelected] = useState<string | undefined>("grid");
   const refGrid = useRef<HTMLButtonElement>(null);
   const refCol = useRef<HTMLButtonElement>(null);
   const { colorScheme } = useMantineColorScheme();
+  const router = useRouter();
 
   return (
     <Flex gap={4} style={{ height: "100%" }}>
@@ -27,7 +29,10 @@ export const ViewCalendarSelection = () => {
         }}
         id="grid"
         ref={refGrid}
-        onClick={() => setBtnSelected(refGrid.current?.id)}
+        onClick={() => {
+          setBtnSelected(refGrid.current?.id);
+          router.push("/calendar");
+        }}
         styles={(theme) => ({
           root: {
             color:
@@ -52,7 +57,10 @@ export const ViewCalendarSelection = () => {
         }}
         id="column"
         ref={refCol}
-        onClick={() => setBtnSelected(refCol.current?.id)}
+        onClick={() => {
+          setBtnSelected(refCol.current?.id);
+          router.push("/calendar/weeks");
+        }}
         styles={(theme) => ({
           root: {
             color:

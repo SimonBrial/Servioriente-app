@@ -1,3 +1,10 @@
+import { CalendarContainer } from "./CalendarContainer";
+import { CalendarView } from "./calendarLayout/CalendarView";
+
 export default function page(): JSX.Element {
-  return <div>Aqui se va a implementar todo el calendario</div>;
+  return (
+    <CalendarContainer>
+      <CalendarView />
+    </CalendarContainer>
+  );
 }

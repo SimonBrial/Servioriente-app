@@ -2,8 +2,9 @@
 import { type ReactNode } from "react";
 import {
   type tagIcon,
-  NotificationType,
   CardContainerHeader,
+  NotificationType,
+  degreeType,
 } from "../types/types";
 
 interface NavIconProps {
@@ -180,6 +181,23 @@ interface NotitifacionProps {
   close: () => void;
 }
 
+interface EventCardProps {
+  title: string;
+  desription: string;
+  degree: degreeType;
+  userToassign: string;
+  id: string;
+  smallSize: boolean;
+}
+
+interface EventCardData {
+  title: string;
+  desription: string;
+  degree: degreeType;
+  userToassign: string;
+  id: string;
+}
+
 export type {
   NotificationIconsProps,
   CardChatContainerProps,
@@ -195,8 +213,10 @@ export type {
   AutoCompleteData,
   TitleLayoutProps,
   CardProcessProps,
+  EventCardProps,
   BtnActionProps,
   AlarmCardProps,
+  EventCardData,
   SectionsArray,
   ColumnSection,
   TaskItemProps,

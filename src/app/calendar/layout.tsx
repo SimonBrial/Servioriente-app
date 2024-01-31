@@ -5,8 +5,9 @@ import { HiOutlineCalendar } from "@/icons";
 import { AutoCompleteInput } from "@/components/inputs/AutoCompleteInput";
 import { BtnFilter } from "@/components/buttons/BtnFilter";
 import BtnReportGenerate from "@/components/buttons/BtnReportGenerate";
-import { MonthNavegationBar } from "./MonthNavegationBar";
 import { ViewCalendarSelection } from "./ViewCalendarSelection";
+import BtnAdd from "@/components/buttons/BtnAdd";
+import { MonthNavigationBar } from "./MonthNavegationBar";
 
 export default function layout({
   children,
@@ -15,7 +16,7 @@ export default function layout({
 }): JSX.Element {
   return (
     <Container p={0}>
-      <Stack p={0}>
+      <Stack p={2} gap={6}>
         <Flex
           gap={6}
           align={"center"}
@@ -29,9 +30,12 @@ export default function layout({
           <AutoCompleteInput />
           <BtnFilter>Prueba</BtnFilter>
           <BtnReportGenerate />
+          <BtnAdd iconTag="add-event" label="Nuevo Evento">
+            Prueba
+          </BtnAdd>
           <ViewCalendarSelection />
         </Flex>
-        <MonthNavegationBar />
+        <MonthNavigationBar />
         {children}
       </Stack>
     </Container>

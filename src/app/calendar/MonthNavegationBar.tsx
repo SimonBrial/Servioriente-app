@@ -6,22 +6,30 @@ import {
   useMantineColorScheme,
   UnstyledButton,
   Container,
+  Center,
   Stack,
   Flex,
   Text,
-  Center,
 } from "@mantine/core";
-import React from "react";
+import React, { useState } from "react";
 import classes from "../../styles/BtnStyles.module.css";
+import { months } from "../../data/calendarDaysAndMonth";
 
-export const MonthNavegationBar = () => {
+export const MonthNavigationBar = () => {
   const { colorScheme } = useMantineColorScheme();
+  const [monthCount, setMonthCount] = useState<number>(new Date().getMonth());
+  const [yearCount, setYearCount] = useState<number>(new Date().getFullYear());
+
   return (
     <Container style={{ width: "100%", padding: "0" }}>
       <Stack gap={4} style={{ width: "100%" }}>
         <Flex gap={10} align={"center"}>
           <Flex gap={4}>
             <UnstyledButton
+              onClick={() => {
+                setMonthCount(monthCount === 0 ? 11 : monthCount - 1);
+                setYearCount(monthCount === 0 ? yearCount - 1 : yearCount);
+              }}
               variant="white"
               size={"lg"}
               classNames={{
@@ -36,6 +44,10 @@ export const MonthNavegationBar = () => {
               </Center>
             </UnstyledButton>
             <UnstyledButton
+              onClick={() => {
+                setMonthCount((monthCount + 1) % 12);
+                setYearCount(monthCount === 11 ? yearCount + 1 : yearCount);
+              }}
               variant="white"
               size={"lg"}
               classNames={{
@@ -61,7 +73,8 @@ export const MonthNavegationBar = () => {
               },
             })}
           >
-            Enero 2024
+            {months.find((month, index) => (monthCount === index ? month : ""))}{" "}
+            - {yearCount}
           </Text>
         </Flex>
         <GeneralDivider />

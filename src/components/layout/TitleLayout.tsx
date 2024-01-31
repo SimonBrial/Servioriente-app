@@ -27,7 +27,7 @@ export function TitleLayout({
   const { colorScheme } = useMantineColorScheme();
 
   return (
-    <Stack gap={2}>
+    <Stack gap={2} style={{ width: "100%" }}>
       <Flex gap={5} justify={"center"} align={"center"}>
         <Text size="1.5rem">{icon}</Text>
         <Title

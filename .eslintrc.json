@@ -24,6 +24,7 @@
     "no-lone-blocks": "off",
     "react-hooks/exhaustive-deps": "off",
     "array-callback-return": "off",
+    "prefer-const": "off",
 
     "@typescript-eslint/semi": "off",
     "@typescript-eslint/quotes": "off",
