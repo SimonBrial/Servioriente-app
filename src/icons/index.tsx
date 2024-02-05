@@ -60,33 +60,39 @@ import {
   IoClose,
   IoSend,
 } from "react-icons/io5";
-import { LuGoal } from "react-icons/lu";
+import { LuGoal, LuCalendarPlus } from "react-icons/lu";
 import {
-  CgCornerUpLeft,
   CgCornerDoubleUpLeft,
   CgCornerUpRight,
+  CgCornerUpLeft,
 } from "react-icons/cg";
 import { TbTemplate, TbMailPlus, TbWorld, TbEdit } from "react-icons/tb";
 import {
   MdOutlineInsertEmoticon,
   MdOutlineMarkChatUnread,
+  MdOutlineEmojiEvents,
   MdOutlineEventNote,
   MdOutlineCategory,
+  MdOutlinePercent,
   MdOutlinePlace,
+  MdOutlineSell,
+  MdHistory,
   MdCircle,
   MdTitle,
 } from "react-icons/md";
 import { BsFilter, BsTelephone, BsMoonStars } from "react-icons/bs";
 import {
-  AiOutlineIdcard,
-  AiOutlineCar,
-  AiOutlinePlus,
+  AiOutlineFundProjectionScreen,
   AiOutlinePaperClip,
+  AiOutlineIdcard,
+  AiOutlinePlus,
+  AiOutlineCar,
 } from "react-icons/ai";
 import { BiMailSend, BiBellPlus, BiCrown } from "react-icons/bi";
 import { PiRobot, PiFolderSimpleDashed } from "react-icons/pi";
 
 export {
+  AiOutlineFundProjectionScreen,
   HiOutlineChatBubbleLeftRight,
   HiOutlineExclamationTriangle,
   HiOutlineExclamationCircle,
@@ -95,6 +101,7 @@ export {
   MdOutlineInsertEmoticon,
   HiOutlineDotsVertical,
   HiOutlineDocumentText,
+  MdOutlineEmojiEvents,
   CgCornerDoubleUpLeft,
   HiOutlineDocumentAdd,
   PiFolderSimpleDashed,
@@ -121,6 +128,7 @@ export {
   HiOutlineMailOpen,
   MdOutlineCategory,
   HiOutlineViewGrid,
+  MdOutlinePercent,
   HiOutlineUserAdd,
   IoWarningOutline,
   IoChevronForward,
@@ -130,12 +138,14 @@ export {
   HiOutlinePencil,
   AiOutlineIdcard,
   IoLogoInstagram,
+  LuCalendarPlus,
   HiOutlineClock,
   MdOutlinePlace,
   HiOutlineTrash,
   HiOutlineCheck,
   CgCornerUpLeft,
   IoLogoFacebook,
+  MdOutlineSell,
   HiOutlineStar,
   AiOutlinePlus,
   HiOutlineUser,
@@ -155,6 +165,7 @@ export {
   TbTemplate,
   TbMailPlus,
   BiMailSend,
+  MdHistory,
   HiHashtag,
   IoIosSend,
   BsFilter,

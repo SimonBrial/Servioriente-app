@@ -47,7 +47,7 @@ export default function CreateAlarmLayout({
         <TimeSelect label="Hora" />
         <PrivateInput privateStatus={false} userName="" />
         <AutomatedInput automatedStatus={false} />
-        <SelectInput title="Selecciona una Carpeta" />
+        <SelectInput title="Selecciona una Carpeta" inputSize="200px" periodeArr={[]} />
         <TextEditor />
       </Stack>
     </ScrollArea>

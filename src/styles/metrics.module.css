@@ -1,0 +1,49 @@
+.history_container_card {
+  cursor: default;
+  border-radius: 6px;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #cdcdcd;
+}
+.history_container_card:hover {
+  background-color: #efefef;
+  transition: all 0.2s ease-in-out;
+}
+.history_container_card_dark {
+  cursor: default;
+  border-radius: 6px;
+  width: 100%;
+  background-color: #9a90ef1a;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #29363f;
+}
+.history_container_card_dark:hover {
+  background-color: #3a4c5a;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn_dots {
+  stroke-width: 1;
+  font-size: 2.5rem;
+  padding: 0.2rem;
+  color: #696969;
+}
+.btn_dots:hover {
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #9a90ef1a;
+  transition: all 0.2s ease-in-out;
+}
+.btn_dots_dark {
+  stroke-width: 1;
+  font-size: 2.5rem;
+  padding: 0.2rem;
+  color: #eff3f5;
+}
+.btn_dots_dark:hover {
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: #9a90ef1a;
+  transition: all 0.2s ease-in-out;
+}

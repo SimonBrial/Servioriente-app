@@ -3,14 +3,14 @@
 import { useDisclosure } from "@mantine/hooks";
 import { Button, Drawer, Stack, useMantineColorScheme } from "@mantine/core";
 import {
-  MdOutlineEventNote,
+  HiOutlineFolderAdd,
   HiOutlineUserAdd,
   HiOutlineCheck,
+  LuCalendarPlus,
   TbTemplate,
   TbMailPlus,
   BiBellPlus,
   LuGoal,
-  HiOutlineFolderAdd,
 } from "../../icons";
 import BtnActions from "./BtnActions";
 import { BtnAddProps, iconList } from "@/interface/interface";
@@ -38,7 +38,7 @@ function BtnAdd({ iconTag, label, children, addFn }: BtnAddProps): JSX.Element {
     },
     {
       tag: "add-event",
-      icon: <MdOutlineEventNote />,
+      icon: <LuCalendarPlus />,
     },
     {
       tag: "add",
