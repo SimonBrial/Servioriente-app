@@ -60,7 +60,7 @@ import {
   IoClose,
   IoSend,
 } from "react-icons/io5";
-import { LuGoal, LuCalendarPlus } from "react-icons/lu";
+import { LuGoal, LuCalendarPlus, LuListTodo } from "react-icons/lu";
 import {
   CgCornerDoubleUpLeft,
   CgCornerUpRight,
@@ -165,6 +165,7 @@ export {
   TbTemplate,
   TbMailPlus,
   BiMailSend,
+  LuListTodo,
   MdHistory,
   HiHashtag,
   IoIosSend,

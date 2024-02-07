@@ -2,16 +2,18 @@
 
 import { Container, useMantineColorScheme } from "@mantine/core";
 import React, { ReactNode } from "react";
-import containerInside from "../../styles/containerInside.module.css";
+import containerInside from "@/styles/containerInside.module.css";
 
 export const ContainerInside = ({
+  withBorder,
   children,
   allWhite,
   width,
 }: {
   children: ReactNode;
-  width: string;
   allWhite: boolean;
+  withBorder: boolean;
+  width: string;
 }): JSX.Element => {
   const { colorScheme } = useMantineColorScheme();
   return (
@@ -19,10 +21,11 @@ export const ContainerInside = ({
       styles={(theme) => ({
         root: {
           height: "100%",
-          border:
-            colorScheme === "light"
+          border: withBorder
+            ? colorScheme === "light"
               ? `1px solid ${theme.colors.lightTheme[2]}`
-              : `1px solid ${theme.colors.darkTheme[9]}`,
+              : `1px solid ${theme.colors.darkTheme[9]}`
+            : "none",
           backgroundColor:
             colorScheme === "light"
               ? allWhite

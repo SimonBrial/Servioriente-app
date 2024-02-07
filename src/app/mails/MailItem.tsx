@@ -83,7 +83,7 @@ export default function MailItem(): JSX.Element {
                 root: {
                   color:
                     colorScheme === "light"
-                      ? `${theme.colors.lightTheme[2]}`
+                      ? `${theme.colors.lightTheme[3]}`
                       : `${theme.colors.darkTheme[2]}`,
                 },
               })}

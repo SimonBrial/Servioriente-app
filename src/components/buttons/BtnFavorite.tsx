@@ -7,6 +7,8 @@ import btnFavoriteClasses from "../../styles/BtnStyles.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import { NotificationLayout } from "../layout/NotificationLayout";
 
+import { notifications } from "@mantine/notifications";
+
 export const BtnFavorite = () => {
   // Falta agregarle que cuando se le haga click, se muestre una notificacion de "Agregado a Favoritos" y que cambie su color al del tema principal
   const [colorState, setColorState] = useState<boolean>(false);
@@ -43,7 +45,15 @@ export const BtnFavorite = () => {
         variant="transparent"
         onClick={() => {
           setColorState(!colorState);
-          notify();
+          // notify();
+          notifications.show({
+            color: colorState ? "red" : "blue",
+            autoClose: 3000,
+            title: colorState ? "Eliminado" : "Agregado",
+            message: colorState
+              ? "Eliminado de favoritos"
+              : "Agregado a favoritos",
+          });
         }}
         styles={(theme) => ({
           root: {

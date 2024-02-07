@@ -2,12 +2,12 @@ import { HiOutlineDotsVertical } from "@/icons";
 import {
   useMantineColorScheme,
   Container,
+  Divider,
   Avatar,
   Center,
   Stack,
   Flex,
   Text,
-  Divider,
 } from "@mantine/core";
 import classes from "@/styles/metrics.module.css";
 
@@ -42,6 +42,7 @@ export const HistoryCard = () => {
             <Text
               styles={(theme) => ({
                 root: {
+                  marginTop: "-0.5rem",
                   fontSize: "1rem",
                   color:
                     colorScheme === "light"

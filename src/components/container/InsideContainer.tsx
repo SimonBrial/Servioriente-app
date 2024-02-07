@@ -25,7 +25,8 @@ export default function InsideContainer({
             colorScheme === "light"
               ? "#FFFFFF"
               : `${theme.colors.darkTheme[7]}`,
-          borderRadius: "10px"
+          borderRadius: "6px",
+          // border: "1px solid red",
         },
       })}
     >

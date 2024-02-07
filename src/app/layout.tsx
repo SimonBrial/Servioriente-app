@@ -1,15 +1,27 @@
+// <--------------------------------------------------------------------->
+// - Conservar esta estructura para que no se vean afectados los estilos -
+// <--------------------------------------------------------------------->
+// Basic Components
+import { Sidebar } from "@/components/sidebar/Sidebar";
+import { GlobalContainer } from "@/components/container/GlobalContainer";
+// App Global Styles
 import "./globals.css";
-import type { Metadata } from "next";
-import "@mantine/core/styles.css";
+// Mantine configuration
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
+// Mantine Global theme configuration
 import { theme } from "../theme/CustomTheme";
+// Mantine Dependencies Styles
+import "@mantine/core/styles.css";
 import "@mantine/tiptap/styles.css";
 import "@mantine/dates/styles.css";
-import { Sidebar } from "@/components/sidebar/Sidebar";
-
+import "@mantine/notifications/styles.css";
+import '@mantine/charts/styles.css';
+// <--------------------------------------------------------------------->
+// Next/Metadata
+import type { Metadata } from "next";
+// Next/fonts
 import { Inter } from "next/font/google";
-import { GlobalContainer } from "@/components/container/GlobalContainer";
-
+import { Notifications } from "@mantine/notifications";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,11 +40,9 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider
-          theme={theme}
-          defaultColorScheme="light"
-        >
+        <MantineProvider theme={theme} defaultColorScheme="light">
           <Container fluid size={"100%"} px={"0"} display={"flex"}>
+            <Notifications />
             <Sidebar />
             <GlobalContainer>{children}</GlobalContainer>
           </Container>

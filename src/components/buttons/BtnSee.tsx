@@ -32,7 +32,13 @@ export default function BtnSee({
           },
         }}
       >
-        <Stack justify="space-between" style={{ height: "100%" }}>
+        <Stack
+          justify="space-between"
+          style={{
+            padding: "1rem 1rem 0 1rem",
+            height: "96vh",
+          }}
+        >
           {children}
           <BtnBack close={close} label="Volver" />
         </Stack>

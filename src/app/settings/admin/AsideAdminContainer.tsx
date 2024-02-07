@@ -14,7 +14,7 @@ import React from "react";
 export const AsideAdminContainer = () => {
   const { colorScheme } = useMantineColorScheme();
   return (
-    <ContainerInside width="30%" allWhite={false}>
+    <ContainerInside withBorder width="30%" allWhite={false}>
       <Stack justify="space-between" style={{ height: "100%" }}>
         <Stack
           style={{
